@@ -33,6 +33,7 @@ classDiagram
     AnimalJamView --> IController : has a
     AnimalJamController --> IModel : has a
     AnimalJamModel --> AnimalInfo : uses
+    AnimalJamView --> AnimalJamDisplay
     class AnimalJamApp {
         - DEFAULT_COLLECTION : String$
         - AnimalJamApp()
@@ -143,6 +144,11 @@ classDiagram
         + start() : void
         + displayCollection() : void
         + displayList() : void
+    }
+    class AnimalJamDisplay {
+        + AnimalJamDisplay()
+        + updateDisplay() : void
+
     }
 
 ```
