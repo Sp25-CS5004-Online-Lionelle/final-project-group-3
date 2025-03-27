@@ -21,19 +21,23 @@ Please refer to Powerpoint presentation in Desgin Documents folder: Final_Projec
 title:  Animal Jam UML
 ---
 classDiagram
-    AnimalJamApp --> AnimalJamController : uses
-    AnimalJamApp --> AnimalJamModel : uses
-    AnimalJamApp --> AnimalJamView : uses
+    AnimalJamApp --> IController : uses
+    AnimalJamApp --> IModel : uses
+    AnimalJamApp --> IView : uses
     IController <|-- AnimalJamController
     IView <|-- AnimalJamView
     IModel <|-- AnimalJamModel
     AnimalJamModel --> Formats : uses
     AnimalJamModel --> DataFormater : uses
     DataFormater --> AnimalJamXmlWrapper : uses
-    AnimalJamView --> IController : has a
-    AnimalJamController --> IModel : has a
+    AnimalJamView --> IController : uses
+    AnimalJamController --> IModel : uses
     AnimalJamModel --> AnimalInfo : uses
-    AnimalJamView --> AnimalJamDisplay
+    AnimalJamView --> AnimalJamFormatDisplay
+    AnimalJamView --> AnimalJamListDisplay
+    AnimalJamView --> AnimalJamExportDisplay
+    AnimalJamView --> AnimalJamSortDisplay
+    AnimalJamView --> AnimalJamFilterDisplay
     class AnimalJamApp {
         - DEFAULT_COLLECTION : String$
         - AnimalJamApp()
@@ -145,10 +149,25 @@ classDiagram
         + displayCollection() : void
         + displayList() : void
     }
-    class AnimalJamDisplay {
-        + AnimalJamDisplay()
+    class AnimalJamListDisplay {
+        + AnimalJamListDisplay()
         + updateDisplay() : void
-
+    }
+    class AnimalJamFormatDisplay {
+        + AnimalJamFormatDisplay()
+        + updateDisplay() : void
+    }
+    class AnimalJamExportDisplay {
+        + AnimalJamExportDisplay()
+        + updateDisplay() : void
+    }
+    class AnimalJamSortDisplay {
+        + AnimalJamSortDisplay()
+        + updateDisplay() : void
+    }
+    class AnimalJamFilterDisplay {
+        + AnimalJamFilterDisplay()
+        + updateDisplay() : void
     }
 
 ```
