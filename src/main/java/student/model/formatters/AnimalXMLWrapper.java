@@ -19,7 +19,18 @@ import student.model.IModel.AnimalRecord;
  * </pre>
  */
 @JacksonXmlRootElement(localName = "animalList")
-
 public final class AnimalXMLWrapper {
-    
+  
+    /** List of the records. */
+    @JacksonXmlElementWrapper(useWrapping = false)
+    private Collection<AnimalRecord> animalList;
+
+    /**
+     * Constructor.
+     * 
+     * @param records the records to wrap
+     */
+    public AnimailXmlWrapper(Collection<AnimalRecord> records) {
+        this.animalList = records;
+    }  
 }
