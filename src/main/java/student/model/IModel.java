@@ -22,7 +22,7 @@ public interface IModel {
     static void writeRecords(Collection<AnimalRecord> records, Formats format, OutputStream out) {
         DataFormater.write(records, format, out);
     }
-/*
+
     static IModel getInstance() {
         return getInstance(DATABASE);
     }
@@ -30,11 +30,12 @@ public interface IModel {
     static IModel getInstance(String database) {
         return new AnimalJamModel(database);
     }
-*/
+
     @JsonIgnoreProperties(ignoreUnknown = true)
-    @JacksonXmlRootElement(localName = "animal")
+    //@JacksonXmlRootElement(localName = "animal")
     @JsonPropertyOrder({"name", "population_size", "speed", "averge_weight", "diet", "location"})
     record AnimalRecord(String name, double population_size, double speed, double average_weight, 
                     String diet, String location) {
     }
+                    
 }
