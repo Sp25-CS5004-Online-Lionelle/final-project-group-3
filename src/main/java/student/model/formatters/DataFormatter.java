@@ -45,11 +45,12 @@ public final class DataFormatter {
      * @param out the output stream to write to
      */
     private static void prettySingle(@Nonnull AnimalRecord record, @Nonnull PrintStream out) {
-        out.println(record.hostname());
-        out.println("             IP: " + record.ip());
-        out.println("       Location: " + record.city() + ", " + record.region() + ", "
-                + record.country() + ", " + record.postal());
-        out.println("    Coordinates: " + record.latitude() + ", " + record.longitude());
+        out.println(record.name());
+        out.println("             Population Size: " + record.population_size());
+        out.println("       Speed: " + record.speed());
+        out.println("    Average Weight: " + record.average_weight());
+        out.println("    Diet: " + record.diet());
+        out.println("    Location: " + record.location());
 
     }
 
@@ -61,7 +62,7 @@ public final class DataFormatter {
      */
     private static void writeXmlData(Collection<AnimalRecord> records, OutputStream out) {
         ObjectMapper mapper = new XmlMapper();
-        DomainXmlWrapper wrapper = new DomainXmlWrapper(records);
+        AnimalXMLWrapper wrapper = new AnimalXMLWrapper(records);
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
         try {
             mapper.writeValue(out, wrapper);
