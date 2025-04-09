@@ -30,7 +30,7 @@ public final class AnimalXMLWrapper {
      * 
      * @param records the records to wrap
      */
-    public AnimailXmlWrapper(Collection<AnimalRecord> records) {
+    public AnimalXMLWrapper(Collection<AnimalRecord> records) {
         this.animalList = records;
     }  
 }
