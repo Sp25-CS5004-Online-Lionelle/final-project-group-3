@@ -27,11 +27,11 @@ public class AnimalJamModel implements IAnimalModel {
     }
 
     private void loadAnimalInfo(InputStream in, Formats format) {
-        dnInfoLibrary.putAll(
-            InputReader.readDNInfo(in, format).stream().collect(
-                Collectors.toMap(dnInfo -> dnInfo.hostname(),  dnInfo -> dnInfo)));
+        animalInfoLibrary.putAll(
+            InputReader.readAnimalInfo(in, format).stream().collect(
+                Collectors.toMap(animalInfo -> animalInfo.hostname(),  animalInfo -> animalInfo)));
         //debug print
-        System.out.println("In loadAnimalInfo and size is : " + dnInfoLibrary.size());
+        System.out.println("In loadAnimalInfo and size is : " + animalInfoLibrary.size());
         }
 
     @Override
@@ -41,11 +41,11 @@ public class AnimalJamModel implements IAnimalModel {
 
     @Override
     public AnimalRecord getRecord(String id) {
-        AnimalRecord tmp = dnInfoLibrary.get(id);
+        AnimalRecord tmp = animalInfoLibrary.get(id);
         //if(tmp == null) {
              // grab from online the network id, add the book to the collection, save out the collection
         //}
-        return dnInfoLibrary.get(id);
+        return animalInfoLibrary.get(id);
     }
     
 }
