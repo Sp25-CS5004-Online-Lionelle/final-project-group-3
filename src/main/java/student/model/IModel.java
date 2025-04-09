@@ -20,7 +20,7 @@ public interface IModel {
     AnimalRecord getRecord(String name);
 
     static void writeRecords(Collection<AnimalRecord> records, Formats format, OutputStream out) {
-        DataFormater.write(records, format, out);
+        DataFormatter.write(records, format, out);
     }
 
     static IModel getInstance() {
