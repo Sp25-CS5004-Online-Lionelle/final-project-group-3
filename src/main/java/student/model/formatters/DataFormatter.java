@@ -11,7 +11,7 @@ import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
-import student.model.IModel.AnimalRecord;
+import student.model.IAnimalModel.AnimalRecord;
 
 public final class DataFormatter {
     /**
