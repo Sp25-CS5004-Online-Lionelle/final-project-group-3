@@ -1,7 +1,7 @@
 package student;
 
 import student.controller.IController;
-import student.model.IModel;
+import student.model.IAnimalModel;
 /**
  * Main driver for the program.
  * 
@@ -19,11 +19,11 @@ public final class AnimalJamApp {
      */
     public static void main(String[] args) {
 
-        IController parser = new ArgsController();
-        parser.parseArgs(args);
-        IModel model = AnimalJamModel.getInstance(parser.getInputFilename());
-        parser.setModel(model);
-        parser.run();
+        //IController parser = new ArgsController();
+        //parser.parseArgs(args);
+        IAnimalModel model = IAnimalModel.getInstance("data/animals.xml");
+        //parser.setModel(model);
+        //parser.run();
         
     }    
 }
