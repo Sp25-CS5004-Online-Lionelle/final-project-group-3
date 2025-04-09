@@ -3,7 +3,7 @@ package student.model.formatters;
 import java.util.Collection;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import student.model.IModel.AnimalRecord;
+import student.model.IAnimalModel.AnimalRecord;
 
 /**
  * This wrapper helps when using Jackson to serialize a list of domain records to xml. Without this,
