@@ -1,468 +1,267 @@
-name,population_size,speed,average_weight,diet,location
-Aesculapian snake,-,-,-,Carnivore,-
-Affenpinscher,-,-,-,Omnivore,-
-African Bullfrog,Unknown,-,0.9 to 18 kilograms (2 - 4 pounds),Carnivore,-
-African Bush Elephant,"300,000",25 mph,"3,600kg - 5,400kg (7,900lbs - 12,000lbs)",Herbivore,-
-African Civet,Abundant,-,1.4kg - 4.5kg (3lbs - 10lbs),Omnivore,-
-African Clawed Frog,Abundant,5 mph,25g - 220g (1oz - 8oz),Carnivore,-
-African Forest Elephant,"200,000",24 mph,"900kg - 3,000kg (1,984lbs - 6,613lbs)",Herbivore,-
-African Grey Parrot,"630,00 to 13 million",42 mph,14.75 to 18.5 ounces,Herbivore,-
-African Palm Civet,Locally abundant,-,1.4kg - 4.5kg (3lbs - 10lbs),Omnivore,-
-African Penguin,"140,000",12.4 mph,2kg - 5kg (4.4lbs - 11lbs),Carnivore,-
-African Tree Toad,-,5 mph,2g - 5g (0.07oz - 0.18oz),Carnivore,-
-African Wild Dog,"Less than 5,000",45 mph,17kg - 36kg (39lbs - 79lbs),Carnivore,-
-Albacore Tuna,More than a million,50 mph,Up to 80lbs,Carnivore,-
-Alpaca,Least concern,35 mph,48-84 kilograms (106-185 pounds),Herbivore,-
-Alpine Dachsbracke,-,-,-,Omnivore,-
-American Alsatian,-,-,66-88 pounds,Carnivore,-
-American Bulldog,-,-,-,Omnivore,-
-American Cocker Spaniel,-,-,-,Omnivore,-
-American Cockroach,-,3.4 mph,0.105g,Omnivore,-
-American Coonhound,-,-,-,Omnivore,-
-American Dog Tick,-,-,-,Omnivore,-
-American Eskimo Dog,-,-,-,Omnivore,-
-American Foxhound,-,-,-,Omnivore,-
-American Hairless Terrier,-,-,-,Omnivore,-
-American Leopard Hound,-,42 mph,-,Omnivore,-
-American Pit Bull Terrier,-,-,-,Omnivore,-
-American Pygmy Goat,-,-,30-90 lbs,Herbivore,-
-American Robin,310 million,36 mph,75-77g,Omnivore,-
-American Staffordshire Terrier,-,-,-,Omnivore,-
-American Toad,"Unknown, due to constant fluctuations in different regions.",-,Less than 1 lbs,Omnivore,-
-American Water Spaniel,-,-,-,Omnivore,-
-Anaconda,Unknown,10 mph,-,Carnivore,-
-Anchovies,"20,700 metric tons",-,A few ounces,Omnivore,-
-Antarctic scale worm,-,-,unknown,Carnivore,-
-Apple Head Chihuahua,-,-,6 lbs,Omnivore,-
-Arctic Fox,-,30 mph,1.4kg - 9.4kg (3lbs - 21lbs),Carnivore,-
-Arctic Hare,-,40 mph,4kg - 5kg (9lbs - 12lbs),Herbivore,-
-Arctic Wolf,-,46 mph,25kg - 40kg (55lbs - 88lbs),Carnivore,-
-Arizona Bark Scorpion,-,-,2 ounces,Carnivore,-
-Arizona Black Rattlesnake,-,-,-,Carnivore,-
-Asian Cockroach,-,3 mph,0.105 g,Omnivore,-
-Asian Palm Civet,-,-,1.4kg - 4.5kg (3lbs - 10lbs),Carnivore,-
-Asiatic Black Bear,"50,000",25 mph,90kg - 115kg (198lbs - 253lbs),Omnivore,-
-Aurochs,None,-,"Up to 1,360kg (3,000lbs)",Omnivore,-
-Australian Cattle Dog,-,-,-,Omnivore,-
-Australian Cockroach,-,3 mph,0.105 g,Omnivore,-
-Australian Gecko,Millions. Conservation status of many of these geckos is least concern.,-,1.6 to 2.82 ounces,Omnivore,-
-Avocet,-,25 mph,140g - 400g (5oz - 14oz),Carnivore,-
-Bactrian Camel,-,40 mph,"600kg - 816kg (1,322lbs - 1,800lbs)",Herbivore,-
-Banded Palm Civet,-,-,1.4kg - 4.5kg (3lbs - 10lbs),Carnivore,-
-Bandicoot,-,15 mph,0.2kg - 1.6kg (0.4lbs - 3.5lbs),Omnivore,-
-Banjo Catfish,-,-,-,Carnivore,-
-Barnacle,-,-,-,Omnivore,-
-Barracuda,-,-,-,Carnivore,-
-Bearded Collie,-,-,-,Omnivore,-
-Beauceron,-,-,-,Omnivore,-
-Bergamasco,-,-,57-84 pounds,Omnivore,-
-Berger Picard,-,-,70 lbs,Omnivore,-
-Bichir,unavailable,-,5 - 10 lbs,Carnivore,-
-Bichon Frise,-,-,-,Omnivore,-
-Bichpoo,-,-,18 lbs,Omnivore,-
-Biscuit Beetle,-,-,1-5mg,Herbivore,-
-Black And Tan Coonhound,-,32 mph,-,Omnivore,-
-Black Mamba,-,20 mph,-,Carnivore,-
-Black Marlin,Unknown,-,1653,Omnivore,-
-Black Rat Snake,"100,000",-,-,Carnivore,-
-Black Rhinoceros,-,40 mph,"800kg - 1,400kg (1,800lbs - 3,100lbs)",Herbivore,-
-Black Russian Terrier,-,-,-,Omnivore,-
-Black Wasp,-,-,-,Omnivore,-
-Black Widow Spider,-,-,-,Carnivore,-
-Black-Capped Chickadee,41 million,-,0.36 ounces,Omnivore,-
-Black-Footed Ferret,206 mature individuals,-,1.5-2.5 lbs,Carnivore,-
-Blackpoll Warbler,"59,000,000",37 mph, 0.4-0.5 ounces,Omnivore,-
-Blanket Octopus,"Unknown, but status is Least Concern",-,"6-10lbs (F), under an ounce (M)",Carnivore,-
-Blue Catfish,Unknown; 100 million in the Chesapeake Bay,0.6 mph,25-150lbs,Omnivore,-
-Blue Lacy Dog,-,-,-,Omnivore,-
-Blue Picardy Spaniel,-,-,70 lbs,Omnivore,-
-Blue-Ringed Octopus,Unknown,-,10-100g (0.35-3.5oz),Carnivore,-
-Bluetick Coonhound,-,-,-,Omnivore,-
-Bobcat,"1,000,000",34 mph,4.1kg - 15.3g (9lbs - 33lbs),Carnivore,-
-Border Collie,-,-,-,Omnivore,-
-Brookesia Micra,"70,000 to 95,000",-,Only 0.006 to 0.0074 ounces,Carnivore,-
-Brown Dog Tick,-,-,-,Omnivore,-
-Brown-banded Cockroach,-,3 mph,0.105 g,Omnivore,-
-Cactus Mouse,-,8 mph,0.6oz - 1.41oz,Omnivore,-
-Caecilian,-,-,Up to 2.2 pounds,Carnivore,-
-Caiman,Unknown,25 mph,6kg - 300kg (13lbs - 660lbs),Carnivore,-
-Caiman Lizard,unknown,-,3.6kg-5.4kg (8lbs-12lbs),Carnivore,-
-Cairn Terrier,-,-,6kg (14lbs),Omnivore,-
-Camel,20 million,40 mph,"300kg - 690kg (660lbs - 1,500lbs)",Herbivore,-
-Camel Cricket,Millions,-,20 grams,Omnivore,-
-Camel Spider,Unknown,10 mph,2 oz,Carnivore,-
-Canaan Dog,-,-,25kg (55lbs),Omnivore,-
-Canada Lynx,Unknown,50 mph,9 kgs (20 lbs),Carnivore,-
-Canadian Eskimo Dog,300,-,-,Omnivore,-
-Canadian Horse,"2,000",-,"408kg-544kg (900lbs-1,200lbs",Herbivore,-
-Cane Corso,-,-,110 pounds,Omnivore,-
-Cantil,-,-,-,Carnivore,-
-Cape Lion,-,48 mph,up to 600 pounds,Carnivore,-
-Capybara,Stable,22 mph,30kg - 70kg (66lbs - 154lbs),Herbivore,-
-Caracal,-,50 mph,11kg - 18kg (24lbs - 40lbs),Carnivore,-
-Caribou,About 5 million,50 mph,180 – 701+ lbs. (depending on species),Herbivore,-
-Carolina Dog,-,-,18kg (40lbs),Omnivore,-
-Carolina Parakeet,None,-,280g,Omnivore,-
-Carp,Unknown,-,Up to 49lbs,Omnivore,-
-Carpenter Ant,-,-,one to five milligrams,Omnivore,-
-Carpet Python,-,-,-,Omnivore,-
-Carpet Viper,-,-,-,Carnivore,-
-Cascabel,-,-,-,Carnivore,-
-Cashmere Goat,700 million,10 mph,-,Herbivore,-
-Cassowary,-,31 mph,25kg - 58.5kg (55lbs - 129lbs),Omnivore,-
-Cat-Eyed Snake,Unknown,-,-,Carnivore,-
-Catahoula Leopard,-,45 mph,-,Omnivore,-
-Catalan Sheepdog,-,-,-,Omnivore,-
-Caterpillar,-,-,-,Herbivore,-
-Catfish,-,-,-,Carnivore,-
-Cava Tzu,-,-,-,Omnivore,-
-Cavador,-,-,55 lbs,Omnivore,-
-Cavalier King Charles Spaniel,-,-,8kg (18lbs),Omnivore,-
-Cavapoo,-,-,-,Omnivore,-
-Cecropia Moth,"Unknown, its conservation status is not evaluated on the IUCN Red List",-,0.1 pound,Omnivore,-
-Centipede,-,-,-,Carnivore,-
-Cesky Fousek,-,-,34kg (75lbs),Omnivore,-
-Cesky Terrier,-,-,24 lbs,Omnivore,-
-Chameleon,-,21 mph,0.01kg - 2kg (0.02lbs - 4.4lbs),Omnivore,-
-Chamois,-,10 mph,50kg - 55kg (110lbs - 121lbs),Herbivore,-
-Chartreux,-,-,seven to 16 pounds,Omnivore,-
-Cheagle,-,-,20 lbs,Omnivore,-
-Cheetah,"8,500",70 mph,40kg - 65kg (88lbs - 140lbs),Carnivore,-
-Chesapeake Bay Retriever,-,-,34kg (75lbs),Omnivore,-
-Chickadee,43 million,12 mph,0.3 to 0.4 oz,Omnivore,-
-Chicken,-,6 mph,1kg - 3kg (2.2lbs - 6.6lbs),Omnivore,-
-Chicken Snake,-,-,-,Carnivore,-
-Chihuahua,-,-,2.7kg (6lbs),Omnivore,-
-Chimaera,-,-,Up to 5 lbs.,Carnivore,-
-Chimpanzee,"100,000 - 200,000",25 mph,26kg - 70kg (57lbs - 154lbs),Omnivore,-
-Chinchilla,-,15 mph,400g - 500g (14oz - 18oz),Herbivore,-
-Chinese Alligator,"150, maybe even less than 100; conservation status critically endangered",35 mph,80-100 pounds,Carnivore,-
-Chinese Crested Dog,-,-,4.5kg (10lbs),Omnivore,-
-Chinese Geese,60-90 thousand,-,-,Herbivore,-
-Chinese Paddlefish,Unknown,-,Up to 992lbs,Carnivore,-
-Chinese Shar-Pei,-,-,44 lbs,Omnivore,-
-Chinook,-,-,41kg (90lbs),Omnivore,-
-Chinook Salmon,Millions,-,Up to 59kg (130lbs),Carnivore,-
-Chinstrap Penguin,-,-,3kg - 6kg (6.6lbs - 13lbs),Carnivore,-
-Chipmunk,-,21 mph,57g - 113g (2oz - 4oz),Omnivore,-
-Chipoo,-,-,20lbs,Omnivore,-
-Chipping Sparrow,200 million,-,-,Omnivore,-
-Chiweenie,-,-,10 lbs.,Omnivore,-
-Chorkie,-,-,10 lbs,Omnivore,-
-Chow Chow,-,-,32kg (70lbs),Omnivore,-
-Chow Shepherd,-,-,105 lbs,Omnivore,-
-Christmas Island Red Crab,About 44 million,-,17 ounces,Omnivore,-
-Cicada,-,-,2g,Herbivore,-
-Cichlid,Unknown,-,From less than an ounce to more than 7 pounds,Omnivore,-
-Cinereous Vulture,-,-,18 to 31 pounds,Carnivore,-
-Cinnamon Ferret,Unknown,-,2-5 pounds,Carnivore,-
-Clouded Leopard,"Less than 10,000",40 mph,11kg - 30kg (24lbs - 66lbs),Carnivore,-
-Clownfish,-,-,250 grams,Omnivore,-
-Clumber Spaniel,-,-,29kg (65lbs),Omnivore,-
-Coachwhip Snake,-,-,-,Omnivore,-
-Coati,-,15 mph,3-8kg (6-18lbs),Omnivore,-
-Cobia Fish,"At least 80,000",-,Up to 135 pounds,Carnivore,-
-Cockalier,-,-,-,Omnivore,-
-Cockapoo,-,-,-,Omnivore,-
-Cockatiel,"Undetermined, but conservation status is least concern",43 mph,3.17 ounces,Herbivore,-
-Cockatoo,-,-,"300g – 1,200g (0.66lbs – 2.65lbs)",Omnivore,-
-Cocker Spaniel,-,-,-,Omnivore,-
-Cockroach,Billions,-,30 grams,Omnivore,-
-Codfish,Unknown,-,33-212lbs (15-96kg),Carnivore,-
-Coelacanth,Hundreds or thousands,-,Up to 200lbs,Carnivore,-
-Collared Peccary,-,-,9kg - 27kg (20lbs- 60lbs),Omnivore,-
-Collett’s Snake,-,-,-,Omnivore,-
-Collie,-,-,34kg (75lbs),Omnivore,-
-Colossal Squid,-,-,1300lbs,Carnivore,-
-Common Buzzard,-,25 mph,400g - 1400g (15oz - 48oz),Carnivore,-
-Common European Adder,-,-,-,Carnivore,-
-Common Frog,-,5 mph,20g - 80g (0.7oz - 2.8oz),Carnivore,-
-Common Furniture Beetle,Unknown,-,1-10mg,Herbivore,-
-Common House Spider,-,1 mph,Less than 1 ounce,Carnivore,-
-Common Loon,-,-,3kg - 5kg (6.6lbs - 11lbs),Omnivore,-
-Common Raven,16 million,40 mph,1.5 to 3.6 pounds,Omnivore,-
-Common Toad,-,5 mph,20g - 80g (0.7oz - 2.8oz),Carnivore,-
-Conger Eel,-,-,"10 - 160 lbs average, 350 lbs largest",Carnivore,-
-Congo Snake,-,-,-,Carnivore,-
-Cookiecutter Shark,Unknown,-,-,Carnivore,-
-Cooper’s Hawk,"100,000-1,000,000",-,0.45kg-0.7kg (1lbs-1.5lbs),Carnivore,-
-Copperhead,-,-,-,Carnivore,-
-Coral,-,-,-,Omnivore,-
-Coral Snake,-,-,-,Carnivore,-
-Corgidor,-,-,-,Omnivore,-
-Corgipoo,-,-,-,Omnivore,-
-Corkie,-,-,20 lbs,Omnivore,-
-Corman Shepherd,-,-,70 lbs,Omnivore,-
-Corn Rex Cat (Cornish Rex),-,-,5-10 pounds,Omnivore,-
-Corn Snake,-,-,-,Carnivore,-
-Coton de Tulear,-,-,-,Omnivore,-
-Cotton-top Tamarin,-,24 mph,220g - 900g (7.7oz - 32oz),Omnivore,-
-Cottonmouth,-,-,-,Carnivore,-
-Cougar,-,30 mph,29kg - 90kg (64lbs - 198lbs),Carnivore,-
-Cow,-,25 mph,"400kg - 800kg (881lbs - 1,760lbs)",Herbivore,-
-Coyote,-,40 mph,7kg - 21kg (15lbs - 46lbs),Carnivore,-
-Crab,-,12 mph,"100g - 2,000g (3.5oz - 704oz)",Carnivore,-
-Crab Spider,-,-,-,Omnivore,-
-Crab-Eating Macaque,-,30 mph,3kg - 9kg (7lbs - 20lbs),Carnivore,-
-Crabeater Seal,7 to 70 million,15 mph,Up to 600 pounds,Carnivore,-
-Crane,-,25 mph,3.7kg - 10kg (8.2lbs - 22lbs),Omnivore,-
-Crappie Fish,Unknown.,-,-,Omnivore,-
-Crested Gecko,-,30 mph,1.06 to 1.23 ounces,Omnivore,-
-Crested Penguin,-,-,3kg - 6kg (6.6lbs - 13lbs),Carnivore,-
-Cricket,-,3.5 mph,200-800mg,Omnivore,-
-Crocodile,Unknown,25 mph,"18kg - 1,000kg (40lbs - 2,200lbs)",Carnivore,-
-Cross Fox,Tens of thousands,31 mph,-,Carnivore,-
-Cross River Gorilla,-,25 mph,100kg - 200kg (220lbs - 440lbs),Herbivore,-
-Crow,27 million,59 mph,11-21 ounces,Omnivore,-
-Crucian Carp,Abundant,2.7 mph,4.4lbs to 6.6lbs,Omnivore,-
-Cuban Cockroach,Unknown,4 mph,-,Omnivore,-
-Cuckoo,between 25 and 100 million birds,19 mph,.5 ounces to 1.4 ounces,Omnivore,-
-Curly Coated Retriever,-,-,95 lbs,Omnivore,-
-Cuscus,-,15 mph,3kg - 6kg (6.5lbs - 13lbs),Herbivore,-
-Cuttlefish,-,-,3kg - 10.5kg (6.6lbs - 23lbs),Carnivore,-
-Czechoslovakian Wolfdog,-,62 mph,-,Omnivore,-
-Dachsador,-,-,40 lbs,Omnivore,-
-Dachshund,-,-,32 lbs,Omnivore,-
-Dapple Dachshund,-,-,16 to 32 pounds (standards); 11 pounds or less (miniature),Omnivore,-
-Death’s Head Cockroach,Millions,-,less than 1 ounce,Omnivore,-
-Deathwatch Beetle,Unknown,-,1-5mg,Herbivore,-
-Deer Head Chihuahua,-,-,12 lbs,Omnivore,-
-Deer Tick,-,-,-,Omnivore,-
-Desert Locust,-,19 mph,2 grams,Herbivore,-
-Deutsche Bracke,-,-,18kg (40lbs),Omnivore,-
-Devils Coach Horse Beetle,-,-,10-50mg,Carnivore,-
-Discus,Unknown,-,150g – 250g,Omnivore,-
-Doberman Pinscher,-,-,40kg (88lbs),Omnivore,-
-Dog Tick,-,-,-,Omnivore,-
-Douc,"About 26,000 or less. The conservation status of all species of douc is critically endangered.",-,18 to 24 pounds,Herbivore,-
-Draco Volans Lizard,Unknown but conservation status is Least Concern.,17 mph,0.73 ounces,Carnivore,-
-Dubia Cockroach,-,3 mph,0.105 g,Omnivore,-
-Duck,-,88 mph,0.7kg - 1.4kg (1.5lbs - 3lbs),Omnivore,-
-Dunnock,25-44 million mature individuals,-,19-24g (0.6-0.9oz),Omnivore,-
-Dwarf Crocodile,"25,000 - 100,000",11 mph,18kg - 32kg (40lbs - 70lbs),Carnivore,-
-Eastern Barred Bandicoot,"10,000-100,000",12 mph,-,Omnivore,-
-Eastern Chipmunk,-,18 mph,2.33 to 5.30 ounces,Herbivore,-
-Eastern Diamondback Rattlesnake,-,-,-,Carnivore,-
-Eastern Fence Lizard,"over 1,000,000",-,15g,Carnivore,-
-Echidna,-,18 mph,4kg - 7kg (9lbs - 15lbs),Carnivore,-
-Eclectus Parrot,"7,300 – 51,000 mature adults",40 mph,16 ounces,Herbivore,-
-Egyptian Cobra,-,-,Up to 20 lbs,Carnivore,-
-Electric Catfish,Unknown,-,4.4kg (2lbs),Carnivore,-
-Electric Eel,Unknown,5 mph,45+ lbs.,Carnivore,-
-English Cocker Spaniel,-,-,15kg (34lbs),Omnivore,-
-English Cream Golden Retriever,-,-,75 lbs,Omnivore,-
-Entlebucher Mountain Dog,-,-,30kg (65lbs),Omnivore,-
-Escolar,unknown,-,-,Carnivore,-
-Eurasian Nuthatch,"10,000,000 - 500,000,000",13 mph,0.6-1 ounce,Omnivore,-
-European Polecat,-,23 mph,two to three pounds,Carnivore,-
-European Wildcat,"500,000",-,eight to 18 pounds,Omnivore,-
-Falcon,-,200 mph,0.7kg - 1.2kg (1.5lbs - 2.6lbs),Carnivore,-
-Fennec Fox,Unknown,25 mph,1kg - 1.5kg (2.2lbs - 3.3lbs),Omnivore,-
-Fer-de-lance Snake,-,-,13lb,Carnivore,-
-Fiddler Crab,-,-,1.8 grams,Omnivore,-
-Fierce Snake,-,-,-,Carnivore,-
-Fisher Cat,"100,000",-,1.4-6.8kg (3-15lbs),Omnivore,-
-Fishing Cat,"Less than 10,000",34 mph,5.5kg - 8kg (12lbs - 17.6lbs),Carnivore,-
-Flat-Coated Retriever,-,-,32kg (70lbs),Omnivore,-
-Florida Woods Cockroach,-,3 mph,0.105 g,Omnivore,-
-French Bulldog,-,-,28 lbs,Omnivore,-
-Frenchton,-,12 mph,-,Omnivore,-
-Freshwater Crocodile,"Less than 100,000 but its conservation status is least concern.",10.56 mph,"159 pounds for males, 88 pounds for females",Carnivore,-
-Gecko,-,30 mph,18g (0.5oz),Carnivore,-
-German Cockroach,-,3 mph,0.105 g,Omnivore,-
-German Pinscher,-,-,16kg (35lbs),Omnivore,-
-Ghost Catfish,Unknown,-,Less than an ounce,Carnivore,-
-Ghost Crab,"Hundreds of thousands, at least.",10 mph,0.53 – 2.5 ounces,Omnivore,-
-Giant African Land Snail,-,0.002 mph,250-450g (8.8-15.9oz),Herbivore,-
-Giant Clam,-,-,100-200kg (220-440lbs),Omnivore,-
-Giant Schnauzer,-,-,35kg (77lbs),Omnivore,-
-Giant Schnoodle,-,-,-,Omnivore,-
-Glechon,-,-,35 Lbs,Omnivore,-
-Golden Lancehead,"2,000-4,000",-,-,Carnivore,-
-Golden-Crowned Flying Fox,"10,000 – 20,000",-,3.1 pounds,Herbivore,-
-Gouldian Finch,"2,500",-,14g,Herbivore,-
-Grass Carp,Unknown,-,Up to 99 pounds,Omnivore,-
-Great Crested Flycatcher,6.7 million,-,27-40g (0.9-1.4oz),Omnivore,-
-Groundhog (Woodchuck),Over 200 million,10 mph,10 to 13 pounds,Omnivore,-
-Haddock,-,-,2-40 pounds,Carnivore,-
-Hardhead Catfish,-,-,1-12 pounds,Omnivore,-
-Hawaiian Crow,-,-,1lb - 1.2lbs,Omnivore,-
-Hercules Beetle,"Unknown, but the beetle does not have special conservation status.",8.9 mph,"1.2 ounces for male, 0.57 ounces for female",Herbivore,-
-Hermit Crab,-,-,200-500g (7-18oz),Omnivore,-
-Highland Cattle,-,25 mph,"400-1,000kg (882-2,204lbs)",Herbivore,-
-Horseshoe Crab,2.3 to 4.5 million just on the Atlantic coast,-,As much as 9 pounds in the tri-spine horseshoe crab; males of all species smaller,Omnivore,-
-House Finch,20 million – 40 million,-,19g – 22g,Herbivore,-
-Humpback Whale,"120,000 to 150,000",17 mph,"36,000-99,800kg (40-100tons)",Omnivore,-
-Husky Jack,-,-,40 pounds,Omnivore,-
-Icelandic Sheepdog,-,21 mph,-,Omnivore,-
-Indian Cobra,-,-,-,Omnivore,-
-Indian Rhinoceros,-,30 mph,"2,200kg - 3,000kg (4,900lbs - 6,600lbs)",Herbivore,-
-Indochinese Tiger,-,60 mph,100kg - 195kg (221lbs - 430lbs),Carnivore,-
-Insect,-,-,-,Omnivore,-
-Ivory-billed woodpecker,Unknown,-,450-570g,Omnivore,-
-Jacana,millions,-,one to nine ounces,Omnivore,-
-Jack Russell,-,-,15 pounds,Omnivore,-
-Jackabee,-,-,30 lbs,Omnivore,-
-Jackal,-,20 mph,6.8-11kg (15-24lbs),Carnivore,-
-Jackdaw,Around 100 million,25 mph,8 ounces,Omnivore,-
-Jackrabbit,-,45 mph,three to six pounds,Herbivore,-
-Jackson’s Chameleon,-,-,90 to 150 grams,Carnivore,-
-Jaguarundi Cat,-,40 mph,-,Carnivore,-
-Japanese Chin,-,-,4kg (8lbs),Omnivore,-
-Japanese Macaque,"50,000",-,5kg - 14kg (11lbs - 31lbs),Omnivore,-
-Javan Rhinoceros,-,30 mph,"900kg - 2,300kg (2,000lbs - 5,100lbs)",Herbivore,-
-Jonah Crab,Unknown,-,12-19oz,Carnivore,-
-Keel-Billed Toucan,-,39 mph,2.1kg - 4kg (4.7lbs - 8.8lbs),Omnivore,-
-King Cobra,Unknown,12 mph,-,Carnivore,-
-King Crab,-,7 mph,2-8kg (4.4-18lbs),Carnivore,-
-LaMancha Goat,Unknown,-,"Average 150 to 165 for males, 125 to 130 for females",Herbivore,-
-Lancashire Heeler,-,-,9-17 pounds,Omnivore,-
-Lappet-faced Vulture,-,29 mph,9.7 to 20.7 pounds,Carnivore,-
-Leaf-Tailed Gecko,-,30 mph,10g - 30g (0.35oz - 1oz),Carnivore,-
-Leatherback Sea Turtle,"less than 50,000",6 mph,500 pounds to over 1 ton,Omnivore,-
-Leech,Unknown,-,Under 1 ounce,Carnivore,-
-Leopard Cat,-,45 mph,2.2kg - 7.5kg (4.9lbs - 17lbs),Carnivore,-
-Leopard Gecko,-,-,50 to 80 grams (adults),Carnivore,-
-Loach,-,-,0.3lbs-6.6lbs (0.1-3kg),Omnivore,-
-Locust,-,-,-,Herbivore,-
-Lone Star Tick,-,-,-,Omnivore,-
-Lowchen,-,-,18 Lbs,Omnivore,-
-Macaque,varies,-,Up to 40 lbs,Carnivore,-
-Macaroni Penguin,-,22 mph,3.2-6.4kg (7-14lbs),Carnivore,-
-Macaw,-,15 mph,0.9kg - 2kg (2lbs - 4.4lbs),Omnivore,-
-Mackenzie Wolf,"40,000+",40 mph,85-153 lbs,Carnivore,-
-Madagascar Hissing Cockroach,-,2 mph,15-20 g,Omnivore,-
-Magellanic Penguin,-,22 mph,2.7kg - 6.5kg (5.9lbs - 14lbs),Carnivore,-
-Maine Coon,-,-,"8-12lbs, up to 15lbs for females and 25lbs for males",Omnivore,-
-Malayan Civet,-,-,1.4kg - 4.5kg (3lbs - 10lbs),Carnivore,-
-Manchester Terrier,-,-,12 lbs,Omnivore,-
-Masked Palm Civet,-,-,1.4kg - 4.5kg (3lbs - 10lbs),Carnivore,-
-Mekong Giant Catfish,A few hundred,-,"Up to 646 lbs, possibly more",Herbivore,-
-Mexican Alligator Lizard,Unknown,-,21g(0.75oz),Carnivore,-
-Mexican Black Kingsnake,-,-,-,Carnivore,-
-Mexican Eagle (Northern crested caracara),Unknown,-,1.3kg (3lbs),Carnivore,-
-Mexican Free-Tailed Bat,120 to 150 million,47 mph,-,Carnivore,-
-Mexican Mole Lizard,-,-,3 oz,Carnivore,-
-Miniature Pinscher,-,15 mph,-,Omnivore,-
-Moccasin Snake,-,-,-,Carnivore,-
-Mola mola (Ocean Sunfish),Unknown,-,"Up to 2,200kg (5,000lbs)",Carnivore,-
-Mole Cricket,-,-,0.5 grams,Omnivore,-
-Monarch Butterfly,-,12 mph,0.25 - 0.75 grams,Herbivore,-
-Moscow Watchdog,-,-,150 lbs,Omnivore,-
-Mountain Cur,-,-,-,Omnivore,-
-Muntjac,Unknown,-,15-35kg (33-77lbs),Omnivore,-
-Natterjack,Unknown,-,0.14 - 0.67 ounces,Carnivore,-
-Nicobar pigeon,"The population of is unknown, but it is decreasing and the bird’s conservation status is near threatened. There are about 1000 individuals on Palau as of 2021.",93 mph,16.22 to 21.16 ounces,Omnivore,-
-Nile Crocodile,"50,000-70,000 mature adults",22 mph,"500lbs-1,650lbs",Carnivore,-
-North American Black Bear,"800,000",30 mph,100kg - 270kg (220lbs - 594lbs),Omnivore,-
-Northern Cardinal,Unknown,37 mph,1.58oz,Omnivore,-
-Norwich Terrier,-,-,-,Omnivore,-
-Nova Scotia Duck Tolling Retriever,-,-,51 lbs,Omnivore,-
-Nudibranch,unknown,-2.8 mph,-,Carnivore,-
-Ocelot,"800,000",38 mph,11.5kg - 16kg (25lbs - 35lbs),Carnivore,-
-Octopus,-,27 mph,5-75kg (11-165lbs),Omnivore,-
-Orange-Crowned Warbler,76 million,25 mph,9 grams,Omnivore,-
-Oscar Fish,-,60 mph,3.5 pounds,Omnivore,-
-Ostrich,-,42 mph,63kg - 130kg (140lbs - 290lbs),Omnivore,-
-Peacock,-,10 mph,2.7kg - 6kg (6lbs - 13.2lbs),Omnivore,-
-Peacock Butterfly,-,-,less than one ounce,Herbivore,-
-Peacock Spider,-,-,-,Carnivore,-
-Pelican,-,40 mph,2.7kg - 15kg (6lbs - 33lbs),Omnivore,-
-Pembroke Welsh Corgi,-,-,22-30 lbs,Omnivore,-
-Pennsylvania Wood Cockroach,-,3 mph,0.105 g,Omnivore,-
-Peregrine Falcon,"140,000",242 mph,0.3kg-1.5kg (0.7lbs-3.3lbs),Carnivore,-
-Perro De Presa Canario,-,-,143 lbs,Omnivore,-
-Peruvian Inca Orchid,"about 1,000",30 mph,-,Omnivore,-
-Pesquet’s Parrot (Dracula Parrot),"20,000 to 49,999",-,"20,000 to 49,999",Herbivore,-
-Pileated Woodpecker,1.9 million,-,8.8 to 12.3 ounces,Omnivore,-
-Pocket Beagle,-,-,15 lbs,Omnivore,-
-Pocket Pitbull,-,-,11-22 pounds.,Omnivore,-
-Polecat,Unknown,15 mph,2 to 3.5 pounds,Carnivore,-
-Pomchi,-,-,-,Omnivore,-
-Poochon,-,-,6 to 17 pounds,Omnivore,-
-Porcupine,-,2 mph,5.4-16kg (12-35lbs),Omnivore,-
-Proboscis Monkey,"7,000",15 mph,7kg - 22kg (15lbs - 48lbs),Omnivore,-
-Purple Finch,6.4 million,-,25g,Omnivore,-
-Raccoon,-,15 mph,3.5-9kg (7.7-19.8lbs),Omnivore,-
-Raccoon Dog,-,25 mph,3kg - 10kg (6.6lbs - 22lbs),Carnivore,-
-Red Diamondback Rattlesnake,-,-,-,Carnivore,-
-Red Finch,67 million - 1.7 billion in North America,-,0.67 to 0.78 oz,Herbivore,-
-Red Tail Boa (common boa),-,-,-,Carnivore,-
-Red-Bellied Black Snake,Unknown,-,-,Carnivore,-
-Red-winged blackbird,More than 200 million,30 mph,41-71g,Omnivore,-
-Redback Spider,"Possibly millions, but its conservation status is not evaluated",-,0.035 ounces,Carnivore,-
-Redbone Coonhound,-,-,70 lbs.,Omnivore,-
-Redtail Catfish,Unknown,-,40 to 90 pounds,Carnivore,-
-Rhinoceros,-,30 mph,"800-3,500kg (1,765-7,716lbs)",Herbivore,-
-Rhombic Egg-Eater Snake,Unknown,-,-,Carnivore,-
-River Jack Snake,-,-,-,Omnivore,-
-Rock Crab,-,-,Approximately 13 ounces,Omnivore,-
-Rock Hyrax,Sustainable,18 mph,3kg - 4kg (6.6lbs - 8.8lbs),Omnivore,-
-Rock Python,-,-,-,Carnivore,-
-Rockfish,More than 400 million fishes,-,770 grams to 5.3 Kgs,Omnivore,-
-Rockhopper Penguin,-,-,2kg - 5kg (4.4lbs - 11lbs),Carnivore,-
-Sable Black German Shepherd,-,30 mph,-,Omnivore,-
-Sand Crab,Unknown,-,Less than 1kg (2lbs),Omnivore,-
-Satanic leaf-tailed gecko,"Unknown, conservation status is Least Concern",-,"0.14 to 0.32 ounces, females heavier",Carnivore,-
-Scarlet Kingsnake,-,-,-,Carnivore,-
-Scarlet Macaw,"20,000 - 50,000",35 mph,2lbs,Omnivore,-
-Schipperke,-,-,16 lbs,Omnivore,-
-Schneagle,-,-,25 lbs,Omnivore,-
-Schnoodle,-,-,-,Omnivore,-
-Scimitar-horned Oryx,-,MPH mph,200 to 460 lbs,Herbivore,-
-Scorpion,-,12 mph,10-100g (0.4-3.5oz),Carnivore,-
-Scorpion Fish,Not known,-,3.4 pounds,Omnivore,-
-Scottish Terrier,-,-,22 lbs,Omnivore,-
-Scrotum Frog,As few as 45,-,nine ounces to two pounds,Carnivore,-
-Sea Roach,Unknown,-,Less than one ounce,Omnivore,-
-Sea Urchin,-,-,-,Omnivore,-
-Silkie Chicken,-,-,1.5-3 pounds,Omnivore,-
-Skipjack Tuna,Millions,40 mph,7lbs – 40lbs,Carnivore,-
-Smokybrown Cockroach,-,3 mph,0.105 g,Omnivore,-
-Snouted Cobra,-,-,-,Carnivore,-
-Snow Crab,Unknown,-,5 - 7 pounds,Carnivore,-
-Sockeye Salmon,Unknown,-,Up to 9.3 pounds,Carnivore,-
-South China Tiger,-,60 mph,100kg - 195kg (221lbs - 430lbs),Carnivore,-
-Southern Black Racer,-,-,-,Carnivore,-
-Southern Pacific Rattlesnake,-,-,-,Carnivore,-
-Spectacled Bear,-,30 mph,130kg - 200kg (286lbs - 440lbs),Omnivore,-
-Spitting Cobra,-,-,-,Carnivore,-
-Spixs Macaw,At least 160,-,360g (12.7oz),Omnivore,-
-Standard Schnauzer,-,-,30-50,Omnivore,-
-Steller’s Sea Cow,-,-,8000kg (8.8tons),Herbivore,-
-Stick Insect,-,-,-,Herbivore,-
-Stone Crab,Unknown,-,-,Carnivore,-
-Striped Rocket Frog,-,5 mph,5g - 8g (0.17oz - 0.28oz),Carnivore,-
-Sucker Fish,-,-,Maximum of 80 pounds (bigmouth buffalo),Omnivore,-
-Sulcata Tortoise,"Unknown, but the animal is listed as vulnerable or endangered",0.3 mph,79 to 200 pounds,Herbivore,-
-Sumatran Rhinoceros,-,30 mph,"500kg - 800kg (1,100lbs - 1,760lbs)",Herbivore,-
-Taco Terrier,-,-,8 lbs,Omnivore,-
-Telescope Fish,Unknown,-,-,Omnivore,-
-Thai Ridgeback,-,-,75lbs,Omnivore,-
-Tick,-,-,-,Carnivore,-
-Timber Rattlesnake (Canebrake Rattlesnake),-,-,-,Carnivore,-
-Tire Track Eel,Unknown,-,3 - 5 pounds,Carnivore,-
-Toucan,-,39 mph,130g - 680g (4.6oz - 24oz),Omnivore,-
-Treecreeper,"40,000,000-79,999,999",20 mph,0.2-0.38 ounces,Omnivore,-
-Treeing Walker Coonhound,-,-,70 lbs,Omnivore,-
-Tropicbird,-,30 mph,0.3kg - 0.7kg (0.6lbs - 1.5lbs),Carnivore,-
-Vicuña,"350,000 adults",-,88-132lbs,Herbivore,-
-Virgin Islands Dwarf Gecko,Unknown,-,0.15g (0.0053oz),Carnivore,-
-Walking Catfish,-,-,2lbs,Omnivore,-
-Wels Catfish,Unknown,-,Up to 500 lbs,Omnivore,-
-Welsh Corgi,-,-,14kg (30lbs),Omnivore,-
-Western Diamondback Rattlesnake,-,-,-,Carnivore,-
-Whinchat,"47,000 pairs in the United Kingdom",-,0.46 to 0.92 ounces,Omnivore,-
-White Rhinoceros,-,30 mph,"1,440-3,600kg (3,168-7,920lbs)",Herbivore,-
-White-Faced Capuchin,-,35 mph,2.9-3.9kg (6.4-8.6lbs),Omnivore,-
-Whooping Crane,50 to 250,-,-,Omnivore,-
-Wood Tick,-,-,-,Omnivore,-
-Woodpecker,-,15 mph,7-600g (0.2-21oz),Omnivore,-
-Xoloitzcuintli,-,-,55 pounds,Omnivore,-
-Yellow Anaconda,-,-,Adults weigh 55-80 pounds,Carnivore,-
-Yellow Sac Spider,-,-,-,Carnivore,-
-Yeti Crab,Unknown,-,2lbs – 5lbs,Carnivore,-
-Yorkie Bichon,-,-,6 to 8 pounds,Omnivore,-
-Zebra Finch,Unknown,-,12g,Omnivore,-
-Zebra Pleco,Unknown,-,-,Omnivore,-
-Zuchon,-,-,-,Omnivore,-
+Name,Population,Speed (km/h),Average Weight (g),Diet,Continental Location
+Aardvark,30000,40,60000,Insectivore,Africa
+Aardwolf,50000,56,50000,Carnivore,Africa
+African buffalo,500000,57,45000000,Herbivore,Africa
+African elephant,415000,40,60000000,Herbivore,Africa
+African leopard,250000,58,4000000,Carnivore,Africa
+Albatross,3000000,127,120000,Omnivore,Antarctica_Australia_South America
+Alligator,1000000,32,40000000,Carnivore,North America
+Alpaca,3000000,50,55000,Herbivore,South America
+American buffalo (bison),500000,56,65000000,Herbivore,North America
+American robin,370000000,24,250,Omnivore,North America
+Anaconda,100000,1.5,700000,Carnivore,South America
+Angelfish,10000000,1.6,200,Omnivore,Worldwide
+Anglerfish,10000000,0.3,500,Carnivore,Worldwide
+Ant,10000000000,0.03,5,Omnivore,Worldwide
+Anteater,10000,48,35000,Insectivore,South America
+Antelope,10000000,90,300000,Herbivore,Africa_Asia
+Antlion,10000000000,Unknown,Unknown,Carnivore,Worldwide
+Ape,500000,35,300000,Omnivore,Africa_Asia
+Aphid,10000000000,0.02,0.1,Herbivore,Worldwide
+Arabian leopard,200,60,300000,Carnivore,Asia
+Arctic fox,300000,50,30000,Omnivore,Arctic
+Arctic wolf,200000,65,30000,Carnivore,Arctic
+Armadillo,15000000,30,50000,Omnivore,Americas
+Arrow crab,1000000,10,2000,Carnivore,Caribbean
+Asp,100000,Unknown,Unknown,Carnivore,Africa_Asia
+Baboon,500000,48,25000,Omnivore,Africa
+Badger,400000,30,10000,Omnivore,Europe_North America_Asia
+Bald eagle,150000,120,6000,Carnivore,North America
+Bandicoot,10000000,20,3000,Omnivore,Australia
+Barnacle,1000000000,0.05,0.1,Herbivore,Worldwide
+Barracuda,10000000,80,50000,Carnivore,Tropical oceans
+Basilisk,10000000,28,2000,Carnivore,Central America
+Bass,1000000000,48,10000,Carnivore,Worldwide
+Bat,1000000000,160,300,Insectivore,Worldwide
+Beaked whale,300000,60,30000000,Carnivore,Arctic_Antarctic_Pacific_Atlantic
+Bear,1000000,40,30000000,Omnivore,North America_Europe_Asia
+Beaver,10000000,32,20000,Herbivore,North America_Europe_Asia
+Bedbug,10000000000,0.3,1,Carnivore,Worldwide
+Bee,10000000000,24,0.1,Omnivore,Worldwide
+Beetle,10000000000,0.4,10,Omnivore,Worldwide
+Bison,500000,56,65000000,Herbivore,North America_Europe
+Blackbird,500000000,32,150,Omnivore,Europe_North America
+Black panther,20000,58,700000,Carnivore,Africa_Asia
+Black widow spider,10000000000,0.8,1,Carnivore,Worldwide
+Blue bird,50000000,50,60,Omnivore,North America
+Blue jay,30000000,40,100,Omnivore,North America
+Blue whale,10000,37,150000000,Carnivore,Worldwide
+Boa,1000000,20,250000,Carnivore,South America
+Boar,10000000,48,150000,Omnivore,Europe_Asia_North America
+Bobcat,500000,48,80000,Carnivore,North America
+Bobolink,10000000,32,50,Omnivore,North America
+Bonobo,50000,32,38000,Omnivore,Africa
+Booby,500000,48,1000,Carnivore,Tropical regions
+Box jellyfish,1000000,8,200,Carnivore,Indo-Pacific
+Bovid,10000000,56,800000,Herbivore,Worldwide
+Bug,10000000000,Unknown,Unknown,Omnivore,Worldwide
+Butterfly,10000000000,0.02,0.01,Herbivore,Worldwide
+Buzzard,1000000,50,2000,Carnivore,Europe_Asia_Africa
+Camel,14000000,65,600000,Herbivore,Africa_Asia
+Canid,50000000,60,80000,Carnivore,Worldwide
+Cape buffalo,500000,57,45000000,Herbivore,Africa
+Capybara,8000000,35,35000,Herbivore,South America
+Cardinal,100000000,30,50,Omnivore,North America
+Caribou,3000000,80,250000,Herbivore,North America_Europe_Asia
+Carp,10000000000,3.2,5000,Omnivore,Europe_Asia_North America
+Cat,90000000,48,40000,Carnivore,Worldwide
+Catshark,1000000000,25,5000,Carnivore,Worldwide
+Caterpillar,10000000000,0.02,0.05,Herbivore,Worldwide
+Catfish,10000000000,1.6,2000,Omnivore,Worldwide
+Cattle,1500000000,56,45000000,Herbivore,Worldwide
+Centipede,1000000000,0.1,3,Carnivore,Worldwide
+Cephalopod,100000000,Unknown,Unknown,Carnivore,Worldwide
+Chameleon,50000000,0.5,50,Omnivore,Africa_Asia
+Cheetah,7000,112-120,60000,Carnivore,Africa
+Chickadee,50000000,24,15,Omnivore,North America
+Chicken,25000000000,14,2000,Omnivore,Worldwide
+Chimpanzee,300000,48,300000,Omnivore,Africa
+Chinchilla,10000000,15,4000,Herbivore,South America
+Chipmunk,50000000,20,120,Omnivore,North America
+Clam,10000000000,0.01,5,Herbivore,Worldwide
+Clownfish,10000000000,0.8,10,Omnivore,Indo-Pacific
+Cobra,1000000,20,10000,Carnivore,Africa_Asia
+Cockroach,10000000000,3,30,Omnivore,Worldwide
+Cod,10000000000,1.5,1000,Carnivore,North Atlantic_North Pacific
+Condor,10000,145,15000,Carnivore,South America_North America
+Constrictor,10000000,1,150000,Carnivore,South America
+Coral,1000000000,Unknown,Unknown,Herbivore,Worldwide
+Cougar,50000,80,50000,Carnivore,North America
+Cow,1500000000,40,500000,Herbivore,Worldwide
+Coyote,500000,65,15000,Carnivore,North America
+Crab,10000000000,1,1500,Carnivore,Worldwide
+Crane,1000000,60,10000,Omnivore,Worldwide
+Crane fly,10000000000,24,100,Omnivore,Worldwide
+Crawdad,1000000000,1.5,20,Omnivore,North America
+Crayfish,1000000000,1.5,30,Omnivore,North America_Europe
+Cricket,10000000000,2,1,Omnivore,Worldwide
+Crocodile,1000000,22,700000,Carnivore,Australia_Africa_Asia_North America
+Crow,1000000000,40,400,Omnivore,Worldwide
+Cuckoo,50000000,50,100,Omnivore,Europe_Asia_Africa
+Cicada,1000000000,0.5,2,Herbivore,Worldwide
+Damselfly,1000000000,10,50,Insectivore,Worldwide
+Deer,30000000,60,50000,Herbivore,North America_Europe_Asia
+Dingo,1000000,40,10000,Carnivore,Australia
+Dinosaur,Extinct,Unknown,Unknown,Herbivore,Worldwide
+Dog,900000000,50,25000,Omnivore,Worldwide
+Dolphin,1000000,56,200000,Carnivore,Worldwide
+Donkey,40000000,50,100000,Herbivore,Worldwide
+Dove,1000000000,80,200,Omnivore,Worldwide
+Duck,1000000000,80,1200,Omnivore,Worldwide
+Eagle,1000000,120,6000,Carnivore,North America_Europe_Asia
+Elephant,415000,40,60000000,Herbivore,Africa_Asia
+Elephant seal,30000,32,200000,Omnivore,Antarctica
+Elk,5000000,72,350000,Herbivore,North America
+Emperor penguin,1000000,12,35000,Carnivore,Antarctica
+Echidna,1000000,10,20000,Insectivore,Australia
+Elephant bird,Extinct,Unknown,Unknown,Herbivore,Madagascar
+Falcon,1000000,240,5000,Carnivore,Worldwide
+Fawn,50000000,35,50000,Herbivore,North America_Europe_Asia
+Ferret,10000000,48,2000,Omnivore,Europe_Asia_North America
+Fin whale,100000,50,70000000,Carnivore,Worldwide
+Flamingo,1000000,60,40000,Omnivore,Asia_Africa_Europe_Americas
+Fox,10000000,65,60000,Carnivore,Worldwide
+Frog,100000000,10,20,Insectivore,Worldwide
+Giraffe,70000,60,80000000,Herbivore,Africa
+Gibbon,1000000,55,10000,Omnivore,Asia
+Goat,1000000000,56,35000,Herbivore,Worldwide
+Goose,1000000000,50,2000,Omnivore,Worldwide
+Gorilla,500000,35,180000,Omnivore,Africa
+Grizzly bear,1000000,40,400000,Omnivore,North America
+Guinea pig,100000000,24,1000,Herbivore,South America
+Haddock,1000000000,0.8,2000,Carnivore,North Atlantic
+Hawk,1000000000,80,5000,Carnivore,Worldwide
+Hedgehog,10000000,32,500,Omnivore,Europe_Asia_Africa
+Heron,100000000,80,10000,Carnivore,Worldwide
+Hippopotamus,1000000,30,40000000,Herbivore,Africa
+Horse,60000000,70,450000,Herbivore,Worldwide
+Housefly,10000000000,24,0.01,Omnivore,Worldwide
+Human,7800000000,45,700000,Omnivore,Worldwide
+Hummingbird,1000000000,60,4,Omnivore,North America_South America
+Humpback whale,100000,40,350000000,Carnivore,Worldwide
+Hyena,10000000,65,60000,Carnivore,Africa
+Iguana,2000000,30,5000,Herbivore,Central America_South America
+Impala,3000000,80,25000,Herbivore,Africa
+Indian elephant,250000,40,40000000,Herbivore,Asia
+Indian leopard,500000,60,4000000,Carnivore,Asia
+Indigo bunting,1000000000,50,25,Omnivore,North America
+Iriomote cat,10000,50,50000,Carnivore,Asia
+Isopod,1000000000,0.5,5,Carnivore,Worldwide
+Jackal,2000000,64,8000,Carnivore,Africa_Asia
+Jaguar,50000,80,80000,Carnivore,South America_Central America
+Jellyfish,1000000000,0.1,1000,Carnivore,Worldwide
+Kangaroo,40000000,70,85000,Herbivore,Australia
+Kingfisher,1000000,50,1500,Carnivore,Worldwide
+Koala,1000000,30,14000,Herbivore,Australia
+Kookaburra,1000000,50,3000,Omnivore,Australia
+Krait,1000000,20,2000,Carnivore,Asia
+Krill,1000000000,0.5,2,Omnivore,Antarctica_Oceans
+Labrador,10000000,48,25000,Omnivore,Worldwide
+Ladybug,10000000000,0.5,0.1,Omnivore,Worldwide
+Lamb,1000000000,32,20000,Herbivore,Worldwide
+Lemming,10000000,32,200,Omnivore,Arctic
+Lemur,1000000,32,2000,Omnivore,Madagascar
+Lion,100000,80,200000,Carnivore,Africa
+Llama,3000000,56,50000,Herbivore,South America
+Lobster,1000000000,5,2000,Carnivore,Worldwide
+Lynx,2000000,56,25000,Carnivore,Europe_Asia_North America
+Macaw,1000000,50,1000,Omnivore,South America
+Mackeral,1000000000,40,10000,Carnivore,Worldwide
+Manatee,80000,32,500000,Herbivore,North America_Africa
+Mantis,10000000,5,2,Insectivore,Worldwide
+Marmoset,1000000,56,500,Omnivore,South America
+Marmot,10000000,30,5000,Herbivore,North America_Europe
+Meerkat,1000000,40,3000,Omnivore,Africa
+Minke whale,100000,50,25000000,Carnivore,North Atlantic_North Pacific
+Mole,10000000,8,500,Insectivore,Worldwide
+Monkey,5000000,56,7000,Omnivore,Worldwide
+Moose,5000000,72,500000,Herbivore,North America
+Moth,10000000000,Unknown,Unknown,Herbivore,Worldwide
+Mountain goat,10000000,60,50000,Herbivore,North America
+Mouse,1000000000,32,30,Omnivore,Worldwide
+Naked mole rat,1000000,0.05,30,Omnivore,Africa
+Narwhal,10000,50,1200000,Carnivore,Arctic
+Newt,10000000,0.5,100,Insectivore,Worldwide
+Nile crocodile,1000000,22,700000,Carnivore,Africa
+Ocelot,1000000,50,80000,Carnivore,South America_Central America
+Octopus,1000000000,0.5,2000,Carnivore,Worldwide
+Okapi,50000,56,300000,Herbivore,Africa
+Opossum,1000000,56,4000,Omnivore,North America
+Orangutan,100000,40,70000,Omnivore,Asia
+Ostrich,10000000,70,150000,Omnivore,Africa
+Otter,1000000,32,8000,Carnivore,Worldwide
+Owl,1000000000,60,2000,Carnivore,Worldwide
+Pangolin,5000000,32,10000,Insectivore,Africa_Asia
+Panther,10000,55,50000,Carnivore,Asia
+Parakeet,10000000,50,50,Omnivore,Australia_South America
+Parrot,10000000,50,2000,Omnivore,Worldwide
+Parrotfish,1000000000,5,2000,Herbivore,Tropical oceans
+Peacock,1000000,16,4000,Omnivore,Asia
+Pelican,1000000,50,5000,Carnivore,Worldwide
+Penguin,1000000,30,5000,Carnivore,Antarctica
+Perch,1000000000,2,300,Omnivore,Worldwide
+Pheasant,1000000000,40,4000,Omnivore,Asia_Europe_North America
+Pigeon,1000000000,80,3000,Omnivore,Worldwide
+Platypus,5000000,32,15000,Omnivore,Australia
+Porcupine,1000000,24,7000,Herbivore,North America_Africa_Asia
+Porpoise,1000000,64,200000,Carnivore,Worldwide
+Praying mantis,10000000000,0.1,10,Carnivore,Worldwide
+Python,1000000,20,100000,Carnivore,Africa_Asia_Americas
+Quail,1000000000,56,1500,Omnivore,Worldwide
+Rabbit,3000000000,48,2000,Herbivore,Worldwide
+Raccoon,1000000,40,5000,Omnivore,North America_Europe
+Rat,1000000000,32,200,Omnivore,Worldwide
+Rattlesnake,1000000000,32,3000,Carnivore,North America
+Red fox,10000000,48,6000,Carnivore,Worldwide
+Reindeer,5000000,80,100000,Herbivore,North America_Europe_Asia
+Rhino,100000,40,10000000,Herbivore,Africa_Asia
+Roach,10000000000,0.5,10,Omnivore,Worldwide
+Robin,370000000,24,250,Omnivore,North America
+Rottweiler,10000000,50,40000,Omnivore,Worldwide
+Sailfish,1000000,68,300000,Carnivore,Worldwide
+Salmon,1000000000,32,5000,Carnivore,North America_Europe_Asia
+Scorpion,1000000000,10,20,Carnivore,Worldwide
+Sea urchin,1000000000,0.03,30,Herbivore,Worldwide
+Seal,5000000,40,25000,Carnivore,Worldwide
+Shark,1000000000,56,700000,Carnivore,Worldwide
+Sheep,1000000000,40,40000,Herbivore,Worldwide
+Shiba Inu,10000000,40,10000,Omnivore,Worldwide
+Skunk,1000000,24,4000,Omnivore,North America
+Sloth,1000000,0.05,40000,Herbivore,South America
+Snail,10000000000,0.02,10,Herbivore,Worldwide
+Snake,1000000000,32,10000,Carnivore,Worldwide
+Snow leopard,2000,58,300000,Carnivore,Asia
+Sparrow,1000000000,40,25,Omnivore,Worldwide
+Spider,10000000000,5,0.1,Carnivore,Worldwide
+Spoonbill,1000000,50,10000,Carnivore,Worldwide
+Squid,1000000000,1.5,1500,Carnivore,Worldwide
+Squirrel,1000000000,40,300,Omnivore,Worldwide
+Starfish,1000000000,0.1,200,Omnivore,Worldwide
+Stingray,1000000,30,2000,Carnivore,Worldwide
+Stoat,1000000,40,2000,Carnivore,Europe_Asia_North America
+Swallow,1000000000,80,30,Omnivore,Worldwide
+Swan,1000000,48,15000,Herbivore,Europe_Asia_North America
+Tapir,1000000,48,30000,Herbivore,South America_Asia
+Tarsier,100000,48,1200,Omnivore,Asia
+Tasmanian devil,100000,32,7000,Carnivore,Australia
+Termite,10000000000,0.2,0.1,Herbivore,Worldwide
+Tiger,100000,80,250000,Carnivore,Asia
+Toad,10000000,5,100,Omnivore,Worldwide
+Tortoise,10000000,0.3,10000,Herbivore,Worldwide
+Toucan,1000000,50,500,Omnivore,South America
+Tree frog,100000000,3,30,Insectivore,Worldwide
+Tuna,1000000,70,200000,Carnivore,Worldwide
+Viper,1000000000,20,3000,Carnivore,Worldwide
+Vulture,1000000,80,7000,Carnivore,Worldwide
+Wasp,1000000000,8,1,Carnivore,Worldwide
+Walrus,250000,32,800000,Carnivore,Arctic
+Warthog,1000000,48,90000,Omnivore,Africa
+Weasel,10000000,40,1000,Carnivore,Worldwide
+Whale shark,10000,32,150000000,Carnivore,Worldwide
+Wild boar,1000000000,48,200000,Carnivore,Europe_Asia_North America
+Wolf,500000,80,35000,Carnivore,Worldwide
+Woodpecker,10000000,16,150,Omnivore,North America_Europe_Asia
+Wolverine,1000000,48,30000,Carnivore,North America_Europe_Asia
+Zebra,5000000,65,350000,Herbivore,Africa
+Zebu,10000000,56,700000,Herbivore,Asia_Africa
+Zorilla,1000000,64,30000,Carnivore,Africa
