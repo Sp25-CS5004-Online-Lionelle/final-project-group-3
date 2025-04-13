@@ -21,7 +21,7 @@ public final class AnimalJamApp {
 
         //IController parser = new ArgsController();
         //parser.parseArgs(args);
-        IAnimalModel model = IAnimalModel.getInstance("data/animals.xml");
+        IAnimalModel model = IAnimalModel.getInstance("data/sample.csv");
         //parser.setModel(model);
         //parser.run();
         
