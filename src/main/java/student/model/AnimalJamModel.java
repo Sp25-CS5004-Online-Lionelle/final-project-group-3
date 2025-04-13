@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import student.model.formatters.Formats;
+import student.model.formatters.InputReader;
 
 public class AnimalJamModel implements IAnimalModel {
     /** Map to store Animal records. */
@@ -29,7 +30,7 @@ public class AnimalJamModel implements IAnimalModel {
     private void loadAnimalInfo(InputStream in, Formats format) {
         animalInfoLibrary.putAll(
             InputReader.readAnimalInfo(in, format).stream().collect(
-                Collectors.toMap(animalInfo -> animalInfo.hostname(),  animalInfo -> animalInfo)));
+                Collectors.toMap(animalInfo -> animalInfo.name(),  animalInfo -> animalInfo)));
         //debug print
         System.out.println("In loadAnimalInfo and size is : " + animalInfoLibrary.size());
         }
