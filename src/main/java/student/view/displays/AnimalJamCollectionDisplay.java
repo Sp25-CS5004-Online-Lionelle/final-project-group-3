@@ -54,7 +54,7 @@ public class AnimalJamCollectionDisplay {
         JTableHeader header = colTable.getTableHeader();
         header.setFont(new Font("Arial", Font.BOLD, 12));
 
-        
+
         JScrollPane scroll = new JScrollPane(colTable);
         scroll.setBounds(60,80,870,400);
 
@@ -71,9 +71,9 @@ public class AnimalJamCollectionDisplay {
 
     public static void main(String[] args) {
 
-        String[][] data = {{"Dog", "1", "fast", "30", "Blah"},
-                            {"Cat", "2", "fast", "20", "Blah"}};
-        String[] headings = {"Name", "Population", "Speed", "Weight", "Blah"};
+        String[][] data = {{"Aardvark","30000","40","60000","Insectivore","Africa"},
+                            {"Ant","10000000000","0.03","5","Omnivore","Worldwide"}};
+        String[] headings = {"Name","Population","Speed","Average Weight","Diet","Continental Location"};
 
         AnimalJamCollectionDisplay display = new AnimalJamCollectionDisplay(data, headings);
     }
