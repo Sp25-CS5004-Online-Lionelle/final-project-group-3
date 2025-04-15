@@ -7,6 +7,9 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.JTableHeader;
 
 public class AnimalJamCollectionDisplay {
     public AnimalJamCollectionDisplay(String[][] data, String[] heading) {
@@ -39,6 +42,19 @@ public class AnimalJamCollectionDisplay {
         // Create JTable for the Collection 
         JTable colTable = new JTable(data, heading);
 
+        // Center-align all columns
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+
+        for (int i = 0; i < colTable.getColumnCount(); i++) {
+            colTable.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+        }
+
+        // Customize header
+        JTableHeader header = colTable.getTableHeader();
+        header.setFont(new Font("Arial", Font.BOLD, 12));
+
+        
         JScrollPane scroll = new JScrollPane(colTable);
         scroll.setBounds(60,80,870,400);
 
