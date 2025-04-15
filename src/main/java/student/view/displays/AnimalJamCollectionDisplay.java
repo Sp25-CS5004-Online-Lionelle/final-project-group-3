@@ -1,8 +1,12 @@
 package student.view.displays;
 
+import java.awt.Font;
+
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 
 public class AnimalJamCollectionDisplay {
     public AnimalJamCollectionDisplay(String[][] data, String[] heading) {
@@ -14,6 +18,14 @@ public class AnimalJamCollectionDisplay {
         frame.setLocationRelativeTo(null);
         frame.setLayout(null);
 
+        // Create textfield and button for searching function   
+        JTextField searchText = new JTextField();
+        searchText.setFont(new Font("Arial", Font.PLAIN, 16));
+        searchText.setBounds(620,30,220,25);
+
+        JButton searchButton = new JButton("Search");
+        searchButton.setBounds(850,30,80,25);
+
         // Create JTable for the Collection 
         JTable colTable = new JTable(data, heading);
         JScrollPane scroll = new JScrollPane(colTable);
@@ -21,6 +33,8 @@ public class AnimalJamCollectionDisplay {
 
         // Add elements to frame
         frame.add(scroll);
+        frame.add(searchText);
+        frame.add(searchButton);
         frame.setVisible(true);
     }
 
