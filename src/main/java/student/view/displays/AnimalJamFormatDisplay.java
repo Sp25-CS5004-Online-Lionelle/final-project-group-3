@@ -6,6 +6,7 @@ import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JTextField;
 import javax.swing.UIManager;
 
 public class AnimalJamFormatDisplay {
@@ -30,13 +31,24 @@ public class AnimalJamFormatDisplay {
         JLabel filterOnLabel = new JLabel("Filter on: ");
         filterOnLabel.setBounds(40, 40, 80, 25);
 
-        // Create JComboBox with options to choose from
-        JComboBox<String> filterOptions = new JComboBox<>(options);
-        filterOptions.setBounds(40, 70, 300, 30);
+        // Create JComboBox with columns to choose from
+        JComboBox<String> filterColumn = new JComboBox<>(options);
+        filterColumn.setBounds(40, 70, 300, 30);
         
+        // Create Text Label for filter
+        JLabel filterLabel = new JLabel("Filter: ");
+        filterLabel.setBounds(40, 110, 80, 25);
+
+        // Create JTextBox to imput label
+        JTextField filter = new JTextField("Enter filter here");
+        filter.setBounds(40, 140, 300, 30);
+
+
         // Add Components to JDialog
         formatDialog.add(filterOnLabel);
-        formatDialog.add(filterOptions);
+        formatDialog.add(filterColumn);
+        formatDialog.add(filterLabel);
+        formatDialog.add(filter);
 
         // formatDialog.add(filterOnPanel);
 
