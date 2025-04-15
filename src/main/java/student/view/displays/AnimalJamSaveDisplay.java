@@ -31,19 +31,19 @@ public class AnimalJamSaveDisplay {
 
         JRadioButton txtButton = new JRadioButton("txt", true);
         txtButton.setBounds(40, 120, 100, 30);
-        styleRadioButton(txtButton);
+        DisplayUtils.styleRadioButton(txtButton);
 
         JRadioButton jsonButton = new JRadioButton("json");
         jsonButton.setBounds(40, 145, 100, 30);
-        styleRadioButton(jsonButton);
+        DisplayUtils.styleRadioButton(jsonButton);
 
         JRadioButton xmlButton = new JRadioButton("xml");
         xmlButton.setBounds(40, 170, 100, 30);
-        styleRadioButton(xmlButton);
+        DisplayUtils.styleRadioButton(xmlButton);
 
         JRadioButton csvButton = new JRadioButton("csv");
         csvButton.setBounds(40, 195, 100, 30);
-        styleRadioButton(csvButton);
+        DisplayUtils.styleRadioButton(csvButton);
 
         // Create a group for radio buttons
         ButtonGroup fileTypes = new ButtonGroup();
@@ -66,14 +66,6 @@ public class AnimalJamSaveDisplay {
         saveDialog.add(csvButton);
         saveDialog.add(save);
         saveDialog.setVisible(true);
-    }
-
-    private static void styleRadioButton(JRadioButton button){
-        button.setOpaque(false);
-        button.setContentAreaFilled(false);
-        button.setFocusPainted(false);
-        button.setBorderPainted(false);
-        button.setBorder(null);
     }
 
     public static void main(String[] args) {
