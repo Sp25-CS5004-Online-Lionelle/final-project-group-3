@@ -5,7 +5,7 @@ import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
-import javax.swing.UIManager;
+import javax.swing.JTextField;
 
 public class AnimalJamSaveDisplay {
 
@@ -18,24 +18,30 @@ public class AnimalJamSaveDisplay {
         saveDialog.setLocationRelativeTo(null);
         saveDialog.setLayout(null);
 
+        // Create text field for file name
+        JLabel fileNameLabel = new JLabel("Save As: ");
+        fileNameLabel.setBounds(40, 15, 200, 25);
+        JTextField fileName = new JTextField();
+        fileName.setBounds(40, 50, 300, 25);
+
         // Create radio button for save file type
         JLabel fileTypesLabel = new JLabel("Export FIle Type: ");
-        fileTypesLabel.setBounds(40, 20, 200, 25);
-        
+        fileTypesLabel.setBounds(40, 90, 200, 25);
+
         JRadioButton txtButton = new JRadioButton("txt", true);
-        txtButton.setBounds(40, 40, 100, 30);
+        txtButton.setBounds(40, 120, 100, 30);
         styleRadioButton(txtButton);
 
         JRadioButton jsonButton = new JRadioButton("json");
-        jsonButton.setBounds(40, 60, 100, 30);
+        jsonButton.setBounds(40, 145, 100, 30);
         styleRadioButton(jsonButton);
 
         JRadioButton xmlButton = new JRadioButton("xml");
-        xmlButton.setBounds(40, 80, 100, 30);
+        xmlButton.setBounds(40, 170, 100, 30);
         styleRadioButton(xmlButton);
 
         JRadioButton csvButton = new JRadioButton("csv");
-        csvButton.setBounds(40, 100, 100, 30);
+        csvButton.setBounds(40, 195, 100, 30);
         styleRadioButton(csvButton);
 
         // Create a group for radio buttons
@@ -46,6 +52,8 @@ public class AnimalJamSaveDisplay {
         fileTypes.add(csvButton);
 
         // Add components to Dialog
+        saveDialog.add(fileNameLabel);
+        saveDialog.add(fileName);
         saveDialog.add(fileTypesLabel);
         saveDialog.add(txtButton);
         saveDialog.add(jsonButton);
