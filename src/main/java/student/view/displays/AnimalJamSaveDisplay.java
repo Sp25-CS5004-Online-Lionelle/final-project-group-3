@@ -1,6 +1,7 @@
 package student.view.displays;
 
 import javax.swing.ButtonGroup;
+import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -51,6 +52,10 @@ public class AnimalJamSaveDisplay {
         fileTypes.add(xmlButton);
         fileTypes.add(csvButton);
 
+        // Create Button to save
+        JButton save = new JButton("Save");
+        save.setBounds(270, 210, 70, 25);
+
         // Add components to Dialog
         saveDialog.add(fileNameLabel);
         saveDialog.add(fileName);
@@ -59,6 +64,7 @@ public class AnimalJamSaveDisplay {
         saveDialog.add(jsonButton);
         saveDialog.add(xmlButton);
         saveDialog.add(csvButton);
+        saveDialog.add(save);
         saveDialog.setVisible(true);
     }
 
