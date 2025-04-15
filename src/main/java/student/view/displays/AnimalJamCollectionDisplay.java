@@ -28,10 +28,17 @@ public class AnimalJamCollectionDisplay {
 
         // Create Button to switch to Favorite List
         JButton favoriteListButton = new JButton("Favorite List");
-        favoriteListButton.setBounds(60, 500, 200, 25);
+        favoriteListButton.setBounds(60, 500, 200, 28);
+
+        // Create Sort and Filter Button to open sort and filter displays
+        JButton sortDisplayButton = new JButton("Sort");
+        sortDisplayButton.setBounds(600,500,150,28);
+        JButton filterDisplayButton = new JButton("Filter");
+        filterDisplayButton.setBounds(780,500,150,28);
 
         // Create JTable for the Collection 
         JTable colTable = new JTable(data, heading);
+
         JScrollPane scroll = new JScrollPane(colTable);
         scroll.setBounds(60,80,870,400);
 
@@ -41,14 +48,16 @@ public class AnimalJamCollectionDisplay {
         frame.add(searchText);
         frame.add(searchButton);
         frame.add(favoriteListButton);
+        frame.add(sortDisplayButton);
+        frame.add(filterDisplayButton);
         frame.setVisible(true);
     }
 
     public static void main(String[] args) {
 
-        String[][] data = {{"Dog", "1", "fast", "30"},
-                            {"Cat", "2", "fast", "20"}};
-        String[] headings = {"Name", "Population", "Speed", "Weight"};
+        String[][] data = {{"Dog", "1", "fast", "30", "Blah"},
+                            {"Cat", "2", "fast", "20", "Blah"}};
+        String[] headings = {"Name", "Population", "Speed", "Weight", "Blah"};
 
         AnimalJamCollectionDisplay display = new AnimalJamCollectionDisplay(data, headings);
     }
