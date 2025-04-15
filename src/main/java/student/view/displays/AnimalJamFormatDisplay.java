@@ -2,6 +2,7 @@ package student.view.displays;
 
 import java.awt.*;
 
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -29,28 +30,34 @@ public class AnimalJamFormatDisplay {
         
         // Create Text Label
         JLabel filterOnLabel = new JLabel("Filter on: ");
-        filterOnLabel.setBounds(40, 40, 80, 25);
+        filterOnLabel.setBounds(40, 30, 80, 25);
 
         // Create JComboBox with columns to choose from
         JComboBox<String> filterColumn = new JComboBox<>(options);
-        filterColumn.setBounds(40, 70, 300, 30);
+        filterColumn.setBounds(40, 60, 300, 30);
         
         // Create Text Label for filter
         JLabel filterLabel = new JLabel("Filter: ");
         filterLabel.setBounds(40, 110, 80, 25);
 
         // Create JTextBox to imput label
-        JTextField filter = new JTextField("Enter filter here");
+        JTextField filter = new JTextField();
+        filter.setText("Enter Filter Here");
         filter.setBounds(40, 140, 300, 30);
 
+        // Create buttons to apply and cancel filters
+        JButton apply = new JButton("Apply");
+        apply.setBounds(150, 210, 100, 25);
+        JButton cancel = new JButton("Cancel");
+        cancel.setBounds(270, 210, 100, 25);
 
         // Add Components to JDialog
         formatDialog.add(filterOnLabel);
         formatDialog.add(filterColumn);
         formatDialog.add(filterLabel);
         formatDialog.add(filter);
-
-        // formatDialog.add(filterOnPanel);
+        formatDialog.add(apply);
+        formatDialog.add(cancel);
 
         // Set frame to visible
         formatDialog.setVisible(true);
