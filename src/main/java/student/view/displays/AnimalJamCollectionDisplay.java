@@ -9,13 +9,14 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 
 public class AnimalJamCollectionDisplay {
-    public AnimalJamCollectionDisplay(String[][] data, String[] heading) {
+    public AnimalJamCollectionDisplay(String[][] data, String[] heading, String collectionType, String switchList) {
 
         // Create JFrame for the collection display
-        JFrame frame = new JFrame("AnimalJam");
+        JFrame frame = new JFrame("AnimalJam: " + collectionType);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1000,600);
         frame.setLocationRelativeTo(null);
@@ -30,7 +31,7 @@ public class AnimalJamCollectionDisplay {
         searchButton.setBounds(850,30,80,25);
 
         // Create Button to switch to Favorite List
-        JButton favoriteListButton = new JButton("Favorite List");
+        JButton favoriteListButton = new JButton(switchList);
         favoriteListButton.setBounds(60, 500, 200, 28);
 
         // Create Sort and Filter Button to open sort and filter displays
@@ -39,8 +40,16 @@ public class AnimalJamCollectionDisplay {
         JButton filterDisplayButton = new JButton("Filter");
         filterDisplayButton.setBounds(780,500,150,28);
 
+        // Table model to add extra column
+        DefaultTableModel tableModel = new DefaultTableModel(data, heading) {
+            @Override
+            public boolean isCellEditable(int row, int column){
+                return false;
+            }
+        };
+
         // Create JTable for the Collection 
-        JTable colTable = new JTable(data, heading);
+        JTable colTable = new JTable(tableModel);
 
         // Center-align all columns
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
@@ -71,10 +80,9 @@ public class AnimalJamCollectionDisplay {
 
     public static void main(String[] args) {
 
-        String[][] data = {{"Aardvark","30000","40","60000","Insectivore","Africa"},
-                            {"Ant","10000000000","0.03","5","Omnivore","Worldwide"}};
-        String[] headings = {"Name","Population","Speed","Average Weight","Diet","Continental Location"};
+        DisplayUtils.CSVResult result = DisplayUtils.ParseCSV();
 
-        AnimalJamCollectionDisplay display = new AnimalJamCollectionDisplay(data, headings);
+        AnimalJamCollectionDisplay display = new AnimalJamCollectionDisplay(result.data, result.headings
+                                     ,"Collection List","Favorite List");
     }
 }
