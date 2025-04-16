@@ -1,6 +1,7 @@
 package student.view;
 
 import java.util.Collection;
+import student.model.IAnimalModel;
 
 import student.view.IView;
 
@@ -10,8 +11,7 @@ public class AnimalJamGUI implements IView{
 
     }
 
-    @Override
-    public void displayCollection(Collection collection) {
+    public void displayCollection(Collection<IAnimalModel.AnimalRecord> collection) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'displayCollection'");
     }
