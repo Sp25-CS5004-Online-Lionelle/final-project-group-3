@@ -12,6 +12,8 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 
+import student.view.actionListeners.CollectionAL;
+
 public class AnimalJamCollectionDisplay {
     public AnimalJamCollectionDisplay(String[][] data, String[] heading, String collectionType, String switchList) {
 
@@ -37,6 +39,7 @@ public class AnimalJamCollectionDisplay {
         // Create Sort and Filter Button to open sort and filter displays
         JButton sortDisplayButton = new JButton("Sort");
         sortDisplayButton.setBounds(600,500,150,28);
+        sortDisplayButton.addActionListener(CollectionAL.sortDisplayButtonListener(frame, heading));
         JButton filterDisplayButton = new JButton("Filter");
         filterDisplayButton.setBounds(780,500,150,28);
 
@@ -65,7 +68,7 @@ public class AnimalJamCollectionDisplay {
 
 
         JScrollPane scroll = new JScrollPane(colTable);
-        scroll.setBounds(60,80,870,400);
+        scroll.setBounds(40,80,900,400);
 
 
         // Add elements to frame
