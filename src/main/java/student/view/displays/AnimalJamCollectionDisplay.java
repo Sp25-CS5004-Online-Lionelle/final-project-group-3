@@ -40,8 +40,10 @@ public class AnimalJamCollectionDisplay {
         JButton sortDisplayButton = new JButton("Sort");
         sortDisplayButton.setBounds(600,500,150,28);
         sortDisplayButton.addActionListener(CollectionAL.sortDisplayButtonListener(frame, heading));
+
         JButton filterDisplayButton = new JButton("Filter");
         filterDisplayButton.setBounds(780,500,150,28);
+        filterDisplayButton.addActionListener(CollectionAL.filterDisplayButtonListener(frame, heading));
 
         // Table model to add extra column
         DefaultTableModel tableModel = new DefaultTableModel(data, heading) {
