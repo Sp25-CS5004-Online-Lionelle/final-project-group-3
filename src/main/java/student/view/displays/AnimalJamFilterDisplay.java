@@ -7,12 +7,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class AnimalJamFormatDisplay {
+public class AnimalJamFilterDisplay {
     
     JFrame frame;
     String[] options;
 
-    public AnimalJamFormatDisplay(JFrame frame, String[] options) {
+    public AnimalJamFilterDisplay(JFrame frame, String[] options) {
 
         // Get passed in frame
         this.frame = frame;
@@ -72,7 +72,7 @@ public class AnimalJamFormatDisplay {
 
         String[] options = {"Name","Population","Speed","Average Weight","Diet","Continental Location"};
 
-        AnimalJamFormatDisplay format = new AnimalJamFormatDisplay(frame, options);
+        AnimalJamFilterDisplay filter = new AnimalJamFilterDisplay(frame, options);
 
     }
 }
