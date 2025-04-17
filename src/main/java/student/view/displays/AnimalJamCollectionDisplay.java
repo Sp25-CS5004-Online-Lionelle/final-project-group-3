@@ -15,7 +15,11 @@ import javax.swing.table.JTableHeader;
 import student.view.actionListeners.CollectionAL;
 
 public class AnimalJamCollectionDisplay {
-    public AnimalJamCollectionDisplay(String[][] data, String[] heading, String collectionType, String switchList) {
+    public AnimalJamCollectionDisplay(String[][] data ,
+        String[] heading,
+        String collectionType,
+        String switchList
+    ) {
 
         // Create JFrame for the collection display
         JFrame frame = new JFrame("AnimalJam: " + collectionType);
@@ -44,7 +48,6 @@ public class AnimalJamCollectionDisplay {
         JButton filterDisplayButton = new JButton("Filter");
         filterDisplayButton.setBounds(780,500,150,28);
         filterDisplayButton.addActionListener(CollectionAL.filterDisplayButtonListener(frame, heading));
-
         // Table model to add extra column
         DefaultTableModel tableModel = new DefaultTableModel(data, heading) {
             @Override
