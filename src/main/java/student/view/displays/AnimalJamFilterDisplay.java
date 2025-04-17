@@ -7,19 +7,26 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import student.controller.AnimalJamController;
+import student.controller.IAnimalController;
+import student.model.IAnimalModel;
+import student.view.actionListeners.FilterAL;
+
 public class AnimalJamFilterDisplay {
     
     JFrame frame;
     String[] options;
+    IAnimalController controller;
 
-    public AnimalJamFilterDisplay(JFrame frame, String[] options) {
+    public AnimalJamFilterDisplay(JFrame frame, String[] options, IAnimalController controller) {
 
-        // Get passed in frame
+        // Get passed in variables
         this.frame = frame;
         this.options = options;
+        this.controller = controller;
 
         // Create a JDIalog and set size and location
-        JDialog formatDialog = new JDialog(frame,"Format", true);
+        JDialog formatDialog = new JDialog(frame,"Filter", true);
         formatDialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         formatDialog.setSize(400,300);
         formatDialog.setLocationRelativeTo(frame);
@@ -45,6 +52,8 @@ public class AnimalJamFilterDisplay {
         // Create buttons to apply and cancel filters
         JButton apply = new JButton("Apply");
         apply.setBounds(150, 210, 100, 25);
+        apply.addActionListener(FilterAL.applyFilterButtonListener(formatDialog, filter, filterColumn, controller));
+
         JButton cancel = new JButton("Cancel");
         cancel.setBounds(270, 210, 100, 25);
 
@@ -62,6 +71,9 @@ public class AnimalJamFilterDisplay {
 
     public static void main(String[] args) {
         
+        IAnimalModel model = IAnimalModel.getInstance();
+        IAnimalController controller = new AnimalJamController(model);
+
         JFrame frame = new JFrame("AnimalJam");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -72,7 +84,7 @@ public class AnimalJamFilterDisplay {
 
         String[] options = {"Name","Population","Speed","Average Weight","Diet","Continental Location"};
 
-        AnimalJamFilterDisplay filter = new AnimalJamFilterDisplay(frame, options);
+        AnimalJamFilterDisplay filter = new AnimalJamFilterDisplay(frame, options,controller);
 
     }
 }
