@@ -65,4 +65,10 @@ public class AnimalJamModel implements IAnimalModel {
     public void removeFromFavList(String str) {
 
     }
+
+    @Override
+    public Collection<AnimalRecord> getFavList() {
+        return animalFavList;
+    }
+    
 }
