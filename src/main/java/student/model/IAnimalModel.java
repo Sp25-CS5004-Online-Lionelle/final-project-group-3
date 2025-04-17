@@ -25,6 +25,8 @@ public interface IAnimalModel {
 
     AnimalRecord getRecord(String name);
 
+    Collection<AnimalRecord> getFavList();
+
     static void writeRecords(Collection<AnimalRecord> records, Formats format, OutputStream out) {
         DataFormatter.write(records, format, out);
     }
