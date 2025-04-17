@@ -21,7 +21,7 @@ public interface IAnimalController {
    Collection<AnimalRecord> getFilteredList();
 
    /** Method to write list to a file  */
-   void writeFile(Collection<AnimalRecord> records, Formats format);
+   void writeFile(ListTypes listTypes, Formats format, String filename);
 
    /** Method to add record to favourite list */
    void addToFavList(String str);
