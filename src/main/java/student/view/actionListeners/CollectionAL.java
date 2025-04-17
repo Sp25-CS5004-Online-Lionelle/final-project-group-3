@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 
+import student.controller.IAnimalController;
 import student.view.displays.AnimalJamFilterDisplay;
 import student.view.displays.AnimalJamSortDisplay;
 
@@ -21,11 +22,15 @@ public final class CollectionAL {
     } 
 
     // Action Listener for filter Display button
-    public static ActionListener filterDisplayButtonListener(JFrame frame, String[] heading) {
+    public static ActionListener filterDisplayButtonListener(
+        JFrame frame, 
+        String[] heading,
+        IAnimalController controller
+    ) {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
-                new AnimalJamFilterDisplay(frame, heading);
+                new AnimalJamFilterDisplay(frame, heading, controller);
             }
         };
     } 
