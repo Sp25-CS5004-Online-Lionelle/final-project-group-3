@@ -59,7 +59,7 @@ public final class CollectionAL {
                 List<AnimalRecord> favoriteList = new ArrayList<>(model.getFavList());
                 String[][] data = DisplayUtils.recordsToTableData(favoriteList);
 
-                new AnimalJamCollectionDisplay(data, headings, "Favorite List", "Collection List");
+                new AnimalJamCollectionDisplay(data, headings, "Favorite List", "Collection List", model);
             }
         };
     } 
