@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JFrame;
+import javax.swing.JTable;
 
 import student.controller.IAnimalController;
 import student.model.IAnimalModel;
@@ -64,5 +65,24 @@ public final class CollectionAL {
         };
     } 
     
+    // Action Listener for the add to favorite List button
+    public static ActionListener addToFavoriteButtonListener(JTable table, IAnimalModel model) {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                int selectedRow = table.getSelectedRow();
+
+                if(selectedRow != -1){
+                    Object selectedName = table.getValueAt(selectedRow, 0);
+                    String objName = selectedName.toString();
+                    AnimalRecord record = model.getRecord(objName);
+                    List<AnimalRecord> recordsToAdd = new ArrayList<>();
+                    recordsToAdd.add(record);
+                    model.addToFavList(objName, recordsToAdd.stream());
+                }
+
+            }
+        };
+    } 
     
 }
