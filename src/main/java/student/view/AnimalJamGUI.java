@@ -6,6 +6,7 @@ import java.util.List;
 
 import student.model.IAnimalModel;
 import student.model.IAnimalModel.AnimalRecord;
+import student.view.displays.AnimalJamCollectionDisplay;
 
 public class AnimalJamGUI implements IView{
     
@@ -16,8 +17,13 @@ public class AnimalJamGUI implements IView{
         this.model = model;
 
         List<AnimalRecord> records = new ArrayList<>(model.getRecords());
+        String[][] data = recordsToTableData(records);
+        for(String[] dat : data){
+            System.out.println(dat);
+        }
+        String[] headings = {"Name", "Population", "Speed", "Average Weight", "Diet", "Location"};
         
-
+        AnimalJamCollectionDisplay collection = new AnimalJamCollectionDisplay(data, headings,"Collection", "Favorite List");
     }
 
     public void displayCollection(Collection<AnimalRecord> collection) {
@@ -65,6 +71,10 @@ public class AnimalJamGUI implements IView{
         }
 
         return data;
+    }
+
+    public static void main(String[] args) {
+        new AnimalJamGUI(IAnimalModel.getInstance());
     }
 
     
