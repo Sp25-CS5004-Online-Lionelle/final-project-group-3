@@ -14,18 +14,6 @@ import student.controller.IAnimalController;
 
 public class FilterAL {
 
-    private JDialog filterDialog;
-    private JTextField filter;
-    private JComboBox<String> filterColumn;
-    private IAnimalController filterClass;
-
-    public FilterAL(JDialog filterDialog, JTextField filter,JComboBox<String> filterColumn, IAnimalController filterClass){
-        this.filterDialog = filterDialog;
-        this.filter = filter;
-        this.filterColumn = filterColumn;
-        this.filterClass = filterClass;
-    }
-
     // Action Listener for Filter Button
     public static ActionListener applyFilterButtonListener(
         JDialog filterDialog,
@@ -51,6 +39,16 @@ public class FilterAL {
                     return;
                 }
 
+               filterDialog.dispose();
+            }
+        };
+    } 
+
+    // Action Listener for Filter Button
+    public static ActionListener cancelFilterButtonListener(JDialog filterDialog){
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
                filterDialog.dispose();
             }
         };
