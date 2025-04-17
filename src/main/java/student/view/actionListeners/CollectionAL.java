@@ -1,6 +1,5 @@
 package student.view.actionListeners;
 
-import java.awt.Desktop.Action;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -27,6 +26,16 @@ public final class CollectionAL {
             @Override
             public void actionPerformed(ActionEvent e){
                 new AnimalJamFilterDisplay(frame, heading);
+            }
+        };
+    } 
+
+    // Action Listener for filter Display button
+    public static ActionListener searchButtonListener() {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                System.out.println("Searching Database");
             }
         };
     } 
