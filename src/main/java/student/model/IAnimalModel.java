@@ -15,7 +15,7 @@ import student.model.formatters.Formats;
  * Interface to the model.
  */
 public interface IAnimalModel {
-    String DATABASE = "data/records.xml";
+    String DATABASE = "C:\\Users\\mrash\\OneDrive\\Align\\cs5004\\FinalProject\\final-project-group-3\\data\\sample.csv";
 
     void addToFavList(String str, Stream<AnimalRecord> filtered);
     
