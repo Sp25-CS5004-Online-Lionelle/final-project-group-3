@@ -56,6 +56,7 @@ public class AnimalJamFilterDisplay {
 
         JButton cancel = new JButton("Cancel");
         cancel.setBounds(270, 210, 100, 25);
+        cancel.addActionListener(FilterAL.cancelFilterButtonListener(formatDialog));
 
         // Add Components to JDialog
         formatDialog.add(filterOnLabel);
