@@ -8,6 +8,7 @@ import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -52,18 +53,32 @@ public class AnimalJamModel implements IAnimalModel {
         //if(tmp == null) {
              // grab from online the network id, add the book to the collection, save out the collection
         //}
-        return animalInfoLibrary.get(id);
+        return tmp;
     }
 
     @Override
     public void addToFavList(String str, Stream<AnimalRecord> filtered) {
+        //check if the string has the name of Animal to add to list
+        List<AnimalRecord> animalList = filtered.filter(anr -> anr.name().equalsIgnoreCase(str.trim())).collect(Collectors.toList());
 
+        //add to fav list if found a matching record with name as key
+        if(animalList.size() != 0) {
+            animalFavList.add(animalInfoLibrary.get(animalList.get(0).name()));
+        }
     }
     
     
     @Override
     public void removeFromFavList(String str) {
 
+        Collection<AnimalRecord> animalKeys = animalInfoLibrary.values();
+        //check if the string has the name of Animal to add to list
+        List<AnimalRecord> animalList = animalKeys.stream().filter(anr -> anr.name().equalsIgnoreCase(str.trim())).collect(Collectors.toList());
+
+        //add to fav list if found a matching record with name as key
+        if(animalList.size() != 0) {
+            animalFavList.add(animalInfoLibrary.get(animalList.get(0).name()));
+        }
     }
 
     @Override
