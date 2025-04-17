@@ -32,4 +32,9 @@ public interface IView {
      * This method is used to display a show Favorite JOptionPane
      */
     void displaySavePopup();
+
+    /**
+     * Converts records into a 2d array of table data
+     */
+    String[][] recordsToTableData(Collection<AnimalRecord> records);
 }
