@@ -3,6 +3,7 @@ package student;
 import student.controller.AnimalJamController;
 import student.controller.IAnimalController;
 import student.model.IAnimalModel;
+import student.view.AnimalJamGUI;
 /**
  * Main driver for the program.
  * 
@@ -24,8 +25,9 @@ public final class AnimalJamApp {
         IAnimalModel model = IAnimalModel.getInstance("data/sample.csv");
         IAnimalController controller = new AnimalJamController(model);
 
-        //IView view = new AnimalJamView(controller);
-        //view.start();
+        new AnimalJamGUI(model);
+        
+        // view.start();
         
     }    
 }
