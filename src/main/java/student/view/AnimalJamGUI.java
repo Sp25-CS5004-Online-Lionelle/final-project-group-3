@@ -7,6 +7,7 @@ import java.util.List;
 import student.model.IAnimalModel;
 import student.model.IAnimalModel.AnimalRecord;
 import student.view.displays.AnimalJamCollectionDisplay;
+import student.view.displays.DisplayUtils;
 
 public class AnimalJamGUI implements IView{
     
@@ -17,13 +18,13 @@ public class AnimalJamGUI implements IView{
         this.model = model;
 
         List<AnimalRecord> records = new ArrayList<>(model.getRecords());
-        String[][] data = recordsToTableData(records);
+        String[][] data = DisplayUtils.recordsToTableData(records);
         for(String[] dat : data){
             System.out.println(dat);
         }
         String[] headings = {"Name", "Population", "Speed", "Average Weight", "Diet", "Location"};
         
-        AnimalJamCollectionDisplay collection = new AnimalJamCollectionDisplay(data, headings,"Collection", "Favorite List");
+        AnimalJamCollectionDisplay collection = new AnimalJamCollectionDisplay(data, headings,"Collection", "Favorite List", model);
     }
 
     public void displayCollection(Collection<AnimalRecord> collection) {
@@ -55,23 +56,6 @@ public class AnimalJamGUI implements IView{
         throw new UnsupportedOperationException("Unimplemented method 'displaySavePopup'");
     }
 
-    @Override
-    public String[][] recordsToTableData(Collection<AnimalRecord> records){
-        String[][] data = new String[records.size()][6];
-
-        int i = 0;
-        for(AnimalRecord record : records){
-            data[i][0] = record.name();
-            data[i][1] = String.valueOf(record.population());
-            data[i][2] = String.valueOf(record.speed());
-            data[i][3] = String.valueOf(record.averageWeight());
-            data[i][4] = record.diet();
-            data[i][5] = record.location();
-            i++;
-        }
-
-        return data;
-    }
 
     public static void main(String[] args) {
         new AnimalJamGUI(IAnimalModel.getInstance());
