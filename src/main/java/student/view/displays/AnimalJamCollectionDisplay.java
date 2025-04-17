@@ -12,15 +12,17 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 
+import student.controller.IAnimalController;
+import student.model.IAnimalModel;
 import student.view.actionListeners.CollectionAL;
 
 public class AnimalJamCollectionDisplay {
     public AnimalJamCollectionDisplay(String[][] data ,
         String[] heading,
         String collectionType,
-        String switchList
+        String switchList,
+        IAnimalModel model
     ) {
-
         // Create JFrame for the collection display
         JFrame frame = new JFrame("AnimalJam: " + collectionType);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -33,12 +35,16 @@ public class AnimalJamCollectionDisplay {
         searchText.setFont(new Font("Arial", Font.PLAIN, 16));
         searchText.setBounds(620,30,220,25);
 
+        JButton addToFavoriteListButton = new JButton("Add to Favorite List");
+        addToFavoriteListButton.setBounds(40,30,200, 25);
+
         JButton searchButton = new JButton("Search");
         searchButton.setBounds(850,30,80,25);
 
         // Create Button to switch to Favorite List
         JButton favoriteListButton = new JButton(switchList);
-        favoriteListButton.setBounds(60, 500, 200, 28);
+        favoriteListButton.setBounds(40, 500, 200, 28);
+        favoriteListButton.addActionListener(CollectionAL.favoriteDisplayButtonListener(heading, model));
 
         // Create Sort and Filter Button to open sort and filter displays
         JButton sortDisplayButton = new JButton("Sort");
@@ -79,6 +85,7 @@ public class AnimalJamCollectionDisplay {
         // Add elements to frame
         frame.add(scroll);
         frame.add(searchText);
+        frame.add(addToFavoriteListButton);
         frame.add(searchButton);
         frame.add(favoriteListButton);
         frame.add(sortDisplayButton);
@@ -86,11 +93,12 @@ public class AnimalJamCollectionDisplay {
         frame.setVisible(true);
     }
 
-    public static void main(String[] args) {
+    // public static void main(String[] args) {
 
-        DisplayUtils.CSVResult result = DisplayUtils.ParseCSV();
+    //     IAnimalModel model = IAnimalModel.getInstance();
+    //     DisplayUtils.CSVResult result = DisplayUtils.ParseCSV();
 
-        AnimalJamCollectionDisplay display = new AnimalJamCollectionDisplay(result.data, result.headings
-                                     ,"Collection List","Favorite List");
-    }
+    //     AnimalJamCollectionDisplay display = new AnimalJamCollectionDisplay(result.data, result.headings
+    //                                  ,"Collection List","Favorite List", model);
+    // }
 }
