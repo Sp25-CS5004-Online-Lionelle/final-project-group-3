@@ -76,7 +76,7 @@ public final class InputReader {
               //for (DomainNameInfo dnInfo : dnInfoList) {
               //      if(dnInfo.getId() == null) dnInfo.setId(slugify(dnInfo.getHostname()));
               //}
-            System.out.println("The size of animalInfoList in readXML is : " + animalInfoList.size());
+            System.out.println("The size of animalInfoList in readCSV is : " + animalInfoList.size());
             return animalInfoList.stream().map(AnimalInfo::toRecord).toList();
         } catch (Exception e) {
               e.printStackTrace();
