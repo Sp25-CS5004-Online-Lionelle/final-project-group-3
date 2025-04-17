@@ -3,6 +3,8 @@ package student.model;
 import java.io.OutputStream;
 
 import java.util.Collection;
+import java.util.stream.Stream;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
@@ -14,6 +16,10 @@ import student.model.formatters.Formats;
  */
 public interface IAnimalModel {
     String DATABASE = "data/records.xml";
+
+    void addToFavList(String str, Stream<AnimalRecord> filtered);
+    
+    void removeFromFavList(String str);
 
     Collection<AnimalRecord> getRecords();
 
