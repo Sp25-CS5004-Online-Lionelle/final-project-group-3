@@ -35,9 +35,6 @@ public class AnimalJamCollectionDisplay {
         searchText.setFont(new Font("Arial", Font.PLAIN, 16));
         searchText.setBounds(620,30,220,25);
 
-        JButton addToFavoriteListButton = new JButton("Add to Favorite List");
-        addToFavoriteListButton.setBounds(40,30,200, 25);
-
         JButton searchButton = new JButton("Search");
         searchButton.setBounds(850,30,80,25);
 
@@ -64,6 +61,10 @@ public class AnimalJamCollectionDisplay {
 
         // Create JTable for the Collection 
         JTable colTable = new JTable(tableModel);
+
+        JButton addToFavoriteListButton = new JButton("Add to Favorite List");
+        addToFavoriteListButton.setBounds(40,30,200, 25);
+        addToFavoriteListButton.addActionListener(CollectionAL.addToFavoriteButtonListener(colTable, model));
 
         // Center-align all columns
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
