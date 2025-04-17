@@ -1,6 +1,6 @@
 package student;
 
-import student.controller.IController;
+import student.controller.IAnimalController;
 import student.model.IAnimalModel;
 /**
  * Main driver for the program.
