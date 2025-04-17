@@ -33,8 +33,8 @@ public interface IAnimalModel {
 
     @JsonIgnoreProperties(ignoreUnknown = true)
     @JacksonXmlRootElement(localName = "animal")
-    @JsonPropertyOrder({"name", "population_size", "speed", "averge_weight", "diet", "location"})
-    record AnimalRecord(String name, double population_size, double speed, double average_weight, 
+    @JsonPropertyOrder({"name", "population", "speed", "avergeWeight", "diet", "location"})
+    record AnimalRecord(String name, double population, double speed, double averageWeight, 
                     String diet, String location) {
     }
                     

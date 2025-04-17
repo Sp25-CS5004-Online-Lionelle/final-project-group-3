@@ -1,4 +1,4 @@
-Name,Population,Speed,Average_Weight,Diet,Location
+name,population,speed,averageWeight,diet,location
 Aardvark,30000,40,60000,Insectivore,Africa
 Aardwolf,50000,56,50000,Carnivore,Africa
 African buffalo,500000,57,45000000,Herbivore,Africa

@@ -11,11 +11,11 @@ public class AnimalInfo {
     /** Store animal name. */
     private String name;
     /** Store animal population size. */
-    private double population_size;
+    private double population;
     /** Store animal speed. */
     private double speed;
     /** Store average weight of animal. */
-    private double average_weight;
+    private double averageWeight;
     /** Store animal diet info. */
     private String diet;
     /** Store animal location info. */
@@ -31,20 +31,19 @@ public class AnimalInfo {
 
     /**
      * Constructor with all data for Java bean class.
-     * @param hostname String hostname info
-     * @param ip String ip address info
-     * @param city String city info
-     * @param region String region info
-     * @param postal String postal info
-     * @param latitude double latitude info
-     * @param longitude double longitude info
+     * @param name String name info
+     * @param population double population size
+     * @param spped double speed
+     * @param averageWeight double average weight
+     * @param diet String diet info
+     * @param location double location info
      */
-    public AnimalInfo(String name, double population_size, double speed, double average_weight, 
+    public AnimalInfo(String name, double population, double speed, double averageWeight, 
                         String diet, String location) {
         this.name = name;
-        this.population_size = population_size;
+        this.population = population;
         this.speed = speed;
-        this.average_weight = average_weight;
+        this.averageWeight = averageWeight;
         this.diet = diet;
         this.location = location;
     }
@@ -61,8 +60,8 @@ public class AnimalInfo {
      * Getter for Animal population size.
      * @return double value of population size
      */
-    public double getPopulatonSize() {
-        return population_size;
+    public double getPopulaton() {
+        return population;
     }
 
     /**
@@ -78,7 +77,7 @@ public class AnimalInfo {
      * @return double value of average weight
      */
     public double getAverageWeight() {
-        return average_weight;
+        return averageWeight;
     }
 
     /**
@@ -110,8 +109,8 @@ public class AnimalInfo {
      * Setter for Population Size.
      * @param pop_size double data for population size
      */
-    public void setPopulationSize(double pop_size) {
-        this.population_size = pop_size;
+    public void setPopulation(double pop_size) {
+        this.population = pop_size;
     }
 
     /**
@@ -127,7 +126,7 @@ public class AnimalInfo {
      * @param avg_weight double data for average weight
      */
     public void setAverageWeigt(double avg_weight) {
-        this.average_weight = avg_weight;
+        this.averageWeight = avg_weight;
     }
 
     /**
@@ -148,8 +147,8 @@ public class AnimalInfo {
 
     @Override
     public String toString() {
-        return "AnimalInfo [name=" +  name + ", population_size=" + population_size + ", speed=" + speed
-                + ", average_weight=" + average_weight + ", diet=" + diet + ", location=" + location + "]";
+        return "AnimalInfo [name=" +  name + ", population_size=" + population + ", speed=" + speed
+                + ", average_weight=" + averageWeight + ", diet=" + diet + ", location=" + location + "]";
     }
 
     @Override
@@ -167,6 +166,6 @@ public class AnimalInfo {
      * @return Java record
      */
     public AnimalRecord toRecord() {
-        return new AnimalRecord(name, population_size, speed, average_weight, diet, location);
+        return new AnimalRecord(name, population, speed, averageWeight, diet, location);
     }    
 }

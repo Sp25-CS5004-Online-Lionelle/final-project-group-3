@@ -21,7 +21,7 @@ public class AnimalJamModel implements IAnimalModel {
      */
     public AnimalJamModel(String database) {
         try {
-            loadAnimalInfo(new FileInputStream(database), Formats.XML);
+            loadAnimalInfo(new FileInputStream(database), Formats.CSV);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
