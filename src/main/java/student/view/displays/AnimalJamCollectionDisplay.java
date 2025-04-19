@@ -87,6 +87,7 @@ public class AnimalJamCollectionDisplay {
         saveDisplayButton = new JButton("Save List");
         saveDisplayButton.setBounds(260, 30, 200, 25);
         saveDisplayButton.setVisible(true);
+        saveDisplayButton.addActionListener(CollectionAL.saveButtonListener(frame, model));
 
         // Center-align all columns
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
