@@ -53,6 +53,7 @@ public class AnimalJamCollectionDisplay {
         collectionListButton = new JButton("Collection List");
         collectionListButton.setBounds(40, 500, 200, 28);
         collectionListButton.setVisible(false);
+        collectionListButton.addActionListener(CollectionAL.collectionDisplayButtonListener(this, heading, model));
 
         // Create Sort and Filter Button to open sort and filter displays
         JButton sortDisplayButton = new JButton("Sort");
