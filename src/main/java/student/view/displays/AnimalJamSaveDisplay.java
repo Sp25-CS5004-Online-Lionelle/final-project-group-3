@@ -67,7 +67,7 @@ public class AnimalJamSaveDisplay {
         // Create Button to save
         JButton save = new JButton("Save");
         save.setBounds(150, 210, 100, 25);
-        save.addActionListener(SaveAL.saveButtonListener(frame, fileName, radioButtons, model));
+        save.addActionListener(SaveAL.saveButtonListener(frame, saveDialog, fileName, radioButtons, model));
 
         // Create Button to cancel
         JButton cancel = new JButton("Cancel");
