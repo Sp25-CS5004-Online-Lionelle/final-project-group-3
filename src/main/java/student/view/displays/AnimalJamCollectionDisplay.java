@@ -47,7 +47,7 @@ public class AnimalJamCollectionDisplay {
         // Create Button to switch to Favorite List
         favoriteListButton = new JButton("Favorite List");
         favoriteListButton.setBounds(40, 500, 200, 28);
-        favoriteListButton.addActionListener(CollectionAL.favoriteDisplayButtonListener(heading, model));
+        favoriteListButton.addActionListener(CollectionAL.favoriteDisplayButtonListener(this, heading, model));
 
         // Create Button to switch to Collection List
         collectionListButton = new JButton("Collection List");
