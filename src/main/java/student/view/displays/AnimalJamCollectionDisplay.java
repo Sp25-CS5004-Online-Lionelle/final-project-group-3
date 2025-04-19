@@ -55,6 +55,7 @@ public class AnimalJamCollectionDisplay {
         collectionListButton.setVisible(false);
         collectionListButton.addActionListener(CollectionAL.collectionDisplayButtonListener(this, heading, model));
 
+        
         // Create Sort and Filter Button to open sort and filter displays
         JButton sortDisplayButton = new JButton("Sort");
         sortDisplayButton.setBounds(600,500,150,28);
@@ -70,13 +71,18 @@ public class AnimalJamCollectionDisplay {
                 return false;
             }
         };
-
+        
         // Create JTable for the Collection 
         JTable colTable = new JTable(tableModel);
-
+        
         JButton addToFavoriteListButton = new JButton("Add to Favorite List");
         addToFavoriteListButton.setBounds(40,30,200, 25);
         addToFavoriteListButton.addActionListener(CollectionAL.addToFavoriteButtonListener(colTable, model));
+        
+        // Create Button to Remove from Favorite List
+        JButton removeFromFavoriteListButton = new JButton("Remove from Favorite List");
+        removeFromFavoriteListButton.setBounds(40,30,200, 25);
+        removeFromFavoriteListButton.setVisible(false);
 
         // Center-align all columns
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
@@ -99,6 +105,7 @@ public class AnimalJamCollectionDisplay {
         frame.add(scroll);
         frame.add(searchText);
         frame.add(addToFavoriteListButton);
+        frame.add(removeFromFavoriteListButton);
         frame.add(searchButton);
         frame.add(favoriteListButton);
         frame.add(collectionListButton);
