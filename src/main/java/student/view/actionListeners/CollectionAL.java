@@ -8,12 +8,11 @@ import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JTable;
 
-import student.controller.IAnimalController;
 import student.model.IAnimalModel;
 import student.model.IAnimalModel.AnimalRecord;
-import student.view.AnimalJamGUI;
 import student.view.displays.AnimalJamCollectionDisplay;
 import student.view.displays.AnimalJamFilterDisplay;
+import student.view.displays.AnimalJamSaveDisplay;
 import student.view.displays.AnimalJamSortDisplay;
 import student.view.displays.DisplayUtils;
 
@@ -52,15 +51,46 @@ public final class CollectionAL {
         };
     } 
 
+    // Action Listener for save Display button
+    public static ActionListener saveButtonListener(JFrame frame, IAnimalModel model) {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                new AnimalJamSaveDisplay(frame, model);
+            }
+        };
+    } 
+
     // Action Listener for favorite List button
-    public static ActionListener favoriteDisplayButtonListener(String[] headings, IAnimalModel model) {
+    public static ActionListener favoriteDisplayButtonListener(AnimalJamCollectionDisplay instance,String[] headings, IAnimalModel model) {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
                 List<AnimalRecord> favoriteList = new ArrayList<>(model.getFavList());
                 String[][] data = DisplayUtils.recordsToTableData(favoriteList);
 
-                new AnimalJamCollectionDisplay(data, headings, "Favorite List", "Collection List", model);
+                instance.updateDisplay(
+                    data,
+                    "Favorite List",
+                    true
+                );
+            }
+        };
+    } 
+
+    // Action Listener for collection List button
+    public static ActionListener collectionDisplayButtonListener(AnimalJamCollectionDisplay instance,String[] headings, IAnimalModel model) {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                List<AnimalRecord> collectionList = new ArrayList<>(model.getRecords());
+                String[][] data = DisplayUtils.recordsToTableData(collectionList);
+
+                instance.updateDisplay(
+                    data,
+                    "Collection List",
+                    false
+                );
             }
         };
     } 

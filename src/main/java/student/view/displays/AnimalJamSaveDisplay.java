@@ -1,5 +1,8 @@
 package student.view.displays;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -8,9 +11,12 @@ import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
+import student.model.IAnimalModel;
+import student.view.actionListeners.SaveAL;
+
 public class AnimalJamSaveDisplay {
 
-    public AnimalJamSaveDisplay(JFrame frame) {
+    public AnimalJamSaveDisplay(JFrame frame, IAnimalModel model) {
 
         // Create and style save Dialog
         JDialog saveDialog = new JDialog(frame ,"Save", true);
@@ -45,6 +51,12 @@ public class AnimalJamSaveDisplay {
         csvButton.setBounds(40, 195, 100, 30);
         DisplayUtils.styleRadioButton(csvButton);
 
+        List<JRadioButton> radioButtons = new ArrayList<>();
+        radioButtons.add(txtButton);
+        radioButtons.add(jsonButton);
+        radioButtons.add(xmlButton);
+        radioButtons.add(csvButton);
+
         // Create a group for radio buttons
         ButtonGroup fileTypes = new ButtonGroup();
         fileTypes.add(txtButton);
@@ -54,7 +66,13 @@ public class AnimalJamSaveDisplay {
 
         // Create Button to save
         JButton save = new JButton("Save");
-        save.setBounds(270, 210, 70, 25);
+        save.setBounds(150, 210, 100, 25);
+        save.addActionListener(SaveAL.saveButtonListener(frame, saveDialog, fileName, radioButtons, model));
+
+        // Create Button to cancel
+        JButton cancel = new JButton("Cancel");
+        cancel.setBounds(270, 210, 100, 25);
+        cancel.addActionListener(SaveAL.cancelButtonListener(saveDialog));
 
         // Add components to Dialog
         saveDialog.add(fileNameLabel);
@@ -65,11 +83,13 @@ public class AnimalJamSaveDisplay {
         saveDialog.add(xmlButton);
         saveDialog.add(csvButton);
         saveDialog.add(save);
+        saveDialog.add(cancel);
         saveDialog.setVisible(true);
     }
 
     public static void main(String[] args) {
         
+        IAnimalModel model = IAnimalModel.getInstance();
         JFrame frame = new JFrame("AnimalJam");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -78,7 +98,7 @@ public class AnimalJamSaveDisplay {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
-        AnimalJamSaveDisplay save = new AnimalJamSaveDisplay(frame);
+        AnimalJamSaveDisplay save = new AnimalJamSaveDisplay(frame, model);
 
     }
 }
