@@ -72,6 +72,7 @@ public class AnimalJamSaveDisplay {
         // Create Button to cancel
         JButton cancel = new JButton("Cancel");
         cancel.setBounds(270, 210, 100, 25);
+        cancel.addActionListener(SaveAL.cancelButtonListener(saveDialog));
 
         // Add components to Dialog
         saveDialog.add(fileNameLabel);
