@@ -60,6 +60,12 @@ public class SaveAL {
                 // Get the favorite List from the controller
                 List<AnimalRecord> favoriteList = new ArrayList<>(model.getFavList());
 
+                // Check if the file name is empty
+                while(fileNameText == null || fileNameText.trim().isEmpty()) {
+                    JOptionPane.showMessageDialog(frame, "Please enter a file name.", "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+
                 // Get the data type from the controller
                 Formats format = Formats.containsValues(exportType);
                 if (format == null) {
