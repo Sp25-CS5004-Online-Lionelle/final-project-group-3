@@ -114,5 +114,25 @@ public final class CollectionAL {
             }
         };
     } 
+
+    // Action Listener for the remove from favorite List button
+    public static ActionListener removeFromFavoriteButtonListener(JTable table, IAnimalModel model) {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                int selectedRow = table.getSelectedRow();
+
+                if(selectedRow != -1){
+                    Object selectedName = table.getValueAt(selectedRow, 0);
+                    String objName = selectedName.toString();
+                    
+                    model.removeFromFavList(objName);
+
+                    System.out.println("Removed " + objName + " from favorite list.");
+                }
+
+            }
+        };
+    } 
     
 }

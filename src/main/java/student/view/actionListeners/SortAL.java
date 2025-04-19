@@ -5,8 +5,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 
-import student.view.displays.AnimalJamSortDisplay;
-
 public class SortAL {
     
     // Action Listener for Sort Button
