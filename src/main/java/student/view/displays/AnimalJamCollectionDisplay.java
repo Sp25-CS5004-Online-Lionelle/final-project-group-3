@@ -82,6 +82,7 @@ public class AnimalJamCollectionDisplay {
         removeFromFavoriteListButton = new JButton("Remove from Favorite List");
         removeFromFavoriteListButton.setBounds(40,30,200, 25);
         removeFromFavoriteListButton.setVisible(false);
+        removeFromFavoriteListButton.addActionListener(CollectionAL.removeFromFavoriteButtonListener(colTable, model));
 
         // Create Button to Save
         saveDisplayButton = new JButton("Save List");
