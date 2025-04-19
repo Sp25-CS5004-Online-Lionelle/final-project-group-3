@@ -76,6 +76,10 @@ public class SaveAL {
                 // Display success message
                 JOptionPane.showMessageDialog(frame, "File saved successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
 
+                // Close the dialog
+                System.out.println("Closing save dialog");
+                frame.dispose();
+
             }
         };
     } 
