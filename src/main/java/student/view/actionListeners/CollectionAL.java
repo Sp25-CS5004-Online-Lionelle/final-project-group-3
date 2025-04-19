@@ -53,14 +53,18 @@ public final class CollectionAL {
     } 
 
     // Action Listener for favorite List button
-    public static ActionListener favoriteDisplayButtonListener(String[] headings, IAnimalModel model) {
+    public static ActionListener favoriteDisplayButtonListener(AnimalJamCollectionDisplay instance,String[] headings, IAnimalModel model) {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
                 List<AnimalRecord> favoriteList = new ArrayList<>(model.getFavList());
                 String[][] data = DisplayUtils.recordsToTableData(favoriteList);
 
-                new AnimalJamCollectionDisplay(data, headings, "Favorite List", "Collection List", model);
+                instance.updateDisplay(
+                    data,
+                    "Favorite List",
+                    true
+                );
             }
         };
     } 
