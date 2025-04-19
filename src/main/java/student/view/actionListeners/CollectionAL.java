@@ -116,20 +116,36 @@ public final class CollectionAL {
     } 
 
     // Action Listener for the remove from favorite List button
-    public static ActionListener removeFromFavoriteButtonListener(JTable table, IAnimalModel model) {
+    public static ActionListener removeFromFavoriteButtonListener(AnimalJamCollectionDisplay instance, JTable table, IAnimalModel model) {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
+
+                // Get the selected row from the table
                 int selectedRow = table.getSelectedRow();
 
+                
+                // Check if a row is selected, remove the selected item from the favorite list
+                // and update the display
                 if(selectedRow != -1){
                     Object selectedName = table.getValueAt(selectedRow, 0);
                     String objName = selectedName.toString();
                     
                     model.removeFromFavList(objName);
-
+                    
+                    // Get the favorite list from the model
+                    List<AnimalRecord> favoriteList = new ArrayList<>(model.getFavList());
+                    String[][] data = DisplayUtils.recordsToTableData(favoriteList);
+                    
                     System.out.println("Removed " + objName + " from favorite list.");
+
+                    instance.updateDisplay(
+                    data,
+                    "Favorite List",
+                    true
+                );
                 }
+
 
             }
         };
