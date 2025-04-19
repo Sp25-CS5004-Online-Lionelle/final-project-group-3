@@ -39,9 +39,14 @@ public class AnimalJamCollectionDisplay {
         searchButton.setBounds(850,30,80,25);
 
         // Create Button to switch to Favorite List
-        JButton favoriteListButton = new JButton(switchList);
+        JButton favoriteListButton = new JButton("Favorite List");
         favoriteListButton.setBounds(40, 500, 200, 28);
         favoriteListButton.addActionListener(CollectionAL.favoriteDisplayButtonListener(heading, model));
+
+        // Create Button to switch to Collection List
+        JButton collectionListButton = new JButton("Collection List");
+        collectionListButton.setBounds(40, 500, 200, 28);
+        collectionListButton.setVisible(false);
 
         // Create Sort and Filter Button to open sort and filter displays
         JButton sortDisplayButton = new JButton("Sort");
@@ -89,6 +94,7 @@ public class AnimalJamCollectionDisplay {
         frame.add(addToFavoriteListButton);
         frame.add(searchButton);
         frame.add(favoriteListButton);
+        frame.add(collectionListButton);
         frame.add(sortDisplayButton);
         frame.add(filterDisplayButton);
         frame.setVisible(true);
