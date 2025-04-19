@@ -41,15 +41,5 @@ public class FilterAL {
             }
         };
     } 
-
-    // Action Listener for Filter Button
-    public static ActionListener cancelFilterButtonListener(JDialog filterDialog){
-        return new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e){
-               filterDialog.dispose();
-            }
-        };
-    } 
      
 }

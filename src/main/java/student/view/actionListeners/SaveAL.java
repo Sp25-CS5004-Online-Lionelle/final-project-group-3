@@ -91,13 +91,4 @@ public class SaveAL {
         };
     } 
 
-    public static ActionListener cancelButtonListener(JDialog dialog){
-        return new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e){
-                System.out.println("Canceling save dialog");
-                dialog.dispose();
-            }
-        };
-    }
 }
