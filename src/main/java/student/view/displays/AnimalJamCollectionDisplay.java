@@ -17,6 +17,12 @@ import student.model.IAnimalModel;
 import student.view.actionListeners.CollectionAL;
 
 public class AnimalJamCollectionDisplay {
+
+    private DefaultTableModel tableModel;
+    private JFrame frame;
+    private JButton favoriteListButton;
+    private JButton collectionListButton;
+
     public AnimalJamCollectionDisplay(String[][] data ,
         String[] heading,
         String collectionType,
@@ -24,7 +30,7 @@ public class AnimalJamCollectionDisplay {
         IAnimalModel model
     ) {
         // Create JFrame for the collection display
-        JFrame frame = new JFrame("AnimalJam: " + collectionType);
+        frame = new JFrame("AnimalJam: " + collectionType);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1000,600);
         frame.setLocationRelativeTo(null);
@@ -39,12 +45,12 @@ public class AnimalJamCollectionDisplay {
         searchButton.setBounds(850,30,80,25);
 
         // Create Button to switch to Favorite List
-        JButton favoriteListButton = new JButton("Favorite List");
+        favoriteListButton = new JButton("Favorite List");
         favoriteListButton.setBounds(40, 500, 200, 28);
         favoriteListButton.addActionListener(CollectionAL.favoriteDisplayButtonListener(heading, model));
 
         // Create Button to switch to Collection List
-        JButton collectionListButton = new JButton("Collection List");
+        collectionListButton = new JButton("Collection List");
         collectionListButton.setBounds(40, 500, 200, 28);
         collectionListButton.setVisible(false);
 
@@ -57,7 +63,7 @@ public class AnimalJamCollectionDisplay {
         filterDisplayButton.setBounds(780,500,150,28);
         filterDisplayButton.addActionListener(CollectionAL.filterDisplayButtonListener(frame, heading));
         // Table model to add extra column
-        DefaultTableModel tableModel = new DefaultTableModel(data, heading) {
+        tableModel = new DefaultTableModel(data, heading) {
             @Override
             public boolean isCellEditable(int row, int column){
                 return false;
@@ -98,6 +104,31 @@ public class AnimalJamCollectionDisplay {
         frame.add(sortDisplayButton);
         frame.add(filterDisplayButton);
         frame.setVisible(true);
+    }
+
+    public void updateDisplay(String[][] data, String collectionType, boolean isFavoriteList) {
+        // Get the columns from the table model
+        int columnCount = tableModel.getColumnCount();
+        String[] columnNames = new String[columnCount];
+        for (int i = 0; i < columnCount; i++) {
+            columnNames[i] = tableModel.getColumnName(i);
+        }
+
+        // Update the table model with new data
+        tableModel.setDataVector(data, columnNames);
+        tableModel.fireTableDataChanged();
+
+        // Update the frame title
+        if (isFavoriteList) {
+            frame.setTitle("AnimalJam: Favorite List");
+            collectionListButton.setVisible(true);
+            favoriteListButton.setVisible(false);
+        } else {
+            frame.setTitle("AnimalJam: " + collectionType);
+            collectionListButton.setVisible(false);
+            favoriteListButton.setVisible(true);
+        }
+        
     }
 
     // public static void main(String[] args) {
