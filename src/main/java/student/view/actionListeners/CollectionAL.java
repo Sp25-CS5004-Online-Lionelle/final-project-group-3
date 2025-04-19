@@ -8,12 +8,11 @@ import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JTable;
 
-import student.controller.IAnimalController;
 import student.model.IAnimalModel;
 import student.model.IAnimalModel.AnimalRecord;
-import student.view.AnimalJamGUI;
 import student.view.displays.AnimalJamCollectionDisplay;
 import student.view.displays.AnimalJamFilterDisplay;
+import student.view.displays.AnimalJamSaveDisplay;
 import student.view.displays.AnimalJamSortDisplay;
 import student.view.displays.DisplayUtils;
 
@@ -48,6 +47,16 @@ public final class CollectionAL {
             @Override
             public void actionPerformed(ActionEvent e){
                 System.out.println("Searching Database");
+            }
+        };
+    } 
+
+    // Action Listener for save Display button
+    public static ActionListener saveButtonListener(JFrame frame, IAnimalModel model) {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                new AnimalJamSaveDisplay(frame, model);
             }
         };
     } 
