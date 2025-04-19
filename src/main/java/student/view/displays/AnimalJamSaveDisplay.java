@@ -66,8 +66,12 @@ public class AnimalJamSaveDisplay {
 
         // Create Button to save
         JButton save = new JButton("Save");
-        save.setBounds(270, 210, 70, 25);
+        save.setBounds(150, 210, 100, 25);
         save.addActionListener(SaveAL.saveButtonListener(frame, fileName, radioButtons, model));
+
+        // Create Button to cancel
+        JButton cancel = new JButton("Cancel");
+        cancel.setBounds(270, 210, 100, 25);
 
         // Add components to Dialog
         saveDialog.add(fileNameLabel);
@@ -78,6 +82,7 @@ public class AnimalJamSaveDisplay {
         saveDialog.add(xmlButton);
         saveDialog.add(csvButton);
         saveDialog.add(save);
+        saveDialog.add(cancel);
         saveDialog.setVisible(true);
     }
 
