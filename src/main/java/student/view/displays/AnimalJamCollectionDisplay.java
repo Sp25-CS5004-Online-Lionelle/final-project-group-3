@@ -20,8 +20,7 @@ public class AnimalJamCollectionDisplay {
 
     private DefaultTableModel tableModel;
     private JFrame frame;
-    private JButton favoriteListButton;
-    private JButton collectionListButton;
+    private JButton favoriteListButton, collectionListButton, removeFromFavoriteListButton, addToFavoriteListButton;
 
     public AnimalJamCollectionDisplay(String[][] data ,
         String[] heading,
@@ -75,12 +74,12 @@ public class AnimalJamCollectionDisplay {
         // Create JTable for the Collection 
         JTable colTable = new JTable(tableModel);
         
-        JButton addToFavoriteListButton = new JButton("Add to Favorite List");
+        addToFavoriteListButton = new JButton("Add to Favorite List");
         addToFavoriteListButton.setBounds(40,30,200, 25);
         addToFavoriteListButton.addActionListener(CollectionAL.addToFavoriteButtonListener(colTable, model));
         
         // Create Button to Remove from Favorite List
-        JButton removeFromFavoriteListButton = new JButton("Remove from Favorite List");
+        removeFromFavoriteListButton = new JButton("Remove from Favorite List");
         removeFromFavoriteListButton.setBounds(40,30,200, 25);
         removeFromFavoriteListButton.setVisible(false);
 
@@ -131,10 +130,14 @@ public class AnimalJamCollectionDisplay {
             frame.setTitle("AnimalJam: Favorite List");
             collectionListButton.setVisible(true);
             favoriteListButton.setVisible(false);
+            removeFromFavoriteListButton.setVisible(true);
+            addToFavoriteListButton.setVisible(false);
         } else {
             frame.setTitle("AnimalJam: " + collectionType);
             collectionListButton.setVisible(false);
             favoriteListButton.setVisible(true);
+            removeFromFavoriteListButton.setVisible(false);
+            addToFavoriteListButton.setVisible(true);
         }
         
     }
