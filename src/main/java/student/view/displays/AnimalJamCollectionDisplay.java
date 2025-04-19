@@ -12,7 +12,6 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 
-import student.controller.IAnimalController;
 import student.model.IAnimalModel;
 import student.view.actionListeners.CollectionAL;
 
@@ -21,6 +20,7 @@ public class AnimalJamCollectionDisplay {
     private DefaultTableModel tableModel;
     private JFrame frame;
     private JButton favoriteListButton, collectionListButton, removeFromFavoriteListButton, addToFavoriteListButton;
+    private JButton saveDisplayButton;
 
     public AnimalJamCollectionDisplay(String[][] data ,
         String[] heading,
@@ -83,6 +83,11 @@ public class AnimalJamCollectionDisplay {
         removeFromFavoriteListButton.setBounds(40,30,200, 25);
         removeFromFavoriteListButton.setVisible(false);
 
+        // Create Button to Save
+        saveDisplayButton = new JButton("Save List");
+        saveDisplayButton.setBounds(260, 30, 200, 25);
+        saveDisplayButton.setVisible(true);
+
         // Center-align all columns
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
@@ -105,6 +110,7 @@ public class AnimalJamCollectionDisplay {
         frame.add(searchText);
         frame.add(addToFavoriteListButton);
         frame.add(removeFromFavoriteListButton);
+        frame.add(saveDisplayButton);
         frame.add(searchButton);
         frame.add(favoriteListButton);
         frame.add(collectionListButton);
