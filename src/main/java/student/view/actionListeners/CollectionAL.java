@@ -68,6 +68,23 @@ public final class CollectionAL {
             }
         };
     } 
+
+    // Action Listener for collection List button
+    public static ActionListener collectionDisplayButtonListener(AnimalJamCollectionDisplay instance,String[] headings, IAnimalModel model) {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                List<AnimalRecord> collectionList = new ArrayList<>(model.getRecords());
+                String[][] data = DisplayUtils.recordsToTableData(collectionList);
+
+                instance.updateDisplay(
+                    data,
+                    "Collection List",
+                    false
+                );
+            }
+        };
+    } 
     
     // Action Listener for the add to favorite List button
     public static ActionListener addToFavoriteButtonListener(JTable table, IAnimalModel model) {
