@@ -1,12 +1,10 @@
 package student.view.actionListeners;
 
-import javax.swing.JFileChooser;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
-
-import javassist.tools.framedump;
 
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -81,4 +79,14 @@ public class SaveAL {
             }
         };
     } 
+
+    public static ActionListener cancelButtonListener(JDialog dialog){
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                System.out.println("Canceling save dialog");
+                dialog.dispose();
+            }
+        };
+    }
 }
