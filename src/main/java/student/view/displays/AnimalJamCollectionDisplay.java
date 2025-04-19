@@ -86,7 +86,7 @@ public class AnimalJamCollectionDisplay {
         // Create Button to Save
         saveDisplayButton = new JButton("Save List");
         saveDisplayButton.setBounds(260, 30, 200, 25);
-        saveDisplayButton.setVisible(true);
+        saveDisplayButton.setVisible(false);
         saveDisplayButton.addActionListener(CollectionAL.saveButtonListener(frame, model));
 
         // Center-align all columns
@@ -139,6 +139,7 @@ public class AnimalJamCollectionDisplay {
             favoriteListButton.setVisible(false);
             removeFromFavoriteListButton.setVisible(true);
             addToFavoriteListButton.setVisible(false);
+            saveDisplayButton.setVisible(true);
         } else {
             frame.setTitle("AnimalJam: " + collectionType);
             collectionListButton.setVisible(false);
