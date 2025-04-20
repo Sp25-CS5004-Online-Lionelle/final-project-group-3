@@ -4,8 +4,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -20,7 +20,7 @@ public class AnimalJamModel implements IAnimalModel {
     private final Map<String, AnimalRecord> animalInfoLibrary = new LinkedHashMap<String, AnimalRecord>();
 
     /** Store favourite list records  */
-    private final List<AnimalRecord> animalFavList = new LinkedList<>();
+    private final Set<AnimalRecord> animalFavList = new HashSet();
 
     /**
      * Contructor.
@@ -34,12 +34,15 @@ public class AnimalJamModel implements IAnimalModel {
         }
     }
 
+    /**
+     * Method to load database based on file format and inputstream
+     * @param in InputStream to read data
+     * @param format Format of the file inputstream
+     */
     private void loadAnimalInfo(InputStream in, Formats format) {
         animalInfoLibrary.putAll(
             InputReader.readAnimalInfo(in, format).stream().collect(
                 Collectors.toMap(animalInfo -> animalInfo.name(),  animalInfo -> animalInfo)));
-        //debug print
-        System.out.println("In loadAnimalInfo and size is : " + animalInfoLibrary.size());
         }
 
     @Override
@@ -49,20 +52,27 @@ public class AnimalJamModel implements IAnimalModel {
 
     @Override
     public AnimalRecord getRecord(String id) {
-        AnimalRecord tmp = animalInfoLibrary.get(id);
-        //if(tmp == null) {
-             // grab from online the network id, add the book to the collection, save out the collection
-        //}
-        return tmp;
+        AnimalRecord tmp = null;
+        try {
+            tmp = animalInfoLibrary.get(id);
+            return tmp;
+        } catch (NullPointerException e) {
+            return null;
+        }
+        
     }
 
     @Override
     public void addToFavList(String str, Stream<AnimalRecord> filtered) {
-        //check if the string has the name of Animal to add to list
-        List<AnimalRecord> animalList = filtered.filter(anr -> anr.name().equalsIgnoreCase(str.trim())).collect(Collectors.toList());
+        List<AnimalRecord> animalList = null;
 
+        if(str != null && filtered != null) {
+            //check if the string has the name of Animal to add to list
+            animalList = filtered.filter(anr -> anr.name().equalsIgnoreCase(str.trim())).collect(Collectors.toList());
+        }
+        
         //add to fav list if found a matching record with name as key
-        if(animalList.size() != 0) {
+        if(animalList != null && animalList.size() != 0) {
             animalFavList.add(animalInfoLibrary.get(animalList.get(0).name()));
         }
     }
@@ -71,19 +81,28 @@ public class AnimalJamModel implements IAnimalModel {
     @Override
     public void removeFromFavList(String str) {
 
+        List<AnimalRecord> animalList = null;
         Collection<AnimalRecord> animalKeys = animalInfoLibrary.values();
-        //check if the string has the name of Animal to add to list
-        List<AnimalRecord> animalList = animalKeys.stream().filter(anr -> anr.name().equalsIgnoreCase(str.trim())).collect(Collectors.toList());
+        
+        if(str != null) {
+            //check if the string has the name of Animal to add to list
+            animalList = animalKeys.stream().filter(anr -> anr.name().equalsIgnoreCase(str.trim())).collect(Collectors.toList());
+        }
 
         //add to fav list if found a matching record with name as key
-        if(animalList.size() != 0) {
-            animalFavList.add(animalInfoLibrary.get(animalList.get(0).name()));
+        if(animalList != null && animalList.size() != 0) {
+            animalFavList.remove(animalInfoLibrary.get(animalList.get(0).name()));
         }
     }
 
     @Override
     public Collection<AnimalRecord> getFavList() {
         return animalFavList;
+    }
+
+    @Override
+    public void clearFavList() {
+        animalFavList.clear();
     }
     
 }
