@@ -65,7 +65,11 @@ public class TestAnimalJamController {
         AnimalRecord ar2 = animalList.get(1);
         controller.addToFavList(ar1.name());
         controller.addToFavList(ar2.name());
+        favList = controller.getFavList();
+        assertEquals(2, favList.size());
 
-        assertEquals(16, recordList.size());
+        //add again the same record
+        controller.addToFavList(ar1.name());
+        assertEquals(2, favList.size());
     }
 }
