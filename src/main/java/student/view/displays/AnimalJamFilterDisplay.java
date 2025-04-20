@@ -48,6 +48,10 @@ public class AnimalJamFilterDisplay {
         filter.setText("Enter Filter Here");
         filter.setBounds(40, 140, 300, 30);
 
+        // Create label for the filter order
+        JLabel sortOrderLabel = new JLabel("Sort Order: ");
+        sortOrderLabel.setBounds(40, 170, 80, 25);
+
         // Create radio buttons for ascending and descending order
         JRadioButton ascending = new JRadioButton("Ascending", true);
         ascending.setBounds(40, 180, 100, 25);
@@ -73,6 +77,7 @@ public class AnimalJamFilterDisplay {
         formatDialog.add(filterColumn);
         formatDialog.add(filterLabel);
         formatDialog.add(filter);
+        formatDialog.add(sortOrderLabel);
         formatDialog.add(ascending);
         formatDialog.add(descending);
         formatDialog.add(apply);
