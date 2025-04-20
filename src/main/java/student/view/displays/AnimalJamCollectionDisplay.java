@@ -97,6 +97,7 @@ public class AnimalJamCollectionDisplay {
         clearFilterButton = new JButton("Clear Search/Filter");
         clearFilterButton.setBounds(260, 30, 200, 25);
         clearFilterButton.setVisible(false);
+        clearFilterButton.addActionListener(CollectionAL.clearFilterButtonListener(this, heading, searchText, controller));
 
         // Center-align all columns
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();

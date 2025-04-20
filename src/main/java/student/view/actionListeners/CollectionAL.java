@@ -179,5 +179,31 @@ public final class CollectionAL {
             }
         };
     } 
+
+    // Action Listener for the clear filter button
+    public static ActionListener clearFilterButtonListener(
+        AnimalJamCollectionDisplay instance,
+        String[] headings,
+        JTextField searchField,
+        IAnimalController controller
+        ) {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                // Clear the filter and set the search field to empty
+                controller.resetFilter();
+                searchField.setText("");
+
+                // Get the collection list from the controller and update the display
+                List<AnimalRecord> collectionList = new ArrayList<>(controller.getCollection());
+                String[][] data = DisplayUtils.recordsToTableData(collectionList);
+
+                instance.updateDisplay(
+                    data,
+                    ListTypes.COLLECTION
+                );
+            }
+        };
+    } 
     
 }
