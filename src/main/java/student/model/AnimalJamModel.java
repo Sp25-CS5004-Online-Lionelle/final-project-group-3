@@ -96,5 +96,10 @@ public class AnimalJamModel implements IAnimalModel {
     public Collection<AnimalRecord> getFavList() {
         return animalFavList;
     }
+
+    @Override
+    public void clearFavList() {
+        animalFavList.clear();
+    }
     
 }
