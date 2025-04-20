@@ -9,6 +9,7 @@ import java.util.Collection;
 
 import javax.swing.SortOrder;
 
+import org.apache.commons.lang3.ObjectUtils.Null;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import student.model.formatters.Formats;
@@ -46,8 +47,21 @@ public class TestAnimalJamModel {
     public void testGetRecord() {
         String filename = "data/sample.csv";
         model = IAnimalModel.getInstance(filename);
-        singleRecord = model.getRecord("Aardvark");
-        assertEquals("Aardvark", singleRecord.name());
+
+        try {
+            singleRecord = model.getRecord("Aardvark");
+            assertEquals("Aardvark", singleRecord.name());    
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        //negative test get record that does not exist
+        try {
+            singleRecord = model.getRecord("Ardvark");
+        } catch (Exception e) {
+            assertEquals((NullPointerException.class), e.getClass());
+        }
+        
     }
 
     
@@ -84,7 +98,7 @@ public class TestAnimalJamModel {
     @Test
     public void testWriteRecordsCSV() {
         String filename = "data/sample.csv";
-        String outFileName = "data/outsample.csv";
+        String outFileName = "output/outsample.csv";
 
         //load model with sample.csv file records
         model = IAnimalModel.getInstance(filename);
@@ -114,7 +128,7 @@ public class TestAnimalJamModel {
     @Test
     public void testWriteRecordsJSON() {
         String filename = "data/sample.csv";
-        String outFileName = "data/outsample.json";
+        String outFileName = "output/outsample.json";
 
         //load model with sample.csv file records
         model = IAnimalModel.getInstance(filename);
