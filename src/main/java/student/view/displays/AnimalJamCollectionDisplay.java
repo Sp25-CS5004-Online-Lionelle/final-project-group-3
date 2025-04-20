@@ -23,7 +23,7 @@ public class AnimalJamCollectionDisplay {
     private DefaultTableModel tableModel;
     private JFrame frame;
     private JButton favoriteListButton, collectionListButton, removeFromFavoriteListButton, addToFavoriteListButton;
-    private JButton saveDisplayButton, clearFilterButton;
+    private JButton saveDisplayButton, clearFilterButton, sortDisplayButton, filterDisplayButton;
 
     public AnimalJamCollectionDisplay(String[][] data ,
         String[] heading,
@@ -59,11 +59,11 @@ public class AnimalJamCollectionDisplay {
         collectionListButton.addActionListener(CollectionAL.collectionDisplayButtonListener(this, heading, controller));
 
         // Create Sort and Filter Button to open sort and filter displays
-        JButton sortDisplayButton = new JButton("Sort");
+        sortDisplayButton = new JButton("Sort");
         sortDisplayButton.setBounds(600,500,150,28);
         sortDisplayButton.addActionListener(CollectionAL.sortDisplayButtonListener(frame, heading));
 
-        JButton filterDisplayButton = new JButton("Filter");
+        filterDisplayButton = new JButton("Filter");
         filterDisplayButton.setBounds(780,500,150,28);
         filterDisplayButton.addActionListener(CollectionAL.filterDisplayButtonListener(frame, heading, controller, this));
         // Table model to add extra column
@@ -152,6 +152,8 @@ public class AnimalJamCollectionDisplay {
             addToFavoriteListButton.setVisible(false);
             saveDisplayButton.setVisible(true);
             clearFilterButton.setVisible(false);
+            sortDisplayButton.setVisible(false);
+            filterDisplayButton.setVisible(false);
         } else if (listType == ListTypes.COLLECTION) {
             frame.setTitle("AnimalJam: Collection");
             collectionListButton.setVisible(false);
