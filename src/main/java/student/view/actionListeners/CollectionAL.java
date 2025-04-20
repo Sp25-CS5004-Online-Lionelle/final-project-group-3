@@ -158,6 +158,12 @@ public final class CollectionAL {
             @Override
             public void actionPerformed(ActionEvent e){
 
+                // Check if the table is empty
+                if (table.getRowCount() == 0) {
+                    JOptionPane.showMessageDialog(null, "The favorite list is empty.");
+                    return;
+                }
+                
                 // Get the selected rows from the table
                 int getSelectedRows[] = table.getSelectedRows();
 
