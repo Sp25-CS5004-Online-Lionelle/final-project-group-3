@@ -129,13 +129,16 @@ public final class CollectionAL {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
-                int selectedRow = table.getSelectedRow();
+                int[] selectedRow = table.getSelectedRows();
 
-                if(selectedRow != -1){
-                    Object selectedName = table.getValueAt(selectedRow, 0);
-                    String objName = selectedName.toString();
-                    controller.addToFavList(objName);
+                if(selectedRow.length > 0){
+                    for (int row : selectedRow) {
+                        Object selectedName = table.getValueAt(row, 0);
+                        String objName = selectedName.toString();
+                        controller.addToFavList(objName);
+                    }
                     table.clearSelection();
+                    JOptionPane.showMessageDialog(null, "Selected animals added to the favorite list.");
                     return;
                 }
 
