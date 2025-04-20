@@ -25,7 +25,7 @@ public final class AnimalJamApp {
         IAnimalModel model = IAnimalModel.getInstance("data/sample.csv");
         IAnimalController controller = new AnimalJamController(model);
 
-        new AnimalJamGUI(model);
+        new AnimalJamGUI(controller);
         
         // view.start();
         

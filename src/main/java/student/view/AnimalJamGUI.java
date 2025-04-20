@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import student.controller.AnimalJamController;
+import student.controller.IAnimalController;
 import student.model.IAnimalModel;
 import student.model.IAnimalModel.AnimalRecord;
 import student.view.displays.AnimalJamCollectionDisplay;
@@ -11,20 +13,25 @@ import student.view.displays.DisplayUtils;
 
 public class AnimalJamGUI implements IView{
     
-    IAnimalModel model;
+    private IAnimalController controller;
 
-    public AnimalJamGUI(IAnimalModel model) {
+    public AnimalJamGUI(IAnimalController controller) {
         
-        this.model = model;
+        this.controller = controller;
 
-        List<AnimalRecord> records = new ArrayList<>(model.getRecords());
+        List<AnimalRecord> records = new ArrayList<>(controller.getCollection());
         String[][] data = DisplayUtils.recordsToTableData(records);
         for(String[] dat : data){
             System.out.println(dat);
         }
         String[] headings = {"Name", "Population", "Speed", "Average Weight", "Diet", "Location"};
         
-        AnimalJamCollectionDisplay collection = new AnimalJamCollectionDisplay(data, headings,"Collection", "Favorite List", model);
+        AnimalJamCollectionDisplay collection = new AnimalJamCollectionDisplay(
+            data,
+            headings,
+            "Collection", 
+            "Favorite List",
+            controller);
     }
 
     public void displayCollection(Collection<AnimalRecord> collection) {
@@ -58,7 +65,8 @@ public class AnimalJamGUI implements IView{
 
 
     public static void main(String[] args) {
-        new AnimalJamGUI(IAnimalModel.getInstance());
+        IAnimalController controller = new AnimalJamController(IAnimalModel.getInstance());
+        new AnimalJamGUI(controller);
     }
 
     
