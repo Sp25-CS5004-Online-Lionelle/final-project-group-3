@@ -69,6 +69,7 @@ public class TestAnimalJamModel {
     public void testWriteRecordsXML() {
         String filename = "data/sample.csv";
         String outFileName = "data/outsample.xml";
+        String badFileName = "output/outsample.xml";
 
         //load model with sample.csv file records
         model = IAnimalModel.getInstance(filename);
@@ -86,6 +87,14 @@ public class TestAnimalJamModel {
             e.printStackTrace();
         }
 
+        //negative case output stream not available
+        try {
+            output = new FileOutputStream(badFileName);
+            IAnimalModel.writeRecords(recordList, Formats.XML, output);
+        } catch (Exception e) {
+            assertEquals((FileNotFoundException.class), e.getClass());
+        }
+
         // load model with xml file that was output
         // model = IAnimalModel.getInstance(outFileName);
         // recordList = model.getRecords();
@@ -98,7 +107,8 @@ public class TestAnimalJamModel {
     @Test
     public void testWriteRecordsCSV() {
         String filename = "data/sample.csv";
-        String outFileName = "output/outsample.csv";
+        String outFileName = "data/outsample.csv";
+        String badFileName = "data/Outsample.csv";
 
         //load model with sample.csv file records
         model = IAnimalModel.getInstance(filename);
@@ -112,16 +122,18 @@ public class TestAnimalJamModel {
         try {
             output = new FileOutputStream(outFileName);
             IAnimalModel.writeRecords(recordList, Formats.CSV, output);
+
+            // reload model with csv file that was output
+            model = IAnimalModel.getInstance(outFileName);
+            recordList = model.getRecords();
+            singleRecord = model.getRecord("Aardvark");
+            assertEquals(259, recordList.size());
+            assertEquals("Aardvark", singleRecord.name());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 
-        // load model with xml file that was output
-        model = IAnimalModel.getInstance(outFileName);
-        recordList = model.getRecords();
-        singleRecord = model.getRecord("Aardvark");
-        assertEquals(259, recordList.size());
-        assertEquals("Aardvark", singleRecord.name());
+        
     }
 
             
