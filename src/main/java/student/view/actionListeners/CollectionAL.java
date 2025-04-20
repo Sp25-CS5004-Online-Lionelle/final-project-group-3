@@ -8,7 +8,7 @@ import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JTable;
 
-import student.model.IAnimalModel;
+import student.controller.IAnimalController;
 import student.model.IAnimalModel.AnimalRecord;
 import student.view.displays.AnimalJamCollectionDisplay;
 import student.view.displays.AnimalJamFilterDisplay;
@@ -52,21 +52,25 @@ public final class CollectionAL {
     } 
 
     // Action Listener for save Display button
-    public static ActionListener saveButtonListener(JFrame frame, IAnimalModel model) {
+    public static ActionListener saveButtonListener(JFrame frame, IAnimalController controller) {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
-                new AnimalJamSaveDisplay(frame, model);
+                new AnimalJamSaveDisplay(frame, controller);
             }
         };
     } 
 
     // Action Listener for favorite List button
-    public static ActionListener favoriteDisplayButtonListener(AnimalJamCollectionDisplay instance,String[] headings, IAnimalModel model) {
+    public static ActionListener favoriteDisplayButtonListener(
+        AnimalJamCollectionDisplay instance,
+        String[] headings,
+        IAnimalController controller
+    ) {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
-                List<AnimalRecord> favoriteList = new ArrayList<>(model.getFavList());
+                List<AnimalRecord> favoriteList = new ArrayList<>(controller.getFavList());
                 String[][] data = DisplayUtils.recordsToTableData(favoriteList);
 
                 instance.updateDisplay(
@@ -79,11 +83,15 @@ public final class CollectionAL {
     } 
 
     // Action Listener for collection List button
-    public static ActionListener collectionDisplayButtonListener(AnimalJamCollectionDisplay instance,String[] headings, IAnimalModel model) {
+    public static ActionListener collectionDisplayButtonListener(
+        AnimalJamCollectionDisplay instance,
+        String[] headings,
+        IAnimalController controller
+        ) {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
-                List<AnimalRecord> collectionList = new ArrayList<>(model.getRecords());
+                List<AnimalRecord> collectionList = new ArrayList<>(controller.getCollection());
                 String[][] data = DisplayUtils.recordsToTableData(collectionList);
 
                 instance.updateDisplay(
@@ -96,7 +104,7 @@ public final class CollectionAL {
     } 
     
     // Action Listener for the add to favorite List button
-    public static ActionListener addToFavoriteButtonListener(JTable table, IAnimalModel model) {
+    public static ActionListener addToFavoriteButtonListener(JTable table, IAnimalController controller) {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
@@ -105,10 +113,7 @@ public final class CollectionAL {
                 if(selectedRow != -1){
                     Object selectedName = table.getValueAt(selectedRow, 0);
                     String objName = selectedName.toString();
-                    AnimalRecord record = model.getRecord(objName);
-                    List<AnimalRecord> recordsToAdd = new ArrayList<>();
-                    recordsToAdd.add(record);
-                    model.addToFavList(objName, recordsToAdd.stream());
+                    controller.addToFavList(objName);
                 }
 
             }
@@ -116,7 +121,11 @@ public final class CollectionAL {
     } 
 
     // Action Listener for the remove from favorite List button
-    public static ActionListener removeFromFavoriteButtonListener(AnimalJamCollectionDisplay instance, JTable table, IAnimalModel model) {
+    public static ActionListener removeFromFavoriteButtonListener(
+        AnimalJamCollectionDisplay instance,
+        JTable table,
+        IAnimalController controller
+        ) {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
@@ -131,12 +140,12 @@ public final class CollectionAL {
                     Object selectedName = table.getValueAt(selectedRow, 0);
                     String objName = selectedName.toString();
                     
-                    model.removeFromFavList(objName);
+                    controller.removeFromFavList(objName);
                     
-                    // Get the favorite list from the model
-                    List<AnimalRecord> favoriteList = new ArrayList<>(model.getFavList());
+                    // Get the favorite list from the controller
+                    List<AnimalRecord> favoriteList = new ArrayList<>(controller.getFavList());
                     String[][] data = DisplayUtils.recordsToTableData(favoriteList);
-                    
+
                     System.out.println("Removed " + objName + " from favorite list.");
 
                     instance.updateDisplay(
