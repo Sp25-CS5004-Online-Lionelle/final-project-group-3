@@ -69,16 +69,16 @@ public class TestAnimalJamModel {
     public void testWriteRecordsXML() {
         String filename = "data/sample.csv";
         String outFileName = "data/outsample.xml";
-        String badFileName = "output/outsample.xml";
+        String badFileName = "data/Outsample.xml";
 
-        //load model with sample.csv file records
+        //load model with sample.csv file records.
         model = IAnimalModel.getInstance(filename);
         recordList = model.getRecords();
         singleRecord = model.getRecord("Aardvark");
         assertEquals(259, recordList.size());
         assertEquals("Aardvark", singleRecord.name());
 
-        //output the collection to xml file format
+        //output the collection to xml file format.
         OutputStream output;
         try {
             output = new FileOutputStream(outFileName);
@@ -87,7 +87,7 @@ public class TestAnimalJamModel {
             e.printStackTrace();
         }
 
-        //negative case output stream not available
+        //negative case output stream not available.
         try {
             output = new FileOutputStream(badFileName);
             IAnimalModel.writeRecords(recordList, Formats.XML, output);
@@ -95,12 +95,6 @@ public class TestAnimalJamModel {
             assertEquals((FileNotFoundException.class), e.getClass());
         }
 
-        // load model with xml file that was output
-        // model = IAnimalModel.getInstance(outFileName);
-        // recordList = model.getRecords();
-        // singleRecord = model.getRecord("Aardvark");
-        // assertEquals(259, recordList.size());
-        // assertEquals("Aardvark", singleRecord.name());
     }
 
         
@@ -117,7 +111,7 @@ public class TestAnimalJamModel {
         assertEquals(259, recordList.size());
         assertEquals("Aardvark", singleRecord.name());
 
-        //output the collection to xml file format
+        //output the collection to csv file format
         OutputStream output;
         try {
             output = new FileOutputStream(outFileName);
@@ -133,14 +127,22 @@ public class TestAnimalJamModel {
             e.printStackTrace();
         }
 
-        
+        //negative case output stream not available
+        try {
+            output = new FileOutputStream(badFileName);
+            IAnimalModel.writeRecords(recordList, Formats.CSV, output);
+        } catch (Exception e) {
+            assertEquals((FileNotFoundException.class), e.getClass());
+        }
+
     }
 
             
     @Test
     public void testWriteRecordsJSON() {
         String filename = "data/sample.csv";
-        String outFileName = "output/outsample.json";
+        String outFileName = "data/outsample.json";
+        String badFileName = "data/Outsample.json";
 
         //load model with sample.csv file records
         model = IAnimalModel.getInstance(filename);
@@ -158,11 +160,14 @@ public class TestAnimalJamModel {
             e.printStackTrace();
         }
 
-        // load model with xml file that was output
-        // model = IAnimalModel.getInstance(outFileName);
-        // recordList = model.getRecords();
-        // singleRecord = model.getRecord("Aardvark");
-        // assertEquals(259, recordList.size());
-        // assertEquals("Aardvark", singleRecord.name());
+        
+        //negative case output stream not available
+        try {
+            output = new FileOutputStream(badFileName);
+            IAnimalModel.writeRecords(recordList, Formats.JSON, output);
+        } catch (Exception e) {
+            assertEquals((FileNotFoundException.class), e.getClass());
+        }
+
     }
 }
