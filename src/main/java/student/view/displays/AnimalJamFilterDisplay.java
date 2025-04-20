@@ -27,7 +27,7 @@ public class AnimalJamFilterDisplay {
         // Create a JDIalog and set size and location
         JDialog formatDialog = new JDialog(frame,"Filter", true);
         formatDialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-        formatDialog.setSize(400,300);
+        formatDialog.setSize(400,370);
         formatDialog.setLocationRelativeTo(frame);
         formatDialog.setLayout(null);
         
@@ -49,14 +49,14 @@ public class AnimalJamFilterDisplay {
         filter.setBounds(40, 140, 300, 30);
 
         // Create label for the filter order
-        JLabel sortOrderLabel = new JLabel("Sort Order: ");
-        sortOrderLabel.setBounds(40, 170, 80, 25);
+        JLabel sortOrderLabel = new JLabel("Filter Order: ");
+        sortOrderLabel.setBounds(40, 190, 80, 25);
 
         // Create radio buttons for ascending and descending order
         JRadioButton ascending = new JRadioButton("Ascending", true);
-        ascending.setBounds(40, 180, 100, 25);
+        ascending.setBounds(40, 225, 100, 25);
         JRadioButton descending = new JRadioButton("Descending", false);
-        descending.setBounds(40, 200, 100, 25);
+        descending.setBounds(40, 260, 100, 25);
 
         // Group radio buttons
         ButtonGroup group = new ButtonGroup();
@@ -65,11 +65,11 @@ public class AnimalJamFilterDisplay {
 
         // Create buttons to apply and cancel filters
         JButton apply = new JButton("Apply");
-        apply.setBounds(150, 210, 100, 25);
+        apply.setBounds(150, 285, 100, 25);
         apply.addActionListener(FilterAL.applyFilterButtonListener(formatDialog, filter, filterColumn));
 
         JButton cancel = new JButton("Cancel");
-        cancel.setBounds(270, 210, 100, 25);
+        cancel.setBounds(270, 285, 100, 25);
         cancel.addActionListener(DisplayUtils.cancelButtonListener(formatDialog));
 
         // Add Components to JDialog
