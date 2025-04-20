@@ -61,11 +61,15 @@ public class AnimalJamModel implements IAnimalModel {
 
     @Override
     public void addToFavList(String str, Stream<AnimalRecord> filtered) {
-        //check if the string has the name of Animal to add to list
-        List<AnimalRecord> animalList = filtered.filter(anr -> anr.name().equalsIgnoreCase(str.trim())).collect(Collectors.toList());
+        List<AnimalRecord> animalList = null;
 
+        if(str != null && filtered != null) {
+            //check if the string has the name of Animal to add to list
+            animalList = filtered.filter(anr -> anr.name().equalsIgnoreCase(str.trim())).collect(Collectors.toList());
+        }
+        
         //add to fav list if found a matching record with name as key
-        if(animalList.size() != 0) {
+        if(animalList != null && animalList.size() != 0) {
             animalFavList.add(animalInfoLibrary.get(animalList.get(0).name()));
         }
     }
