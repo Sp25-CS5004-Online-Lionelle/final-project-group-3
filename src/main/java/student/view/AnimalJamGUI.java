@@ -18,6 +18,9 @@ public class AnimalJamGUI implements IView{
     public AnimalJamGUI(IAnimalController controller) {
         
         this.controller = controller;
+    }
+
+    private void displayCollection() {
 
         List<AnimalRecord> records = new ArrayList<>(controller.getCollection());
         String[][] data = DisplayUtils.recordsToTableData(records);
@@ -26,7 +29,7 @@ public class AnimalJamGUI implements IView{
         }
         String[] headings = {"Name", "Population", "Speed", "Average Weight", "Diet", "Location"};
         
-        AnimalJamCollectionDisplay collection = new AnimalJamCollectionDisplay(
+        AnimalJamCollectionDisplay collectionDisplay = new AnimalJamCollectionDisplay(
             data,
             headings,
             "Collection", 
@@ -34,33 +37,10 @@ public class AnimalJamGUI implements IView{
             controller);
     }
 
-    public void displayCollection(Collection<AnimalRecord> collection) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'displayCollection'");
-    }
-
     @Override
-    public void displayMessage(String Message, boolean isError) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'displayMessage'");
-    }
-
-    @Override
-    public void displayFilterPopup() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'displayFilterPopup'");
-    }
-
-    @Override
-    public void displaySortPopup() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'displaySortPopup'");
-    }
-
-    @Override
-    public void displaySavePopup() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'displaySavePopup'");
+    public void run() {
+        // Display the collection
+        displayCollection();
     }
 
 
