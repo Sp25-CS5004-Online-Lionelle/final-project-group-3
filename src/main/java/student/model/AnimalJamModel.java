@@ -80,7 +80,7 @@ public class AnimalJamModel implements IAnimalModel {
 
         //add to fav list if found a matching record with name as key
         if(animalList.size() != 0) {
-            animalFavList.add(animalInfoLibrary.get(animalList.get(0).name()));
+            animalFavList.remove(animalInfoLibrary.get(animalList.get(0).name()));
         }
     }
 
