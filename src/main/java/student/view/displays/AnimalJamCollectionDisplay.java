@@ -45,6 +45,7 @@ public class AnimalJamCollectionDisplay {
 
         JButton searchButton = new JButton("Search");
         searchButton.setBounds(850,30,80,25);
+        searchButton.addActionListener(CollectionAL.searchButtonListener(searchText, controller, this));
 
         // Create Button to switch to Favorite List
         favoriteListButton = new JButton("Favorite List");
