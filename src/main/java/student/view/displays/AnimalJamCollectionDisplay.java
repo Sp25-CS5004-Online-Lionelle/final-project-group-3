@@ -12,6 +12,8 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 
+import student.controller.AnimalJamController;
+import student.controller.IAnimalController;
 import student.model.IAnimalModel;
 import student.view.actionListeners.CollectionAL;
 
@@ -26,7 +28,7 @@ public class AnimalJamCollectionDisplay {
         String[] heading,
         String collectionType,
         String switchList,
-        IAnimalModel model
+        IAnimalController controller
     ) {
         // Create JFrame for the collection display
         frame = new JFrame("AnimalJam: " + collectionType);
@@ -46,15 +48,14 @@ public class AnimalJamCollectionDisplay {
         // Create Button to switch to Favorite List
         favoriteListButton = new JButton("Favorite List");
         favoriteListButton.setBounds(40, 500, 200, 28);
-        favoriteListButton.addActionListener(CollectionAL.favoriteDisplayButtonListener(this, heading, model));
+        favoriteListButton.addActionListener(CollectionAL.favoriteDisplayButtonListener(this, heading, controller));
 
         // Create Button to switch to Collection List
         collectionListButton = new JButton("Collection List");
         collectionListButton.setBounds(40, 500, 200, 28);
         collectionListButton.setVisible(false);
-        collectionListButton.addActionListener(CollectionAL.collectionDisplayButtonListener(this, heading, model));
+        collectionListButton.addActionListener(CollectionAL.collectionDisplayButtonListener(this, heading, controller));
 
-        
         // Create Sort and Filter Button to open sort and filter displays
         JButton sortDisplayButton = new JButton("Sort");
         sortDisplayButton.setBounds(600,500,150,28);
@@ -76,19 +77,19 @@ public class AnimalJamCollectionDisplay {
         
         addToFavoriteListButton = new JButton("Add to Favorite List");
         addToFavoriteListButton.setBounds(40,30,200, 25);
-        addToFavoriteListButton.addActionListener(CollectionAL.addToFavoriteButtonListener(colTable, model));
+        addToFavoriteListButton.addActionListener(CollectionAL.addToFavoriteButtonListener(colTable, controller));
         
         // Create Button to Remove from Favorite List
         removeFromFavoriteListButton = new JButton("Remove from Favorite List");
         removeFromFavoriteListButton.setBounds(40,30,200, 25);
         removeFromFavoriteListButton.setVisible(false);
-        removeFromFavoriteListButton.addActionListener(CollectionAL.removeFromFavoriteButtonListener(this, colTable, model));
+        removeFromFavoriteListButton.addActionListener(CollectionAL.removeFromFavoriteButtonListener(this, colTable, controller));
 
         // Create Button to Save
         saveDisplayButton = new JButton("Save List");
         saveDisplayButton.setBounds(260, 30, 200, 25);
         saveDisplayButton.setVisible(false);
-        saveDisplayButton.addActionListener(CollectionAL.saveButtonListener(frame, model));
+        saveDisplayButton.addActionListener(CollectionAL.saveButtonListener(frame, controller));
 
         // Center-align all columns
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
@@ -152,12 +153,18 @@ public class AnimalJamCollectionDisplay {
         
     }
 
-    // public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    //     IAnimalModel model = IAnimalModel.getInstance();
-    //     DisplayUtils.CSVResult result = DisplayUtils.ParseCSV();
+        IAnimalModel model = IAnimalModel.getInstance();
+        String[][] data = {
+            {"Animal1", "Type1", "Rarity1"},
+            {"Animal2", "Type2", "Rarity2"},
+            {"Animal3", "Type3", "Rarity3"}
+        };
+        String[] headings = {"Name", "Type", "Rarity"};
+        IAnimalController controller = new AnimalJamController(model);
 
-    //     AnimalJamCollectionDisplay display = new AnimalJamCollectionDisplay(result.data, result.headings
-    //                                  ,"Collection List","Favorite List", model);
-    // }
+        AnimalJamCollectionDisplay display = new AnimalJamCollectionDisplay(data, headings
+                                     ,"Collection List","Favorite List", controller);
+    }
 }

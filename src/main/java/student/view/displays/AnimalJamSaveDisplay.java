@@ -11,12 +11,14 @@ import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
+import student.controller.IAnimalController;
 import student.model.IAnimalModel;
+import student.controller.AnimalJamController;
 import student.view.actionListeners.SaveAL;
 
 public class AnimalJamSaveDisplay {
 
-    public AnimalJamSaveDisplay(JFrame frame, IAnimalModel model) {
+    public AnimalJamSaveDisplay(JFrame frame, IAnimalController controller) {
 
         // Create and style save Dialog
         JDialog saveDialog = new JDialog(frame ,"Save", true);
@@ -67,7 +69,7 @@ public class AnimalJamSaveDisplay {
         // Create Button to save
         JButton save = new JButton("Save");
         save.setBounds(150, 210, 100, 25);
-        save.addActionListener(SaveAL.saveButtonListener(frame, saveDialog, fileName, radioButtons, model));
+        save.addActionListener(SaveAL.saveButtonListener(frame, saveDialog, fileName, radioButtons, controller));
 
         // Create Button to cancel
         JButton cancel = new JButton("Cancel");
@@ -90,6 +92,7 @@ public class AnimalJamSaveDisplay {
     public static void main(String[] args) {
         
         IAnimalModel model = IAnimalModel.getInstance();
+        IAnimalController controller = new AnimalJamController(model);
         JFrame frame = new JFrame("AnimalJam");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -98,7 +101,7 @@ public class AnimalJamSaveDisplay {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
-        AnimalJamSaveDisplay save = new AnimalJamSaveDisplay(frame, model);
+        new AnimalJamSaveDisplay(frame, controller);
 
     }
 }
