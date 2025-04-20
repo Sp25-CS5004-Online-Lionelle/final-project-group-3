@@ -72,4 +72,23 @@ public class TestAnimalJamController {
         controller.addToFavList(ar1.name());
         assertEquals(2, favList.size());
     }
+
+    
+    @Test
+    public void testRemoveToFavList() {
+        List<AnimalRecord> animalList;
+        Collection<AnimalRecord> favList;
+        recordList = controller.getCollection();
+        animalList = recordList.stream().toList();
+        AnimalRecord ar1 = animalList.get(0);
+        AnimalRecord ar2 = animalList.get(1);
+        controller.addToFavList(ar1.name());
+        controller.addToFavList(ar2.name());
+        favList = controller.getFavList();
+        assertEquals(2, favList.size());
+
+        //remove record
+        controller.removeFromFavList(ar1.name());
+        assertEquals(1, favList.size());
+    }
 }
