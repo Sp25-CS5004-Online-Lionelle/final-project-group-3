@@ -135,7 +135,11 @@ public final class CollectionAL {
                     Object selectedName = table.getValueAt(selectedRow, 0);
                     String objName = selectedName.toString();
                     controller.addToFavList(objName);
+                    table.clearSelection();
+                    return;
                 }
+
+                JOptionPane.showMessageDialog(null, "Please select an animal to add to the favorite list.");
 
             }
         };
