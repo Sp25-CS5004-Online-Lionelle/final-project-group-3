@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JTable;
 
 import student.controller.IAnimalController;
+import student.controller.ListTypes;
 import student.model.IAnimalModel.AnimalRecord;
 import student.view.displays.AnimalJamCollectionDisplay;
 import student.view.displays.AnimalJamFilterDisplay;
@@ -31,12 +32,14 @@ public final class CollectionAL {
     // Action Listener for filter Display button
     public static ActionListener filterDisplayButtonListener(
         JFrame frame, 
-        String[] heading
+        String[] heading,
+        IAnimalController controller,
+        AnimalJamCollectionDisplay instance
     ) {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
-                new AnimalJamFilterDisplay(frame, heading);
+                new AnimalJamFilterDisplay(instance, frame, heading, controller);
             }
         };
     } 
@@ -75,8 +78,7 @@ public final class CollectionAL {
 
                 instance.updateDisplay(
                     data,
-                    "Favorite List",
-                    true
+                    ListTypes.FAVOURITE
                 );
             }
         };
@@ -96,8 +98,7 @@ public final class CollectionAL {
 
                 instance.updateDisplay(
                     data,
-                    "Collection List",
-                    false
+                    ListTypes.COLLECTION
                 );
             }
         };
@@ -150,9 +151,8 @@ public final class CollectionAL {
 
                     instance.updateDisplay(
                     data,
-                    "Favorite List",
-                    true
-                );
+                    ListTypes.FAVOURITE
+                    );
                 }
 
 
