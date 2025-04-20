@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.swing.SortOrder;
@@ -22,10 +23,14 @@ public class TestAnimalJamModel {
     Collection<AnimalRecord> recordList;
     AnimalRecord singleRecord;
 
-    @Test
-    public void testGetInstanceCSV() {
+    @BeforeAll
+    public static void setup() {
         String filename = "data/sample.csv";
-        model = IAnimalModel.getInstance(filename);
+        model = IAnimalModel.getInstance(filename);    
+    }
+
+    @Test
+    public void testGetInstanceCSV() { 
         recordList = model.getRecords();
         singleRecord = model.getRecord("Aardvark");
         System.out.println("Test Get Instance CSV and recordList size is: " + recordList.size());
@@ -36,8 +41,6 @@ public class TestAnimalJamModel {
     
     @Test
     public void testGetRecords() {
-        String filename = "data/sample.csv";
-        model = IAnimalModel.getInstance(filename);
         recordList = model.getRecords();
         assertEquals(259, recordList.size());
     }
@@ -45,8 +48,6 @@ public class TestAnimalJamModel {
     
     @Test
     public void testGetRecord() {
-        String filename = "data/sample.csv";
-        model = IAnimalModel.getInstance(filename);
 
         try {
             singleRecord = model.getRecord("Aardvark");
@@ -67,12 +68,9 @@ public class TestAnimalJamModel {
     
     @Test
     public void testWriteRecordsXML() {
-        String filename = "data/sample.csv";
         String outFileName = "data/outsample.xml";
         String badFileName = "data/Outsample.xml";
 
-        //load model with sample.csv file records.
-        model = IAnimalModel.getInstance(filename);
         recordList = model.getRecords();
         singleRecord = model.getRecord("Aardvark");
         assertEquals(259, recordList.size());
@@ -100,12 +98,9 @@ public class TestAnimalJamModel {
         
     @Test
     public void testWriteRecordsCSV() {
-        String filename = "data/sample.csv";
         String outFileName = "data/outsample.csv";
         String badFileName = "data/Outsample.csv";
 
-        //load model with sample.csv file records
-        model = IAnimalModel.getInstance(filename);
         recordList = model.getRecords();
         singleRecord = model.getRecord("Aardvark");
         assertEquals(259, recordList.size());
@@ -140,12 +135,9 @@ public class TestAnimalJamModel {
             
     @Test
     public void testWriteRecordsJSON() {
-        String filename = "data/sample.csv";
         String outFileName = "data/outsample.json";
         String badFileName = "data/Outsample.json";
 
-        //load model with sample.csv file records
-        model = IAnimalModel.getInstance(filename);
         recordList = model.getRecords();
         singleRecord = model.getRecord("Aardvark");
         assertEquals(259, recordList.size());
@@ -170,4 +162,48 @@ public class TestAnimalJamModel {
         }
 
     }
+
+            
+    @Test
+    public void testaddToFavList() {
+        Collection<AnimalRecord> favList;
+        recordList = model.getRecords();
+        AnimalRecord ar1 = model.getRecord("Aardvark");
+        AnimalRecord ar2 = model.getRecord("Cat");
+        AnimalRecord ar3 = model.getRecord("Dog");
+        AnimalRecord ar4 = model.getRecord("Seal");
+
+        //check happy paths
+        model.addToFavList(ar1.name(), recordList.stream());
+        favList = model.getFavList();
+        assertEquals(1, favList.size());
+
+        model.addToFavList(ar2.name(), recordList.stream());
+        model.addToFavList(ar3.name(), recordList.stream());
+        favList = model.getFavList();
+        assertEquals(3, favList.size());
+        
+        //negative path adding the same record again
+        model.addToFavList(ar2.name(), recordList.stream());
+        model.addToFavList(ar3.name(), recordList.stream());
+        favList = model.getFavList();
+        assertEquals(3, favList.size());
+
+        //negative path adding with null name
+        model.addToFavList(null, recordList.stream());
+        favList = model.getFavList();
+        assertEquals(3, favList.size());
+
+        //negative path adding with null filtered list
+        model.addToFavList(ar4.name(), null);
+        favList = model.getFavList();
+        assertEquals(3, favList.size());
+
+        //negative path adding with null filtered list and name string
+        model.addToFavList(null, null);
+        favList = model.getFavList();
+        assertEquals(3, favList.size());
+
+    }
+
 }
