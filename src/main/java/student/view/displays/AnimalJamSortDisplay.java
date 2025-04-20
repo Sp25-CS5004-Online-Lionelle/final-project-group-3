@@ -44,6 +44,7 @@ public class AnimalJamSortDisplay {
         apply.setBounds(150, 210, 100, 25);
         JButton cancel = new JButton("Cancel");
         cancel.setBounds(270, 210, 100, 25);
+        cancel.addActionListener(DisplayUtils.cancelButtonListener(formatDialog));
 
         // Add Components to JDialog
         formatDialog.add(filterOnLabel);

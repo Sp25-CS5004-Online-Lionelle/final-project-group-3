@@ -1,12 +1,15 @@
 package student.view.displays;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+// import java.io.BufferedReader;
+// import java.io.FileReader;
+// import java.io.IOException;
+// import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
+// import java.util.List;
 
+import javax.swing.JDialog;
 import javax.swing.JRadioButton;
 
 import student.model.IAnimalModel.AnimalRecord;
@@ -78,6 +81,16 @@ public final class DisplayUtils {
         }
 
         return data;
+    }
+
+    public static ActionListener cancelButtonListener(JDialog dialog){
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                System.out.println("Canceling Operation");
+                dialog.dispose();
+            }
+        };
     }
 
     // public static void main(String[] args) {

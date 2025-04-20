@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.awt.event.ActionEvent;
 
+import student.controller.IAnimalController;
 import student.model.IAnimalModel;
 import student.model.IAnimalModel.AnimalRecord;
 import student.model.formatters.Formats;
@@ -25,7 +26,7 @@ public class SaveAL {
         JDialog dialog,
         JTextField fileName,
         List<JRadioButton> buttons,
-        IAnimalModel model
+        IAnimalController controller
     ) {
         return new ActionListener() {
             @Override
@@ -58,7 +59,7 @@ public class SaveAL {
                 // Replaced by the controller //
 
                 // Get the favorite List from the controller
-                List<AnimalRecord> favoriteList = new ArrayList<>(model.getFavList());
+                List<AnimalRecord> favoriteList = new ArrayList<>(controller.getFavList());
 
                 // Check if the file name is empty
                 while(fileNameText == null || fileNameText.trim().isEmpty()) {
@@ -75,7 +76,7 @@ public class SaveAL {
 
                 // Write the data to the file
                 try {
-                    IAnimalModel.writeRecords(favoriteList, format, new FileOutputStream(new File(fileNameText)));
+                    IAnimalModel.writeRecords(favoriteList, format, new FileOutputStream(new File(fileNameText+"." + exportType)));
                 } catch (Exception ex) {
                     System.out.println("Error saving file: " + ex.getMessage());
                 }
@@ -91,13 +92,4 @@ public class SaveAL {
         };
     } 
 
-    public static ActionListener cancelButtonListener(JDialog dialog){
-        return new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e){
-                System.out.println("Canceling save dialog");
-                dialog.dispose();
-            }
-        };
-    }
 }

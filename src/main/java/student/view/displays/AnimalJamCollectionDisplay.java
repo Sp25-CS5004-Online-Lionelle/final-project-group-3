@@ -12,6 +12,9 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 
+import student.controller.AnimalJamController;
+import student.controller.IAnimalController;
+import student.controller.ListTypes;
 import student.model.IAnimalModel;
 import student.view.actionListeners.CollectionAL;
 
@@ -20,13 +23,13 @@ public class AnimalJamCollectionDisplay {
     private DefaultTableModel tableModel;
     private JFrame frame;
     private JButton favoriteListButton, collectionListButton, removeFromFavoriteListButton, addToFavoriteListButton;
-    private JButton saveDisplayButton;
+    private JButton saveDisplayButton, clearFilterButton;
 
     public AnimalJamCollectionDisplay(String[][] data ,
         String[] heading,
         String collectionType,
         String switchList,
-        IAnimalModel model
+        IAnimalController controller
     ) {
         // Create JFrame for the collection display
         frame = new JFrame("AnimalJam: " + collectionType);
@@ -42,19 +45,19 @@ public class AnimalJamCollectionDisplay {
 
         JButton searchButton = new JButton("Search");
         searchButton.setBounds(850,30,80,25);
+        searchButton.addActionListener(CollectionAL.searchButtonListener(searchText, controller, this));
 
         // Create Button to switch to Favorite List
         favoriteListButton = new JButton("Favorite List");
         favoriteListButton.setBounds(40, 500, 200, 28);
-        favoriteListButton.addActionListener(CollectionAL.favoriteDisplayButtonListener(this, heading, model));
+        favoriteListButton.addActionListener(CollectionAL.favoriteDisplayButtonListener(this, heading, controller));
 
         // Create Button to switch to Collection List
         collectionListButton = new JButton("Collection List");
         collectionListButton.setBounds(40, 500, 200, 28);
         collectionListButton.setVisible(false);
-        collectionListButton.addActionListener(CollectionAL.collectionDisplayButtonListener(this, heading, model));
+        collectionListButton.addActionListener(CollectionAL.collectionDisplayButtonListener(this, heading, controller));
 
-        
         // Create Sort and Filter Button to open sort and filter displays
         JButton sortDisplayButton = new JButton("Sort");
         sortDisplayButton.setBounds(600,500,150,28);
@@ -62,7 +65,7 @@ public class AnimalJamCollectionDisplay {
 
         JButton filterDisplayButton = new JButton("Filter");
         filterDisplayButton.setBounds(780,500,150,28);
-        filterDisplayButton.addActionListener(CollectionAL.filterDisplayButtonListener(frame, heading));
+        filterDisplayButton.addActionListener(CollectionAL.filterDisplayButtonListener(frame, heading, controller, this));
         // Table model to add extra column
         tableModel = new DefaultTableModel(data, heading) {
             @Override
@@ -76,18 +79,25 @@ public class AnimalJamCollectionDisplay {
         
         addToFavoriteListButton = new JButton("Add to Favorite List");
         addToFavoriteListButton.setBounds(40,30,200, 25);
-        addToFavoriteListButton.addActionListener(CollectionAL.addToFavoriteButtonListener(colTable, model));
+        addToFavoriteListButton.addActionListener(CollectionAL.addToFavoriteButtonListener(colTable, controller));
         
         // Create Button to Remove from Favorite List
         removeFromFavoriteListButton = new JButton("Remove from Favorite List");
         removeFromFavoriteListButton.setBounds(40,30,200, 25);
         removeFromFavoriteListButton.setVisible(false);
+        removeFromFavoriteListButton.addActionListener(CollectionAL.removeFromFavoriteButtonListener(this, colTable, controller));
 
         // Create Button to Save
         saveDisplayButton = new JButton("Save List");
         saveDisplayButton.setBounds(260, 30, 200, 25);
         saveDisplayButton.setVisible(false);
-        saveDisplayButton.addActionListener(CollectionAL.saveButtonListener(frame, model));
+        saveDisplayButton.addActionListener(CollectionAL.saveButtonListener(frame, controller));
+
+        // Create Button to Clear Search/Filter
+        clearFilterButton = new JButton("Clear Search/Filter");
+        clearFilterButton.setBounds(260, 30, 200, 25);
+        clearFilterButton.setVisible(false);
+        clearFilterButton.addActionListener(CollectionAL.clearFilterButtonListener(this, heading, searchText, controller));
 
         // Center-align all columns
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
@@ -117,10 +127,11 @@ public class AnimalJamCollectionDisplay {
         frame.add(collectionListButton);
         frame.add(sortDisplayButton);
         frame.add(filterDisplayButton);
+        frame.add(clearFilterButton);
         frame.setVisible(true);
     }
 
-    public void updateDisplay(String[][] data, String collectionType, boolean isFavoriteList) {
+    public void updateDisplay(String[][] data, ListTypes listType) {
         // Get the columns from the table model
         int columnCount = tableModel.getColumnCount();
         String[] columnNames = new String[columnCount];
@@ -133,30 +144,46 @@ public class AnimalJamCollectionDisplay {
         tableModel.fireTableDataChanged();
 
         // Update the frame title
-        if (isFavoriteList) {
+        if (listType == ListTypes.FAVOURITE) {
             frame.setTitle("AnimalJam: Favorite List");
             collectionListButton.setVisible(true);
             favoriteListButton.setVisible(false);
             removeFromFavoriteListButton.setVisible(true);
             addToFavoriteListButton.setVisible(false);
             saveDisplayButton.setVisible(true);
-        } else {
-            frame.setTitle("AnimalJam: " + collectionType);
+            clearFilterButton.setVisible(false);
+        } else if (listType == ListTypes.COLLECTION) {
+            frame.setTitle("AnimalJam: Collection");
             collectionListButton.setVisible(false);
             favoriteListButton.setVisible(true);
             removeFromFavoriteListButton.setVisible(false);
             addToFavoriteListButton.setVisible(true);
             saveDisplayButton.setVisible(false);
+            clearFilterButton.setVisible(false);
+        } else {
+            frame.setTitle("AnimalJam: Filtered List");
+            collectionListButton.setVisible(false);
+            favoriteListButton.setVisible(true);
+            removeFromFavoriteListButton.setVisible(false);
+            addToFavoriteListButton.setVisible(true);
+            saveDisplayButton.setVisible(false);
+            clearFilterButton.setVisible(true);
         }
         
     }
 
-    // public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    //     IAnimalModel model = IAnimalModel.getInstance();
-    //     DisplayUtils.CSVResult result = DisplayUtils.ParseCSV();
+        IAnimalModel model = IAnimalModel.getInstance();
+        String[][] data = {
+            {"Animal1", "Type1", "Rarity1"},
+            {"Animal2", "Type2", "Rarity2"},
+            {"Animal3", "Type3", "Rarity3"}
+        };
+        String[] headings = {"Name", "Type", "Rarity"};
+        IAnimalController controller = new AnimalJamController(model);
 
-    //     AnimalJamCollectionDisplay display = new AnimalJamCollectionDisplay(result.data, result.headings
-    //                                  ,"Collection List","Favorite List", model);
-    // }
+        AnimalJamCollectionDisplay display = new AnimalJamCollectionDisplay(data, headings
+                                     ,"Collection List","Favorite List", controller);
+    }
 }
