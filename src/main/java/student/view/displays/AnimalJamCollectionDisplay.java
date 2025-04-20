@@ -14,6 +14,7 @@ import javax.swing.table.JTableHeader;
 
 import student.controller.AnimalJamController;
 import student.controller.IAnimalController;
+import student.controller.ListTypes;
 import student.model.IAnimalModel;
 import student.view.actionListeners.CollectionAL;
 
@@ -122,7 +123,7 @@ public class AnimalJamCollectionDisplay {
         frame.setVisible(true);
     }
 
-    public void updateDisplay(String[][] data, String collectionType, boolean isFavoriteList) {
+    public void updateDisplay(String[][] data, ListTypes listType) {
         // Get the columns from the table model
         int columnCount = tableModel.getColumnCount();
         String[] columnNames = new String[columnCount];
@@ -135,20 +136,22 @@ public class AnimalJamCollectionDisplay {
         tableModel.fireTableDataChanged();
 
         // Update the frame title
-        if (isFavoriteList) {
+        if (listType == ListTypes.FAVOURITE) {
             frame.setTitle("AnimalJam: Favorite List");
             collectionListButton.setVisible(true);
             favoriteListButton.setVisible(false);
             removeFromFavoriteListButton.setVisible(true);
             addToFavoriteListButton.setVisible(false);
             saveDisplayButton.setVisible(true);
-        } else {
-            frame.setTitle("AnimalJam: " + collectionType);
+        } else if (listType == ListTypes.COLLECTION) {
+            frame.setTitle("AnimalJam: Collection");
             collectionListButton.setVisible(false);
             favoriteListButton.setVisible(true);
             removeFromFavoriteListButton.setVisible(false);
             addToFavoriteListButton.setVisible(true);
             saveDisplayButton.setVisible(false);
+        } else {
+            frame.setTitle("AnimalJam: Filtered List");
         }
         
     }
