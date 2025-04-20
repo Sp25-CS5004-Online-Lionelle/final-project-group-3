@@ -165,6 +165,24 @@ public class TestAnimalJamModel {
 
             
     @Test
+    public void testGetFavList() {
+        Collection<AnimalRecord> favList;
+        recordList = model.getRecords();
+        AnimalRecord ar1 = model.getRecord("Aardvark");
+        AnimalRecord ar2 = model.getRecord("Cat");
+        AnimalRecord ar3 = model.getRecord("Dog");
+        AnimalRecord ar4 = model.getRecord("Seal");
+
+        //check happy paths
+        model.addToFavList(ar1.name(), recordList.stream());
+        model.addToFavList(ar2.name(), recordList.stream());
+        model.addToFavList(ar3.name(), recordList.stream());
+        favList = model.getFavList();
+        assertEquals(3, favList.size());
+    }
+    
+    
+    @Test
     public void testaddToFavList() {
         Collection<AnimalRecord> favList;
         recordList = model.getRecords();
