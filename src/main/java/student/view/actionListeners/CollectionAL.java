@@ -158,30 +158,35 @@ public final class CollectionAL {
             @Override
             public void actionPerformed(ActionEvent e){
 
-                // Get the selected row from the table
-                int selectedRow = table.getSelectedRow();
+                // Get the selected rows from the table
+                int getSelectedRows[] = table.getSelectedRows();
 
                 
-                // Check if a row is selected, remove the selected item from the favorite list
+                // Check if any rows are selected, remove the selected items from the favorite list
                 // and update the display
-                if(selectedRow != -1){
-                    Object selectedName = table.getValueAt(selectedRow, 0);
-                    String objName = selectedName.toString();
-                    
-                    controller.removeFromFavList(objName);
+                if(getSelectedRows.length > 0){
+                    for (int row : getSelectedRows) {
+                        Object selectedName = table.getValueAt(row, 0);
+                        String objName = selectedName.toString();
+                        
+                        controller.removeFromFavList(objName);
+                        System.out.println("Removed " + objName + " from favorite list.");
+                    }
                     
                     // Get the favorite list from the controller
                     List<AnimalRecord> favoriteList = new ArrayList<>(controller.getFavList());
                     String[][] data = DisplayUtils.recordsToTableData(favoriteList);
 
-                    System.out.println("Removed " + objName + " from favorite list.");
-
                     instance.updateDisplay(
                     data,
                     ListTypes.FAVOURITE
                     );
+                    return;
                 }
 
+                // If no row is selected, show a message dialog
+                JOptionPane.showMessageDialog(null, "Please select an animal to remove from the favorite list.");
+                return;
 
             }
         };
