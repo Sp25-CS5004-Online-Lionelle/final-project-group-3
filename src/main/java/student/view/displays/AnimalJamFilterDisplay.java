@@ -1,10 +1,12 @@
 package student.view.displays;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import student.controller.IAnimalController;
@@ -41,10 +43,21 @@ public class AnimalJamFilterDisplay {
         JLabel filterLabel = new JLabel("Filter: ");
         filterLabel.setBounds(40, 110, 80, 25);
 
-        // Create JTextBox to imput label
+        // Create JTextBox to input filter
         JTextField filter = new JTextField();
         filter.setText("Enter Filter Here");
         filter.setBounds(40, 140, 300, 30);
+
+        // Create radio buttons for ascending and descending order
+        JRadioButton ascending = new JRadioButton("Ascending", true);
+        ascending.setBounds(40, 180, 100, 25);
+        JRadioButton descending = new JRadioButton("Descending", false);
+        descending.setBounds(40, 200, 100, 25);
+
+        // Group radio buttons
+        ButtonGroup group = new ButtonGroup();
+        group.add(ascending);
+        group.add(descending);
 
         // Create buttons to apply and cancel filters
         JButton apply = new JButton("Apply");
@@ -60,6 +73,8 @@ public class AnimalJamFilterDisplay {
         formatDialog.add(filterColumn);
         formatDialog.add(filterLabel);
         formatDialog.add(filter);
+        formatDialog.add(ascending);
+        formatDialog.add(descending);
         formatDialog.add(apply);
         formatDialog.add(cancel);
 
