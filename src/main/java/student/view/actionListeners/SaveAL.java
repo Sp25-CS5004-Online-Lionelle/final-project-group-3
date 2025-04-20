@@ -76,7 +76,7 @@ public class SaveAL {
 
                 // Write the data to the file
                 try {
-                    IAnimalModel.writeRecords(favoriteList, format, new FileOutputStream(new File(fileNameText)));
+                    IAnimalModel.writeRecords(favoriteList, format, new FileOutputStream(new File(fileNameText+"." + exportType)));
                 } catch (Exception ex) {
                     System.out.println("Error saving file: " + ex.getMessage());
                 }
