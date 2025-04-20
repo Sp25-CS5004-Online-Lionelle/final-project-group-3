@@ -63,7 +63,7 @@ public class AnimalJamCollectionDisplay {
         sortDisplayButton.setBounds(600,500,150,28);
         sortDisplayButton.addActionListener(CollectionAL.sortDisplayButtonListener(frame, heading));
 
-        filterDisplayButton = new JButton("Filter");
+        filterDisplayButton = new JButton("Filter/Sort");
         filterDisplayButton.setBounds(780,500,150,28);
         filterDisplayButton.addActionListener(CollectionAL.filterDisplayButtonListener(frame, heading, controller, this));
         // Table model to add extra column
@@ -125,7 +125,7 @@ public class AnimalJamCollectionDisplay {
         frame.add(searchButton);
         frame.add(favoriteListButton);
         frame.add(collectionListButton);
-        frame.add(sortDisplayButton);
+        //frame.add(sortDisplayButton);
         frame.add(filterDisplayButton);
         frame.add(clearFilterButton);
         frame.setVisible(true);
@@ -152,7 +152,7 @@ public class AnimalJamCollectionDisplay {
             addToFavoriteListButton.setVisible(false);
             saveDisplayButton.setVisible(true);
             clearFilterButton.setVisible(false);
-            sortDisplayButton.setVisible(false);
+            //sortDisplayButton.setVisible(false);
             filterDisplayButton.setVisible(false);
         } else if (listType == ListTypes.COLLECTION) {
             frame.setTitle("AnimalJam: Collection");
@@ -162,7 +162,7 @@ public class AnimalJamCollectionDisplay {
             addToFavoriteListButton.setVisible(true);
             saveDisplayButton.setVisible(false);
             clearFilterButton.setVisible(false);
-            sortDisplayButton.setVisible(true);
+            //sortDisplayButton.setVisible(true);
             filterDisplayButton.setVisible(true);
         } else {
             frame.setTitle("AnimalJam: Filtered List");
@@ -172,7 +172,7 @@ public class AnimalJamCollectionDisplay {
             addToFavoriteListButton.setVisible(true);
             saveDisplayButton.setVisible(false);
             clearFilterButton.setVisible(true);
-            sortDisplayButton.setVisible(false);
+            //sortDisplayButton.setVisible(false);
             filterDisplayButton.setVisible(false);
         }
         
