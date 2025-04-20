@@ -75,7 +75,7 @@ public class AnimalJamController implements IAnimalController {
     @Override
     public Collection<AnimalRecord> filter(String str, Columns sortOn, boolean ascending) {
         //check if filtered list is empty than filter on Collection
-        if (filteredList.size() == 0) {
+        if ( (filteredList == null) || (filteredList.size() == 0) ) {
             filteredList = getCollection();
         }
         //Split multiple filters that are comman seperated
