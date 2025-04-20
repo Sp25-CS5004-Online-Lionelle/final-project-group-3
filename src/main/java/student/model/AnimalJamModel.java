@@ -78,12 +78,16 @@ public class AnimalJamModel implements IAnimalModel {
     @Override
     public void removeFromFavList(String str) {
 
+        List<AnimalRecord> animalList = null;
         Collection<AnimalRecord> animalKeys = animalInfoLibrary.values();
-        //check if the string has the name of Animal to add to list
-        List<AnimalRecord> animalList = animalKeys.stream().filter(anr -> anr.name().equalsIgnoreCase(str.trim())).collect(Collectors.toList());
+        
+        if(str != null) {
+            //check if the string has the name of Animal to add to list
+            animalList = animalKeys.stream().filter(anr -> anr.name().equalsIgnoreCase(str.trim())).collect(Collectors.toList());
+        }
 
         //add to fav list if found a matching record with name as key
-        if(animalList.size() != 0) {
+        if(animalList != null && animalList.size() != 0) {
             animalFavList.remove(animalInfoLibrary.get(animalList.get(0).name()));
         }
     }
