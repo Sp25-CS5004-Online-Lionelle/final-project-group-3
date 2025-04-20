@@ -162,6 +162,8 @@ public class AnimalJamCollectionDisplay {
             addToFavoriteListButton.setVisible(true);
             saveDisplayButton.setVisible(false);
             clearFilterButton.setVisible(false);
+            sortDisplayButton.setVisible(true);
+            filterDisplayButton.setVisible(true);
         } else {
             frame.setTitle("AnimalJam: Filtered List");
             collectionListButton.setVisible(false);
@@ -170,6 +172,8 @@ public class AnimalJamCollectionDisplay {
             addToFavoriteListButton.setVisible(true);
             saveDisplayButton.setVisible(false);
             clearFilterButton.setVisible(true);
+            sortDisplayButton.setVisible(false);
+            filterDisplayButton.setVisible(false);
         }
         
     }
