@@ -48,66 +48,67 @@ public class AnimalJamGUI implements IView{
     }
 
     private void displayWelcome() {
-            // Create frame
-            JFrame frame = new JFrame("Welcome to Animal Jam!");
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setSize(600, 500);
-            frame.setLocationRelativeTo(null); // Center on screen
 
-            // Create main panel
-            JPanel mainPanel = new JPanel();
-            mainPanel.setLayout(null);
+        // Create frame
+        JFrame frame = new JFrame("Welcome to Animal Jam!");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(600, 500);
+        frame.setLocationRelativeTo(null); // Center on screen
 
-            // Add image
-            ImageIcon image = new ImageIcon("C:\\Users\\mrash\\OneDrive\\Align\\cs5004\\FinalProject\\final-project-group-3\\images\\Welcome.jpg");
-            Image scaledImage = image.getImage().getScaledInstance(600, 600, Image.SCALE_SMOOTH);
-            ImageIcon scaledImageIcon = new ImageIcon(scaledImage);
+        // Create main panel
+        JPanel mainPanel = new JPanel();
+        mainPanel.setLayout(null);
 
-            JLabel imageLabel = new JLabel(scaledImageIcon);
-            imageLabel.setBounds(0, -130, 600, 600);
-            imageLabel.setLayout(null);
-            
-            // Enter button panel
-            JPanel buttonPanel = new JPanel();
-            buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.Y_AXIS));
-            buttonPanel.setBounds(0,250, 600, 600);
-            buttonPanel.setOpaque(false);
+        // Add image
+        ImageIcon image = new ImageIcon("C:\\Users\\mrash\\OneDrive\\Align\\cs5004\\FinalProject\\final-project-group-3\\images\\Welcome.jpg");
+        Image scaledImage = image.getImage().getScaledInstance(600, 600, Image.SCALE_SMOOTH);
+        ImageIcon scaledImageIcon = new ImageIcon(scaledImage);
 
-
-            buttonPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
-            buttonPanel.setAlignmentY(Component.CENTER_ALIGNMENT);
-
-            // Enter button
-            JButton enterButton = new JButton("Enter");
-            enterButton.setFont(new Font("Arial", Font.BOLD, 30));
-            enterButton.setBackground(new Color(50, 178, 163));
-            enterButton.setForeground(Color.WHITE);
-            enterButton.setMaximumSize(new Dimension(200,50));
-            enterButton.addActionListener(e -> {
-                // Close the welcome screen and display the collection
-                frame.dispose();
-                displayCollection();
-            });
-
-            enterButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-            
-            // Add components to the message panel
-            buttonPanel.add(Box.createVerticalStrut(80));
-            buttonPanel.add(enterButton);
+        JLabel imageLabel = new JLabel(scaledImageIcon);
+        imageLabel.setBounds(0, -130, 600, 600);
+        imageLabel.setLayout(null);
+        
+        // Enter button panel
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.Y_AXIS));
+        buttonPanel.setBounds(0,250, 600, 600);
+        buttonPanel.setOpaque(false);
 
 
-            // Add components to the main panel
-            mainPanel.add(buttonPanel);
-            mainPanel.add(imageLabel);
-            
-            frame.add(mainPanel);
-            frame.setVisible(true);
+        buttonPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        buttonPanel.setAlignmentY(Component.CENTER_ALIGNMENT);
+
+        // Enter button
+        JButton enterButton = new JButton("Enter");
+        enterButton.setFont(new Font("Arial", Font.BOLD, 30));
+        enterButton.setBackground(new Color(50, 178, 163));
+        enterButton.setForeground(Color.WHITE);
+        enterButton.setMaximumSize(new Dimension(200,50));
+        enterButton.addActionListener(e -> {
+            // Close the welcome screen and display the collection
+            frame.dispose();
+            displayCollection();
+        });
+
+        enterButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        
+        // Add components to the message panel
+        buttonPanel.add(Box.createVerticalStrut(80));
+        buttonPanel.add(enterButton);
+
+
+        // Add components to the main panel
+        mainPanel.add(buttonPanel);
+        mainPanel.add(imageLabel);
+        
+        frame.add(mainPanel);
+        frame.setVisible(true);
 
     }
 
     @Override
     public void run() {
-        // Display the welcome and collection
+        // Display the welcome screen
         displayWelcome(); 
     }
 
