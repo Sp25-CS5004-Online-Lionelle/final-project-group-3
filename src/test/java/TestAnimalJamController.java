@@ -7,6 +7,7 @@ import java.io.OutputStream;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import javax.swing.SortOrder;
 
@@ -39,9 +40,32 @@ public class TestAnimalJamController {
     }
 
     @Test
-    public void testAddToFavList() {
-        //Get list of records
+    public void testGetFavList() {
+        List<AnimalRecord> animalList;
+        Collection<AnimalRecord> favList;
+
         recordList = controller.getCollection();
+        animalList = recordList.stream().toList();
+        AnimalRecord ar1 = animalList.get(0);
+        AnimalRecord ar2 = animalList.get(1);
+        controller.addToFavList(ar1.name());
+        controller.addToFavList(ar2.name());
+    
+        favList = controller.getFavList();
+        assertEquals(2, favList.size());
+    }
+
+    @Test
+    public void testAddToFavList() {
+        List<AnimalRecord> animalList;
+        Collection<AnimalRecord> favList;
+        recordList = controller.getCollection();
+        animalList = recordList.stream().toList();
+        AnimalRecord ar1 = animalList.get(0);
+        AnimalRecord ar2 = animalList.get(1);
+        controller.addToFavList(ar1.name());
+        controller.addToFavList(ar2.name());
+
         assertEquals(16, recordList.size());
     }
 }
