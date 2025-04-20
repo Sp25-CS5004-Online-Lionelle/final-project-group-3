@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 
 import student.controller.IAnimalController;
 import student.controller.ListTypes;
@@ -45,11 +47,29 @@ public final class CollectionAL {
     } 
 
     // Action Listener for filter Display button
-    public static ActionListener searchButtonListener() {
+    public static ActionListener searchButtonListener(
+        JTextField searchField,
+        IAnimalController controller,
+        AnimalJamCollectionDisplay instance
+    ) {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
-                System.out.println("Searching Database");
+                
+                String searchText = searchField.getText().trim();
+                if (searchText.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Please enter the name of an animal to search.");
+                    return;
+                }
+
+                // Create the filter string
+                String filterString = String.format("NAME~=" +  searchText);
+
+                // Apply filter to the table
+                List<AnimalRecord> filteredRecords = new ArrayList<>(controller.filter(filterString));
+
+                // Update the display with the filtered records
+                instance.updateDisplay(DisplayUtils.recordsToTableData(filteredRecords), ListTypes.FILTERED);
             }
         };
     } 
