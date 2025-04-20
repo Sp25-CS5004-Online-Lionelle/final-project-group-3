@@ -30,12 +30,22 @@ public class TestAnimalJamModel {
     }
 
     @Test
-    public void testGetInstanceCSV() { 
+    public void testGetInstance() { 
         recordList = model.getRecords();
         singleRecord = model.getRecord("Aardvark");
-        System.out.println("Test Get Instance CSV and recordList size is: " + recordList.size());
         assertEquals(259, recordList.size());
         assertEquals("Aardvark", singleRecord.name());
+    }
+
+    
+    @Test
+    public void testGetInstanceBadPath() { 
+        String flname = "badpath/sample.csv";
+        IAnimalModel emptyModel = IAnimalModel.getInstance(flname);    
+
+        recordList = emptyModel.getRecords();
+        assertEquals(0, recordList.size());
+        
     }
 
     
