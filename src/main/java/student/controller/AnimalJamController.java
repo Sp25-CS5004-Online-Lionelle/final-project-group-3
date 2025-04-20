@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.util.Collection;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import student.model.IAnimalModel;
@@ -82,7 +83,7 @@ public class AnimalJamController implements IAnimalController {
         String[] filters = str.split(",");
         //iterate over each filter to be applied on the list
         for(String f : filters) {
-            filteredList = filterSingle(f).toList();
+            filteredList = filterSingle(f).collect(Collectors.toList());
         }
 
         return filteredList;
