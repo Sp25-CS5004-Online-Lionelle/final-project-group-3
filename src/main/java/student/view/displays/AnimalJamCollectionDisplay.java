@@ -23,7 +23,7 @@ public class AnimalJamCollectionDisplay {
     private DefaultTableModel tableModel;
     private JFrame frame;
     private JButton favoriteListButton, collectionListButton, removeFromFavoriteListButton, addToFavoriteListButton;
-    private JButton saveDisplayButton;
+    private JButton saveDisplayButton, clearFilterButton;
 
     public AnimalJamCollectionDisplay(String[][] data ,
         String[] heading,
@@ -93,6 +93,11 @@ public class AnimalJamCollectionDisplay {
         saveDisplayButton.setVisible(false);
         saveDisplayButton.addActionListener(CollectionAL.saveButtonListener(frame, controller));
 
+        // Create Button to Clear Search/Filter
+        clearFilterButton = new JButton("Clear Search/Filter");
+        clearFilterButton.setBounds(260, 30, 200, 25);
+        clearFilterButton.setVisible(false);
+
         // Center-align all columns
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
@@ -121,6 +126,7 @@ public class AnimalJamCollectionDisplay {
         frame.add(collectionListButton);
         frame.add(sortDisplayButton);
         frame.add(filterDisplayButton);
+        frame.add(clearFilterButton);
         frame.setVisible(true);
     }
 
@@ -144,6 +150,7 @@ public class AnimalJamCollectionDisplay {
             removeFromFavoriteListButton.setVisible(true);
             addToFavoriteListButton.setVisible(false);
             saveDisplayButton.setVisible(true);
+            clearFilterButton.setVisible(false);
         } else if (listType == ListTypes.COLLECTION) {
             frame.setTitle("AnimalJam: Collection");
             collectionListButton.setVisible(false);
@@ -151,8 +158,15 @@ public class AnimalJamCollectionDisplay {
             removeFromFavoriteListButton.setVisible(false);
             addToFavoriteListButton.setVisible(true);
             saveDisplayButton.setVisible(false);
+            clearFilterButton.setVisible(false);
         } else {
             frame.setTitle("AnimalJam: Filtered List");
+            collectionListButton.setVisible(false);
+            favoriteListButton.setVisible(true);
+            removeFromFavoriteListButton.setVisible(false);
+            addToFavoriteListButton.setVisible(true);
+            saveDisplayButton.setVisible(false);
+            clearFilterButton.setVisible(true);
         }
         
     }
