@@ -64,7 +64,7 @@ public class AnimalJamCollectionDisplay {
 
         JButton filterDisplayButton = new JButton("Filter");
         filterDisplayButton.setBounds(780,500,150,28);
-        filterDisplayButton.addActionListener(CollectionAL.filterDisplayButtonListener(frame, heading));
+        filterDisplayButton.addActionListener(CollectionAL.filterDisplayButtonListener(frame, heading, controller, this));
         // Table model to add extra column
         tableModel = new DefaultTableModel(data, heading) {
             @Override
