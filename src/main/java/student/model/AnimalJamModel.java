@@ -4,8 +4,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -20,7 +20,7 @@ public class AnimalJamModel implements IAnimalModel {
     private final Map<String, AnimalRecord> animalInfoLibrary = new LinkedHashMap<String, AnimalRecord>();
 
     /** Store favourite list records  */
-    private final List<AnimalRecord> animalFavList = new LinkedList<>();
+    private final Set<AnimalRecord> animalFavList = new HashSet();
 
     /**
      * Contructor.
@@ -49,11 +49,14 @@ public class AnimalJamModel implements IAnimalModel {
 
     @Override
     public AnimalRecord getRecord(String id) {
-        AnimalRecord tmp = animalInfoLibrary.get(id);
-        //if(tmp == null) {
-             // grab from online the network id, add the book to the collection, save out the collection
-        //}
-        return tmp;
+        AnimalRecord tmp = null;
+        try {
+            tmp = animalInfoLibrary.get(id);
+            return tmp;
+        } catch (NullPointerException e) {
+            return null;
+        }
+        
     }
 
     @Override
