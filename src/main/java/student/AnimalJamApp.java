@@ -1,7 +1,9 @@
 package student;
 
-import student.controller.IController;
+import student.controller.AnimalJamController;
+import student.controller.IAnimalController;
 import student.model.IAnimalModel;
+import student.view.AnimalJamGUI;
 /**
  * Main driver for the program.
  * 
@@ -19,11 +21,13 @@ public final class AnimalJamApp {
      */
     public static void main(String[] args) {
 
-        //IController parser = new ArgsController();
-        //parser.parseArgs(args);
+        
         IAnimalModel model = IAnimalModel.getInstance("data/sample.csv");
-        //parser.setModel(model);
-        //parser.run();
+        IAnimalController controller = new AnimalJamController(model);
+
+        new AnimalJamGUI(model);
+        
+        // view.start();
         
     }    
 }

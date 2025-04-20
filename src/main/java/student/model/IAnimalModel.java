@@ -15,6 +15,7 @@ import student.model.formatters.Formats;
  * Interface to the model.
  */
 public interface IAnimalModel {
+
     /**
      * Default String database path.
      */

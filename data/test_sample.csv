@@ -1,0 +1,17 @@
+name,population,speed,averageWeight,diet,location
+Aardvark,30000,40,60000,Insectivore,Africa
+Arctic fox,300000,50,30000,Omnivore,Arctic
+Arctic wolf,200000,65,30000,Carnivore,Arctic
+Baboon,500000,48,25000,Omnivore,Africa
+Blue whale,10000,37,150000000,Carnivore,Worldwide
+Chimpanzee,300000,48,300000,Omnivore,Africa
+Deer,30000000,60,50000,Herbivore,North America_Europe_Asia
+Elephant seal,30000,32,200000,Omnivore,Antarctica
+Indian elephant,250000,40,40000000,Herbivore,Asia
+Indian leopard,500000,60,4000000,Carnivore,Asia
+Indigo bunting,1000000000,50,25,Omnivore,North America
+Jaguar,50000,80,80000,Carnivore,South America_Central America
+Manatee,80000,32,500000,Herbivore,North America_Africa
+Panther,10000,55,50000,Carnivore,Asia
+Sloth,1000000,0.05,40000,Herbivore,South America
+Walrus,250000,32,800000,Carnivore,Arctic
