@@ -205,5 +205,57 @@ public class TestAnimalJamModel {
         assertEquals(3, favList.size());
 
     }
+            
+    @Test
+    public void testremoveFromFavList() {
+        Collection<AnimalRecord> favList;
+        recordList = model.getRecords();
+        AnimalRecord ar1 = model.getRecord("Aardvark");
+        AnimalRecord ar2 = model.getRecord("Cat");
+        AnimalRecord ar3 = model.getRecord("Dog");
+        AnimalRecord ar4 = model.getRecord("Seal");
+
+
+        model.addToFavList(ar1.name(), recordList.stream());
+        model.addToFavList(ar2.name(), recordList.stream());
+        model.addToFavList(ar3.name(), recordList.stream());
+        favList = model.getFavList();
+        assertEquals(3, favList.size());
+        
+        //check happy paths        
+        model.removeFromFavList(ar1.name());
+        favList = model.getFavList();
+        assertEquals(2, favList.size());
+
+        //remove all records
+        model.removeFromFavList(ar2.name());
+        model.removeFromFavList(ar3.name());
+        favList = model.getFavList();
+        assertEquals(0, favList.size());
+
+        //negative path remove from empty list
+        model.removeFromFavList(ar2.name());
+        favList = model.getFavList();
+        assertEquals(0, favList.size());
+
+
+        //add records back to favList
+        model.addToFavList(ar1.name(), recordList.stream());
+        model.addToFavList(ar2.name(), recordList.stream());
+        model.addToFavList(ar3.name(), recordList.stream());
+        favList = model.getFavList();
+        assertEquals(3, favList.size());
+
+        //negative path removing the record that does not exist
+        model.removeFromFavList(ar4.name());
+        favList = model.getFavList();
+        assertEquals(3, favList.size());
+
+        //negative path removing with null name
+        model.removeFromFavList(null);
+        favList = model.getFavList();
+        assertEquals(3, favList.size());
+
+    }
 
 }
