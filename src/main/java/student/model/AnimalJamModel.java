@@ -34,12 +34,15 @@ public class AnimalJamModel implements IAnimalModel {
         }
     }
 
+    /**
+     * Method to load database based on file format and inputstream
+     * @param in InputStream to read data
+     * @param format Format of the file inputstream
+     */
     private void loadAnimalInfo(InputStream in, Formats format) {
         animalInfoLibrary.putAll(
             InputReader.readAnimalInfo(in, format).stream().collect(
                 Collectors.toMap(animalInfo -> animalInfo.name(),  animalInfo -> animalInfo)));
-        //debug print
-        System.out.println("In loadAnimalInfo and size is : " + animalInfoLibrary.size());
         }
 
     @Override
