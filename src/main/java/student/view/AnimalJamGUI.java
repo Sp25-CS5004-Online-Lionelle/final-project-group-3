@@ -34,9 +34,6 @@ public class AnimalJamGUI implements IView{
 
         List<AnimalRecord> records = new ArrayList<>(controller.getCollection());
         String[][] data = DisplayUtils.recordsToTableData(records);
-        for(String[] dat : data){
-            System.out.println(dat);
-        }
         String[] headings = {"Name", "Population", "Speed", "Average Weight", "Diet", "Location"};
         
         AnimalJamCollectionDisplay collectionDisplay = new AnimalJamCollectionDisplay(
@@ -60,7 +57,7 @@ public class AnimalJamGUI implements IView{
         mainPanel.setLayout(null);
 
         // Add image
-        ImageIcon image = new ImageIcon("C:\\Users\\mrash\\OneDrive\\Align\\cs5004\\FinalProject\\final-project-group-3\\images\\Welcome.jpg");
+        ImageIcon image = new ImageIcon("images/Welcome.jpg");
         Image scaledImage = image.getImage().getScaledInstance(600, 600, Image.SCALE_SMOOTH);
         ImageIcon scaledImageIcon = new ImageIcon(scaledImage);
 
