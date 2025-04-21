@@ -4,6 +4,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.util.Collection;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -18,7 +20,7 @@ public class AnimalJamController implements IAnimalController {
     /** Store handle to model. */
     private IAnimalModel model;
     /** Store filtered list. */
-    private Collection<AnimalRecord> filteredList = null;
+    private Collection<AnimalRecord> filteredList;
     
 
     /**
@@ -27,15 +29,30 @@ public class AnimalJamController implements IAnimalController {
      */
     public AnimalJamController(IAnimalModel model) {
         this.model = model;
+        filteredList = new LinkedList<>();
     }
 
     @Override
     public Collection<AnimalRecord> getCollection() {
+        Collection<AnimalRecord> colList = new LinkedList<>();
+
+        //clear filtered list when displaying collection ist
+        filteredList.clear();
+
+        colList = model.getRecords();
+        //sort list based on Name and ascending order before return
+        colList.stream().sorted(Sort.getSortType(Columns.NAME, true)).collect(Collectors.toList());
+        //Iterator i = colList.iterator();
+        //System.out.println(i.hasNext());
         return model.getRecords();
     }
 
     @Override
     public Collection<AnimalRecord> getFavList() {
+        Collection<AnimalRecord> favlList = new LinkedList<>();
+
+        //clear filtered list when displaying collection ist
+        filteredList.clear();
         return model.getFavList();
     }
 
@@ -86,6 +103,9 @@ public class AnimalJamController implements IAnimalController {
             filteredList = filterSingle(f).collect(Collectors.toList());
         }
 
+        //sort the list
+        filteredList.stream().sorted(Sort.getSortType(sortOn, ascending)).collect(Collectors.toList());
+
         return filteredList;
     }
 
@@ -97,7 +117,8 @@ public class AnimalJamController implements IAnimalController {
     private Stream<AnimalRecord> filterSingle(String filter) {
         Operations op = Operations.getOperatorFromStr(filter);
 
-        if(op == null) {
+        //check if filter string is null or operation is null return list as is
+        if(op == null || filter == null) {
             return filteredList.stream();
         }
 
