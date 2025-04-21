@@ -52,7 +52,7 @@ public class FilterAL {
 
                 // Get the selected column from the JComboBox
                 try{
-                    Columns filterColumnEnum = Columns.valueOf(sortColumn.toUpperCase());
+                    Columns filterColumnEnum = Columns.fromString(sortColumn.toUpperCase());
                     controller.filter(filters, filterColumnEnum, ascending);
                 } catch (IllegalArgumentException i){
                     JOptionPane.showMessageDialog(filterDialog, i + ": Invalid column");
