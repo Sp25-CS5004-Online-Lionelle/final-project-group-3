@@ -35,25 +35,25 @@ public class AnimalJamController implements IAnimalController {
     @Override
     public Collection<AnimalRecord> getCollection() {
         Collection<AnimalRecord> colList = new LinkedList<>();
-
+        
         //clear filtered list when displaying collection ist
         filteredList.clear();
 
         colList = model.getRecords();
-        //sort list based on Name and ascending order before return
-        colList.stream().sorted(Sort.getSortType(Columns.NAME, true)).collect(Collectors.toList());
-        //Iterator i = colList.iterator();
-        //System.out.println(i.hasNext());
-        return model.getRecords();
+        colList = colList.stream().sorted(Sort.getSortType(Columns.NAME, true)).collect(Collectors.toList());
+
+        return colList;
     }
 
     @Override
     public Collection<AnimalRecord> getFavList() {
-        Collection<AnimalRecord> favlList = new LinkedList<>();
+        Collection<AnimalRecord> favList = new LinkedList<>();
 
         //clear filtered list when displaying collection ist
         filteredList.clear();
-        return model.getFavList();
+        favList = model.getFavList();
+        favList = favList.stream().sorted(Sort.getSortType(Columns.NAME, true)).collect(Collectors.toList());
+        return favList;
     }
 
     @Override
@@ -63,14 +63,17 @@ public class AnimalJamController implements IAnimalController {
 
     @Override
     public void addToFavList(String str) {
+        Collection<AnimalRecord> colList = new LinkedList<>();
+
         //check filtered list first to add record
-        if(filteredList != null) {
-            model.addToFavList(str, filteredList.stream());
+        if (filteredList.size() == 0) {
+            colList = model.getRecords();
         }
         else {
-            model.addToFavList(str, model.getRecords().stream());
+            colList = filteredList;
         }
-        
+        //call model method to add to favorite list
+        model.addToFavList(str, colList.stream());
     }
 
     @Override
@@ -104,7 +107,7 @@ public class AnimalJamController implements IAnimalController {
         }
 
         //sort the list
-        filteredList.stream().sorted(Sort.getSortType(sortOn, ascending)).collect(Collectors.toList());
+        filteredList = filteredList.stream().sorted(Sort.getSortType(sortOn, ascending)).collect(Collectors.toList());
 
         return filteredList;
     }

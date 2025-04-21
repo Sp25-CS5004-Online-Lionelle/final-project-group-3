@@ -90,6 +90,34 @@ public interface IAnimalModel {
     @JsonPropertyOrder({"name", "population", "speed", "avergeWeight", "diet", "location"})
     record AnimalRecord(String name, double population, double speed, double averageWeight, 
                     String diet, String location) {
+
+        /**
+         * Find equality based on name of record
+         * 
+         * @return Boolean true or false based on match
+         */
+        @Override
+        public boolean equals(Object o) {
+            if (this == o)
+                return true;
+            if (!(o instanceof AnimalRecord))
+                return false;
+
+            AnimalRecord ar = (AnimalRecord) o;
+            return name().equals(ar.name());
+        }
+
+        /**
+         * Get the hash code of the object.
+         * 
+         * The hash code is based on name fields.
+         * 
+         * @return hash code of the object
+         */
+        @Override
+        public int hashCode() {
+            return name().hashCode();
+        }
     }
                     
 }
