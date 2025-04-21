@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.util.Collection;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -33,13 +34,23 @@ public class AnimalJamController implements IAnimalController {
 
     @Override
     public Collection<AnimalRecord> getCollection() {
+        Collection<AnimalRecord> colList = new LinkedList<>();
+
         //clear filtered list when displaying collection ist
         filteredList.clear();
+
+        colList = model.getRecords();
+        //sort list based on Name and ascending order before return
+        colList.stream().sorted(Sort.getSortType(Columns.NAME, true)).collect(Collectors.toList());
+        //Iterator i = colList.iterator();
+        //System.out.println(i.hasNext());
         return model.getRecords();
     }
 
     @Override
     public Collection<AnimalRecord> getFavList() {
+        Collection<AnimalRecord> favlList = new LinkedList<>();
+
         //clear filtered list when displaying collection ist
         filteredList.clear();
         return model.getFavList();
