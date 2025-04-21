@@ -12,7 +12,7 @@ public enum Columns {
      * 
      */
     NAME("name"), POPULATION("population"),
-    SPEED("speed"), AVG_WEIGHT("avgWeight"),
+    SPEED("speed"), AVG_WEIGHT("averageWeight"),
     DIET("diet"), LOCATION("location");
 
     /** stores the original csv name in the enum. */
