@@ -34,7 +34,7 @@ public class AnimalJamGUI implements IView{
 
         List<AnimalRecord> records = new ArrayList<>(controller.getCollection());
         String[][] data = DisplayUtils.recordsToTableData(records);
-        String[] headings = {"Name", "Population", "Speed", "Average Weight", "Diet", "Location"};
+        String[] headings = {"Name", "Population", "Speed", "AverageWeight", "Diet", "Location"};
         
         AnimalJamCollectionDisplay collectionDisplay = new AnimalJamCollectionDisplay(
             data,
