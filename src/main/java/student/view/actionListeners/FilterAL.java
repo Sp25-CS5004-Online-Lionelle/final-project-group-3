@@ -39,8 +39,7 @@ public class FilterAL {
 
                 // Check if the filter string is empty or null
                 if (filters.isEmpty()){
-                    JOptionPane.showMessageDialog(filterDialog, "Please Enter a filter");
-                    return;
+                    filters = null;
                 }
 
                 // Get the sort order
