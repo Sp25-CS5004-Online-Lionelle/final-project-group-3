@@ -23,7 +23,7 @@ public class AnimalJamCollectionDisplay {
     private DefaultTableModel tableModel;
     private JFrame frame;
     private JButton favoriteListButton, collectionListButton, removeFromFavoriteListButton, addToFavoriteListButton;
-    private JButton saveDisplayButton, clearFilterButton, sortDisplayButton, filterDisplayButton;
+    private JButton saveDisplayButton, clearFilterButton, filterSortDisplayButton;
 
     public AnimalJamCollectionDisplay(String[][] data ,
         String[] heading,
@@ -58,14 +58,14 @@ public class AnimalJamCollectionDisplay {
         collectionListButton.setVisible(false);
         collectionListButton.addActionListener(CollectionAL.collectionDisplayButtonListener(this, heading, controller));
 
-        // Create Sort and Filter Button to open sort and filter displays
-        sortDisplayButton = new JButton("Sort");
-        sortDisplayButton.setBounds(600,500,150,28);
-        sortDisplayButton.addActionListener(CollectionAL.sortDisplayButtonListener(frame, heading));
+        // // Create Sort and Filter Button to open sort and filter displays
+        // JButton sortDisplayButton = new JButton("Sort");
+        // sortDisplayButton.setBounds(600,500,150,28);
+        // sortDisplayButton.addActionListener(CollectionAL.sortDisplayButtonListener(frame, heading));
 
-        filterDisplayButton = new JButton("Filter/Sort");
-        filterDisplayButton.setBounds(780,500,150,28);
-        filterDisplayButton.addActionListener(CollectionAL.filterDisplayButtonListener(frame, heading, controller, this));
+        filterSortDisplayButton = new JButton("Filter | Sort");
+        filterSortDisplayButton.setBounds(780,500,150,28);
+        filterSortDisplayButton.addActionListener(CollectionAL.filterDisplayButtonListener(frame, heading, controller, this));
         // Table model to add extra column
         tableModel = new DefaultTableModel(data, heading) {
             @Override
@@ -125,8 +125,8 @@ public class AnimalJamCollectionDisplay {
         frame.add(searchButton);
         frame.add(favoriteListButton);
         frame.add(collectionListButton);
-        //frame.add(sortDisplayButton);
-        frame.add(filterDisplayButton);
+        // frame.add(sortDisplayButton);
+        frame.add(filterSortDisplayButton);
         frame.add(clearFilterButton);
         frame.setVisible(true);
     }
@@ -152,8 +152,7 @@ public class AnimalJamCollectionDisplay {
             addToFavoriteListButton.setVisible(false);
             saveDisplayButton.setVisible(true);
             clearFilterButton.setVisible(false);
-            //sortDisplayButton.setVisible(false);
-            filterDisplayButton.setVisible(false);
+            filterSortDisplayButton.setVisible(false);
         } else if (listType == ListTypes.COLLECTION) {
             frame.setTitle("AnimalJam: Collection");
             collectionListButton.setVisible(false);
@@ -162,8 +161,7 @@ public class AnimalJamCollectionDisplay {
             addToFavoriteListButton.setVisible(true);
             saveDisplayButton.setVisible(false);
             clearFilterButton.setVisible(false);
-            //sortDisplayButton.setVisible(true);
-            filterDisplayButton.setVisible(true);
+            filterSortDisplayButton.setVisible(true);
         } else {
             frame.setTitle("AnimalJam: Filtered List");
             collectionListButton.setVisible(false);
@@ -172,8 +170,7 @@ public class AnimalJamCollectionDisplay {
             addToFavoriteListButton.setVisible(true);
             saveDisplayButton.setVisible(false);
             clearFilterButton.setVisible(true);
-            //sortDisplayButton.setVisible(false);
-            filterDisplayButton.setVisible(false);
+            filterSortDisplayButton.setVisible(false);
         }
         
     }
