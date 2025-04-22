@@ -9,6 +9,8 @@ The project uses gradle build and run scripts:
 ## Welcome Screen
 
 The welcome screen is the first screen that users see when they open the app. Users can click the "Enter" button to proceed to the main collection screen of the program.
+<br>
+
 ![Welcome Screen](welcomeScreen.png)
 
 ## Main Collection Screen
