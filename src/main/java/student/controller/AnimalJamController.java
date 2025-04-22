@@ -100,12 +100,13 @@ public class AnimalJamController implements IAnimalController {
             filteredList = getCollection();
         }
         //Split multiple filters that are comman seperated
-        String[] filters = str.split(",");
-        //iterate over each filter to be applied on the list
-        for(String f : filters) {
-            filteredList = filterSingle(f).collect(Collectors.toList());
+        if(str != null) {
+            String[] filters = str.split(",");
+            //iterate over each filter to be applied on the list
+            for(String f : filters) {
+                filteredList = filterSingle(f).collect(Collectors.toList());
+            }
         }
-
         //sort the list
         filteredList = filteredList.stream().sorted(Sort.getSortType(sortOn, ascending)).collect(Collectors.toList());
 
@@ -129,6 +130,11 @@ public class AnimalJamController implements IAnimalController {
         filter = filter.replaceAll(" ", "");
         //split filter string into parts to process
         String[] parts = filter.split(op.getOperator());
+
+
+        System.out.println("Part[0] = " + parts[0] + " Part[1] = " + parts[1]);
+        System.out.println("size of filteredList before filter in filterSingle is " + filteredList.size());
+
         if(parts.length != 2) {
             return filteredList.stream();
         }
@@ -144,6 +150,8 @@ public class AnimalJamController implements IAnimalController {
         String value = parts[1].trim();
 
         filteredList = filteredList.stream().filter(ar -> Filter.filter(ar, col, op, value)).toList();
+
+        System.out.println("size of filteredList at end of filterSingle is " + filteredList.size());
         return filteredList.stream();
     }
 
