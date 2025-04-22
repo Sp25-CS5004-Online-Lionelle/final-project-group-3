@@ -37,11 +37,6 @@ public class FilterAL {
                 String filters = filter.getText().trim();
                 String sortColumn = (String) filterColumn.getSelectedItem();
 
-                // Check if the filter string is empty or null
-                if (filters.isEmpty()){
-                    filters = null;
-                }
-
                 // Get the sort order
                 boolean ascending = true;
                 for (JRadioButton button : buttons) {
