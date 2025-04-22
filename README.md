@@ -1,5 +1,5 @@
 # Final Project for CS 5004 - Animal Jam Application
-The application reads in a database of records containing information on different animals and their speed, diet, population, location and average weight.  A user can look at the contents of the database and select animal records to add/removo to/from a favorite list.  User also has the ability to filter the original database using fields like name, population, diet or speed.  They can save the favorite list in JSON, XML, CSV or TXT formats
+The Animal Jam application is designed to read in a database of records containing information on different animals and their speed, diet, population, location and average weight.  A user can look at the contents of the database and select animal records to add/removo to/from a favorite list.  User also has the ability to filter the original database using fields like name, population, diet or speed.  They can save the favorite list in JSON, XML, CSV or TXT formats
 
 ## Group Members
 
