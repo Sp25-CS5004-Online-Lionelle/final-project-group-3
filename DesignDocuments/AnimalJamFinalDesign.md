@@ -9,7 +9,7 @@ The following features have been implemented in the application:
 * Graphical user interface using Java Swing classes.
 * Load and display a collection of animal record items.
 * Add and remove items to the favorite list.
-* Save favorite list to a file using XML, JSON or CSV formats.
+* Save favorite list to a file using XML, JSON, TXT or CSV formats.
 * Search the collection based on name of animals.
 * Filter the collection database using different fields of the database
 * Sort the filtered list using different fields of the database
@@ -26,7 +26,7 @@ The View component calls the Controller component when it needs to perform actio
 
 ### Model Component details
 
-The model component is responsible to maintain the database and favorite list.  The model loads in the initial database from a file at data/sample.csv.  The application can be modified to provide a different database file that has the required fields.  Model provides an interface that the Controller component can use to get the Collection data or data in favorite list.  The model interface also provides methods to add and remove items from the favorite list and to save the favorite list to an output file using JSON, XML or CSV formats.
+The model component is responsible to maintain the database and favorite list.  The model loads in the initial database from a file at data/sample.csv.  The application can be modified to provide a different database file that has the required fields.  Model provides an interface that the Controller component can use to get the Collection data or data in favorite list.  The model interface also provides methods to add and remove items from the favorite list and to save the favorite list to an output file using JSON, XML, TXT or CSV formats.
 
 ### Controller Component details
 
