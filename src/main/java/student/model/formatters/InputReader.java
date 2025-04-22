@@ -31,8 +31,6 @@ public final class InputReader {
         switch (format) {
             case CSV:
                 return readCSV(source);
-            case JSON:
-                return readJSON(source);
             case XML:
                 return readXML(source);
             default:
@@ -54,10 +52,6 @@ public final class InputReader {
 
         System.out.println("The size of animalInfoList in readXML is : " + animalInfoList.size());
         return animalInfoList;
-    }
-
-    private static List<AnimalRecord> readJSON(InputStream source) {
-        throw new UnsupportedOperationException("Not implemented yet");
     }
 
 
