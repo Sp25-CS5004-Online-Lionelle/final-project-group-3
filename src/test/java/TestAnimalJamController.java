@@ -144,4 +144,38 @@ public class TestAnimalJamController {
         filterList = controller.getFilteredList();
         assertEquals(1, filterList.size());
     }
+
+            
+    @Test
+    public void testFilterBadString() {
+        List<AnimalRecord> animalList;
+        //Collection<AnimalRecord> favList;
+        Collection<AnimalRecord> filterList;
+        recordList = controller.getCollection();
+        animalList = recordList.stream().toList();
+        AnimalRecord ar1 = animalList.get(0);
+        AnimalRecord ar2 = animalList.get(1);
+        AnimalRecord ar3 = animalList.get(2);
+        AnimalRecord badAr = new AnimalRecord("Chuppacabra", 5, 20, 30, "human", "Americas");
+        
+        String filterStrEmpty = "";
+        String filterStrBadCol = "na ~= Indian leopard";
+        String filterStrBadOp = "name =~ Indian leopard";
+        String filterStrNoValue = "name ~=";
+        
+        //filter test with name field and contains operation
+        controller.filter(filterStrEmpty);
+        filterList = controller.getFilteredList();
+        assertEquals(16, filterList.size());
+
+        //filter test with name field and Not Equals operation
+        controller.filter(filterStrBadOp);
+        filterList = controller.getFilteredList();
+        assertEquals(16, filterList.size());
+        
+        //filter test with name field and Equals operation
+        controller.filter(filterStrBadCol);
+        filterList = controller.getFilteredList();
+        assertEquals(16, filterList.size());
+    }
 }
