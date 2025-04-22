@@ -66,11 +66,6 @@ public final class InputReader {
                      .with(schema)
                      .readValues(source);
             List<AnimalInfo> animalInfoList = it.readAll();
-              //take out as we use hostname as id
-              //for (DomainNameInfo dnInfo : dnInfoList) {
-              //      if(dnInfo.getId() == null) dnInfo.setId(slugify(dnInfo.getHostname()));
-              //}
-            System.out.println("The size of animalInfoList in readCSV is : " + animalInfoList.size());
             return animalInfoList.stream().map(AnimalInfo::toRecord).toList();
         } catch (Exception e) {
               e.printStackTrace();
