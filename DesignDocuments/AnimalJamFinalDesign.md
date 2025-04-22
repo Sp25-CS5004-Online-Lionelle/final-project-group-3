@@ -69,6 +69,7 @@ classDiagram
     AnimalJamController --> Operations : uses
     AnimalJamController --> Filter : uses
     AnimalJamController --> Sort : uses
+    AnimalJamController --> Columns : uses
     AnimalJamController --> ListTypes : uses
     AnimalJamGUI --> IAnimalController : uses
     AnimalJamGUI --> AnimalJamCollectionDisplay : uses
