@@ -108,7 +108,7 @@ The user then uses the Sort On dropdown to select the column to sort the results
 
 ## Filtered List
 
-The results of the filter will show up in the main collection screen as a filtered list of animals. The filtered list will only display animals that match the specified filter criteria. You can clear the filter by clicking the Clear Filter or Search button or just going back to the main collection screen. The app will reset the filter and display all animals in the collection again.
+The results of the filter will show up in the main collection screen as a filtered list of animals. The filtered list will only display animals that match the specified filter criteria. You can clear the filter by clicking the `Clear Search/Filter`. The app will reset the filter and display all animals in the collection. You can also click the `Favorite List` button to proceed to your favorites list, which will also clear the filter or search. 
 <br>
 ![Filtered List](FilteredList.png)
 <br>
