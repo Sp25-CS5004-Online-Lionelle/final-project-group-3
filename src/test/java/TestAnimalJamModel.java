@@ -173,6 +173,37 @@ public class TestAnimalJamModel {
 
     }
 
+                
+    @Test
+    public void testWriteRecordsTXT() {
+        String outFileName = "data/outsample.txt";
+        String badFileName = "data/Outsample.txt";
+
+        recordList = model.getRecords();
+        singleRecord = model.getRecord("Aardvark");
+        assertEquals(259, recordList.size());
+        assertEquals("Aardvark", singleRecord.name());
+
+        //output the collection to xml file format
+        OutputStream output;
+        try {
+            output = new FileOutputStream(outFileName);
+            IAnimalModel.writeRecords(recordList, Formats.TXT, output);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        
+        //negative case output stream not available
+        try {
+            output = new FileOutputStream(badFileName);
+            IAnimalModel.writeRecords(recordList, Formats.TXT, output);
+        } catch (Exception e) {
+            assertEquals((FileNotFoundException.class), e.getClass());
+        }
+
+    }
+
             
     @Test
     public void testGetFavList() {
@@ -200,6 +231,7 @@ public class TestAnimalJamModel {
         AnimalRecord ar2 = model.getRecord("Cat");
         AnimalRecord ar3 = model.getRecord("Dog");
         AnimalRecord ar4 = model.getRecord("Seal");
+        AnimalRecord badAr = new AnimalRecord("Chuppacabra", 5, 20, 30, "human", "Americas");
 
         //check happy paths
         model.addToFavList(ar1.name(), recordList.stream());
@@ -210,7 +242,12 @@ public class TestAnimalJamModel {
         model.addToFavList(ar3.name(), recordList.stream());
         favList = model.getFavList();
         assertEquals(3, favList.size());
-        
+
+        //test to add record that is not in the list
+        model.addToFavList(badAr.name(), recordList.stream());
+        assertEquals(3, favList.size());
+
+
         //negative path adding the same record again
         model.addToFavList(ar2.name(), recordList.stream());
         model.addToFavList(ar3.name(), recordList.stream());
