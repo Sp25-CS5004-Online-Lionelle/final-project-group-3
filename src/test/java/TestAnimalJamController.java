@@ -89,6 +89,7 @@ public class TestAnimalJamController {
 
         //remove record
         controller.removeFromFavList(ar1.name());
+        favList = controller.getFavList();
         assertEquals(1, favList.size());
     }
 }
