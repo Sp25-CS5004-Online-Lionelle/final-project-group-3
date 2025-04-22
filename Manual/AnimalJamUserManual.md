@@ -8,17 +8,17 @@ The project uses gradle build and run scripts:
 
 ## Welcome Screen
 
-- The welcome screen is the first screen that users see when they open the app. Users can click the "Enter" button to proceed to the main collection screen of the program.
+The welcome screen is the first screen that users see when they open the app. Users can click the "Enter" button to proceed to the main collection screen of the program.
 ![Welcome Screen](welcomeScreen.png)
 
 ## Main Collection Screen
 
-- The main collection screen displays a list of all the Animals available in the app's database. Users are able to utilize multiple features to manage the collections effectively. These include searching for specific animals, filtering the collection based on various criteria, and sorting the collections by different attributes.
+The main collection screen displays a list of all the Animals available in the app's database. Users are able to utilize multiple features to manage the collections effectively. These include searching for specific animals, filtering the collection based on various criteria, and sorting the collections by different attributes.
 ![Main Collection Screen](mainCollection.png)
 
 ## Searching for Animals
 
-- The search panel allows users to find specific animals by entering the animal's name or any part of the name in the search bar. Enter the search term in the search bar and press the "Search" button to initiate the search. The app will display the results in the main collection screen as a filtered list of animals.
+The search panel allows users to find specific animals by entering the animal's name or any part of the name in the search bar. Enter the search term in the search bar and press the "Search" button to initiate the search. The app will display the results in the main collection screen as a filtered list of animals.
 ![Search Panel](searchPanel.png)
 
 ## Add To Favorites
