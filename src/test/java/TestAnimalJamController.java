@@ -145,7 +145,77 @@ public class TestAnimalJamController {
         assertEquals(1, filterList.size());
     }
 
-            
+        
+    @Test
+    public void testFilterByDiet() {
+        List<AnimalRecord> animalList;
+        //Collection<AnimalRecord> favList;
+        Collection<AnimalRecord> filterList;
+        recordList = controller.getCollection();
+        animalList = recordList.stream().toList();
+        AnimalRecord ar1 = animalList.get(0);
+        AnimalRecord ar2 = animalList.get(1);
+        AnimalRecord ar3 = animalList.get(2);
+        AnimalRecord badAr = new AnimalRecord("Chuppacabra", 5, 20, 30, "human", "Americas");
+        
+        String filterStrContainsOp = "diet ~= omni";
+        String filterStrEqualsOp = "diet == Herbivore";
+        String filterStrNotEqualsOp = "diet != Insectivore";
+        
+        //filter test with name field and contains operation
+        controller.filter(filterStrContainsOp);
+        filterList = controller.getFilteredList();
+        assertEquals(5, filterList.size());
+
+        //filter test with name field and Not Equals operation
+        controller.resetFilter();
+        controller.filter(filterStrNotEqualsOp);
+        filterList = controller.getFilteredList();
+        assertEquals(15, filterList.size());
+        
+        //filter test with name field and Equals operation
+        controller.resetFilter();
+        controller.filter(filterStrEqualsOp);
+        filterList = controller.getFilteredList();
+        assertEquals(4, filterList.size());
+    }
+
+        
+    @Test
+    public void testFilterByLocation() {
+        List<AnimalRecord> animalList;
+        //Collection<AnimalRecord> favList;
+        Collection<AnimalRecord> filterList;
+        recordList = controller.getCollection();
+        animalList = recordList.stream().toList();
+        AnimalRecord ar1 = animalList.get(0);
+        AnimalRecord ar2 = animalList.get(1);
+        AnimalRecord ar3 = animalList.get(2);
+        AnimalRecord badAr = new AnimalRecord("Chuppacabra", 5, 20, 30, "human", "Americas");
+        
+        String filterStrContainsOp = "location ~= rica";
+        String filterStrEqualsOp = "location == Worldwide";
+        String filterStrNotEqualsOp = "location != Asia";
+        
+        //filter test with name field and contains operation
+        controller.filter(filterStrContainsOp);
+        filterList = controller.getFilteredList();
+        assertEquals(8, filterList.size());
+
+        //filter test with name field and Not Equals operation
+        controller.resetFilter();
+        controller.filter(filterStrNotEqualsOp);
+        filterList = controller.getFilteredList();
+        assertEquals(13, filterList.size());
+        
+        //filter test with name field and Equals operation
+        controller.resetFilter();
+        controller.filter(filterStrEqualsOp);
+        filterList = controller.getFilteredList();
+        assertEquals(1, filterList.size());
+    }
+
+    
     @Test
     public void testFilterBadString() {
         List<AnimalRecord> animalList;
