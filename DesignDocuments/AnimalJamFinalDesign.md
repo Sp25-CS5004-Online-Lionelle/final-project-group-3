@@ -1,7 +1,7 @@
 # Animal Jam Application Design Document
 
 
-This document provides details on the different design components of the Animal Jam Application.  The application reads in a database of records containing information on different animals and their speed, diet, population, location and average weight.  A user can look at the contents of the database and select animal records to add to a favorite list.  User also has the ability to filter the original database using fields like name, population, diet or speed.
+This document provides details on the different design components of the Animal Jam Application.  The application implements some common features that a user requires to manage a list of records.
 
 ## Application Feature List
 The following features have been implemented in the application:
