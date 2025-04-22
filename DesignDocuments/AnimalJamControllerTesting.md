@@ -14,7 +14,6 @@ This document outlines the unit level testing that was done on all Controller co
 * Test for method removeFromFavList() by removing already removed records
 * Test for method removeFromFavList() by removing non existing records
 * Test for method removeFromFavList() by removing record from empty list
-* or method getRecord() using a valid key - name of animal
 * Test for method resetFilter() when filtered list has items
 * Test for method resetFilter() when filtered list is empty
 * Test for method filter() using filter by name for contains and equals operations
