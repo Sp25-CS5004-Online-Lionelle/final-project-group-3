@@ -46,11 +46,11 @@ public final class DataFormatter {
      */
     private static void prettySingle(@Nonnull AnimalRecord record, @Nonnull PrintStream out) {
         out.println(record.name());
-        out.println("             Population Size: " + record.population());
-        out.println("       Speed: " + record.speed());
-        out.println("    Average Weight: " + record.averageWeight());
-        out.println("    Diet: " + record.diet());
-        out.println("    Location: " + record.location());
+        out.println(" Population Size: " + record.population());
+        out.println(" Speed: " + record.speed());
+        out.println(" Average Weight: " + record.averageWeight());
+        out.println(" Diet: " + record.diet());
+        out.println(" Location: " + record.location());
 
     }
 
