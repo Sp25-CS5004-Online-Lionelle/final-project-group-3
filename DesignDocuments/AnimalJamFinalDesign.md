@@ -56,7 +56,7 @@ classDiagram
     AnimalJamApp --> IAnimalModel : uses
     AnimalJamApp --> IView : uses
     IAnimalController <|-- AnimalJamController
-    IView <|-- AnimalJamView
+    IView <|-- AnimalJamGUI
     IAnimalModel <|-- AnimalJamModel
     AnimalJamModel --> AnimalRecord : uses
     AnimalJamModel --> Formats : uses
@@ -64,7 +64,6 @@ classDiagram
     AnimalJamModel --> InputReader : uses
     DataFormater --> AnimalJamXmlWrapper : uses
     InputReader --> AnimalInfo : uses
-    AnimalJamView --> IAnimalController : uses
     AnimalJamController --> IAnimalModel : uses
     AnimalJamController --> Formats : uses
     AnimalJamController --> Operations : uses
