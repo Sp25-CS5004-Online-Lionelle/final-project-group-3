@@ -1,11 +1,22 @@
-# Final Project for CS 5004 - (APPLICATION NAME/Update)
+# Final Project for CS 5004 - Animal Jam Application
+The application reads in a database of records containing information on different animals and their speed, diet, population, location and average weight.  A user can look at the contents of the database and select animal records to add/removo to/from a favorite list.  User also has the ability to filter the original database using fields like name, population, diet or speed.  They can save the favorite list in JSON, XML, CSV or TXT formats
 
-(remove this and add your sections/elements)
-This readme should contain the following information: 
+## Group Members
 
-* The group member's names and link to their personal githubs
-* The application name and a brief description of the application
-* Links to design documents and manuals
-* Instructions on how to run the application
+* Malik Vernon
+* Umer Syed-Quadri
 
-Ask yourself, if you started here in the readme, would you have what you need to work on this project and/or use the application?
+
+
+## Reference Documents
+
+* The User Manual detailing the operations of various features is available in the Manual directory.  Link to [User Manual](Manual/AnimalJamUserManual.md).
+* The application design document has the implementation details and UML diagram of the various classes used in the design.  Link to [Design Document](DesignDocuments/AnimalJamFinalDesign.md)
+
+
+## Compile and Run Instructions
+
+The project uses gradle build scripts to build and run the application
+
+* To build use command: gradle build
+* To run the application use command: gradle run
