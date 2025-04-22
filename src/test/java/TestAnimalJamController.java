@@ -15,6 +15,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import student.model.formatters.Formats;
 import student.controller.AnimalJamController;
+import student.controller.Columns;
 import student.controller.IAnimalController;
 import student.model.AnimalJamModel;
 import student.model.IAnimalModel;
@@ -63,6 +64,7 @@ public class TestAnimalJamController {
         animalList = recordList.stream().toList();
         AnimalRecord ar1 = animalList.get(0);
         AnimalRecord ar2 = animalList.get(1);
+        AnimalRecord badAr = new AnimalRecord("Chuppacabra", 5, 20, 30, "human", "Americas");
         controller.addToFavList(ar1.name());
         controller.addToFavList(ar2.name());
         favList = controller.getFavList();
@@ -82,8 +84,15 @@ public class TestAnimalJamController {
         animalList = recordList.stream().toList();
         AnimalRecord ar1 = animalList.get(0);
         AnimalRecord ar2 = animalList.get(1);
+        AnimalRecord ar3 = animalList.get(2);
+        AnimalRecord badAr = new AnimalRecord("Chuppacabra", 5, 20, 30, "human", "Americas");
         controller.addToFavList(ar1.name());
         controller.addToFavList(ar2.name());
+        favList = controller.getFavList();
+        assertEquals(2, favList.size());
+
+        //remove record that does not exist in favorite list
+        controller.removeFromFavList(ar3.name());
         favList = controller.getFavList();
         assertEquals(2, favList.size());
 
@@ -91,5 +100,48 @@ public class TestAnimalJamController {
         controller.removeFromFavList(ar1.name());
         favList = controller.getFavList();
         assertEquals(1, favList.size());
+
+        //remove record that is already removed
+        controller.removeFromFavList(ar1.name());
+        favList = controller.getFavList();
+        assertEquals(1, favList.size());
+
+        //remove record from empty list
+        controller.removeFromFavList(ar2.name());
+        favList = controller.getFavList();
+        assertEquals(0, favList.size());
+    }
+
+        
+    @Test
+    public void testFilterByName() {
+        List<AnimalRecord> animalList;
+        //Collection<AnimalRecord> favList;
+        Collection<AnimalRecord> filterList;
+        recordList = controller.getCollection();
+        animalList = recordList.stream().toList();
+        AnimalRecord ar1 = animalList.get(0);
+        AnimalRecord ar2 = animalList.get(1);
+        AnimalRecord ar3 = animalList.get(2);
+        AnimalRecord badAr = new AnimalRecord("Chuppacabra", 5, 20, 30, "human", "Americas");
+        
+        String filterStrNameContains = "name ~= Indi";
+        String filterStrNameEquals = "name == Indian leopard";
+        String filterStrNameNotEquals = "name != Indigo bunting";
+        
+        //filter test with name field and contains operation
+        controller.filter(filterStrNameContains, Columns.NAME, true);
+        filterList = controller.getFilteredList();
+        assertEquals(3, filterList.size());
+
+        //filter test with name field and Not Equals operation
+        controller.filter(filterStrNameNotEquals);
+        filterList = controller.getFilteredList();
+        assertEquals(2, filterList.size());
+        
+        //filter test with name field and Equals operation
+        controller.filter(filterStrNameEquals);
+        filterList = controller.getFilteredList();
+        assertEquals(1, filterList.size());
     }
 }
