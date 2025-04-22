@@ -100,7 +100,7 @@ public class AnimalJamController implements IAnimalController {
             filteredList = getCollection();
         }
         //Split multiple filters that are comman seperated
-        if(str != null) {
+        if(!str.equals("")) {
             String[] filters = str.split(",");
             //iterate over each filter to be applied on the list
             for(String f : filters) {
