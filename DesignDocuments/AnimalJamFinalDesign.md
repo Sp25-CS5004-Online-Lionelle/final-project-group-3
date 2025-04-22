@@ -18,17 +18,17 @@ The following features have been implemented in the application:
 
 The Animal Jam applicaton uses the Model-View-Controller design pattern to implement different components of the application.  The View component launches the GUI component of the application.  It provides all the user interface capabilites of the application.  The Model component manages all the data related tasks like managing the database and the favorite list.  The Controller is responsible to interact with model based on user input from the View component.
 
-# View Component Details
+### View Component Details
 
 The view component has the main class that launches the Graphical User Interface (GUI).  When the applicaton launches it shows the user the list of animals in the collection.  The users have the ability to select items from the initial collection list and them to the favorite list.  They can also filter the collection using the fields of the database.  Users can switch between viewing the original collection or the favorite list.  They can also save the favorite list in XML, JSON or CSV file formats.
 
 The View component calls the Controller component when it needs to perform actions based on the input from the user via buttons or text fields.  For example, when the user want to look at the favorite list and clicks the button to view the list, view component will call the controller method to get the favorite list from the model and display the content for the user in the View component table. 
 
-# Model Component details
+### Model Component details
 
 The model component is responsible to maintain the database and favorite list.  The model loads in the initial database from a file at data/sample.csv.  The application can be modified to provide a different database file that has the required fields.  Model provides an interface that the Controller component can use to get the Collection data or data in favorite list.  The model interface also provides methods to add and remove items from the favorite list and to save the favorite list to an output file using JSON, XML or CSV formats.
 
-# Controller Component details
+### Controller Component details
 
 The controller component maintains the filtered list for the view to display to the user.  The controller provides an interface for the view to utilize and get responses from the model based on user requirements.  The controller interface has methods to get data of all the various lists that view displays to the user.  It also provides view with methods to add and remove items from the favorite list and save the favorite list to a file provided by the user. 
 
@@ -61,6 +61,7 @@ classDiagram
     AnimalJamModel --> AnimalRecord : uses
     AnimalJamModel --> Formats : uses
     AnimalJamModel --> DataFormater : uses
+    AnimalJamModel --> InputReader : uses
     DataFormater --> AnimalJamXmlWrapper : uses
     InputReader --> AnimalInfo : uses
     AnimalJamView --> IAnimalController : uses
