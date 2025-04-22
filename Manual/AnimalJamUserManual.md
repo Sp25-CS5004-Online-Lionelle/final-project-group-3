@@ -1,47 +1,57 @@
-# Manual 
+# Animal Jam User Manual 
+The user manual contains information on how to navigate the Graphical interface to use the various features of the Animal Jam Application
+
+## Build and Run
+The project uses gradle build and run scripts:
+* To build the code base use command : gradle build
+* To launch the application Graphical user interface use command: gradle run
 
 ## Welcome Screen
 
-![Welcome Screen](welcomeScreen.png)
 - The welcome screen is the first screen that users see when they open the app. Users can click the "Enter" button to proceed to the main collection screen of the program.
+![Welcome Screen](welcomeScreen.png)
 
 ## Main Collection Screen
-![Main Collection Screen](mainCollection.png)
+
 - The main collection screen displays a list of all the Animals available in the app's database. Users are able to utilize multiple features to manage the collections effectively. These include searching for specific animals, filtering the collection based on various criteria, and sorting the collections by different attributes.
+![Main Collection Screen](mainCollection.png)
 
-### Searching for Animals
-![Search Panel](SearchPanel.png)
+## Searching for Animals
+
 - The search panel allows users to find specific animals by entering the animal's name or any part of the name in the search bar. Enter the search term in the search bar and press the "Search" button to initiate the search. The app will display the results in the main collection screen as a filtered list of animals.
+![Search Panel](searchPanel.png)
 
-### Add To Favorites
-![Add To Favorites](AddToFavorites.png)
+## Add To Favorites
+
 - Users can add animals to their favorites list by selecting the animal or animals and clicking the "Add to Favorite List" button. This will add the selected animal/s to the user's favorites list.
+![Add To Favorites](AddToFavorites.png)
 
-### View Favorites
-![View Favorites](ViewFavorites.png)
+## View Favorites
+
 - Users can view their favorites list by clicking the "Favorite List" button. This will take them to a new screen that displays all the animals they have added to their favorites list. It will also make available the "Remove from Favorite List" button to remove animals from the favorites list and the Save. 
+![View Favorites](ViewFavorites.png)
 
-#### Favorite List Screen
+## Favorite List Screen
 ![Favorite List Screen](favoritesListScreen.png)
 - On the Favorite List screen, the favorite list will be displayed, along with the Remove from list button and the save button. 
 
-##### Remove From Favorites
+## Remove From Favorites
 ![Remove From Favorites](RemoveFromFavorites.png)
 Users can select the animal or animals they want to remove and click the "Remove from Favorite List" button. This will remove the selected animal/s from the user's favorites list.
 
-##### Save Favorite List
+## Save Favorite List
 ![Save Favorite List](SaveFavoriteList.png)
 - Users can save their favorite list by clicking the "Save" button. This will save the current state of the favorites list to a file, allowing users to keep track of their favorite animals even after closing the app.
 
-##### Go Back to Collection List
+## Go Back to Collection List
 ![Go Back to Collection List](GoBackToCollectionList.png)
 - Users can return to the main collection screen by clicking the "Collection List" button. This will take them back to the main collection screen, where they can continue managing their collections.
 
-### Filtering or Sorting Animals
+## Filtering or Sorting Animals
 ![Filter Panel](FilterPanel.png)
 - The filter panel allows users to narrow down the list of animals based on specific criteria. To start filtering and sorting, click the "Filter" button. A new panel will appear with various filter options. 
 
-#### Filter And Sort Options
+## Filter And Sort Options
 ![Filter Options](FilterOptions.png)
 Users can add filter strings into the Filter textbox to apply them. They should be in the form:
 
@@ -70,7 +80,7 @@ The user then uses the Sort On dropdown to select the column to sort the results
 
 
 
-##### Filtered List
+## Filtered List
 ![Filtered List](FilteredList.png)
 - The results of the filter will show up in the main collection screen as a filtered list of animals. The filtered list will only display animals that match the specified filter criteria. You can clear the filter by clicking the Clear Filter or Search button or just going back to the main collection screen. The app will reset the filter and display all animals in the collection again.
 
