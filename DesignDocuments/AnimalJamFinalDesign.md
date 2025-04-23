@@ -62,7 +62,7 @@ classDiagram
     AnimalJamModel --> Formats : uses
     AnimalJamModel --> DataFormater : uses
     AnimalJamModel --> InputReader : uses
-    DataFormater --> AnimalJamXmlWrapper : uses
+    DataFormater --> AnimalXmlWrapper : uses
     InputReader --> AnimalInfo : uses
     AnimalJamController --> IAnimalModel : uses
     AnimalJamController --> Formats : uses
@@ -251,24 +251,8 @@ classDiagram
         - displayCollection() : void
         - displayWelcome() : void
     }
-    class AnimalJamListDisplay {
-        + AnimalJamListDisplay()
-        + updateDisplay() : void
-    }
-    class AnimalJamFormatDisplay {
-        + AnimalJamFormatDisplay()
-        + updateDisplay() : void
-    }
-    class AnimalJamExportDisplay {
-        + AnimalJamExportDisplay()
-        + updateDisplay() : void
-    }
     class AnimalJamSortDisplay {
         + AnimalJamSortDisplay()
-        + updateDisplay() : void
-    }
-    class AnimalJamFilterDisplay {
-        + AnimalJamFilterDisplay()
         + updateDisplay() : void
     }
     class AnimalJamCollectionDisplay {
